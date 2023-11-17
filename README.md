@@ -20,12 +20,12 @@ Description: An example JSON record demonstrating the structure and content expe
 
 To interact with the Historic England API and submit Heritage Gateway Records, follow these steps:
 
--Review Documentation: Study the provided documentation to understand the API endpoints and the structure of the data required for submission.
--Access API Endpoints: Utilize the File Upload API to submit Heritage Gateway Records to the Historic England system.
--Ensure Data Format: Prepare HGR data in accordance with the defined schema outlined in the HGR Schema Documentation.
--Testing & Validation: Test the submission process using the provided example JSON record to ensure compatibility and proper handling.
--Error Handling: Implement error handling mechanisms as described in the API documentation to manage any issues during data submission.
--Feedback & Support: Reach out to the Historic England support team for any assistance or inquiries regarding API integration or data submission.
+1) Review Documentation: Study the provided documentation to understand the API endpoints and the structure of the data required for submission.
+2) Access API Endpoints: Utilize the File Upload API to submit Heritage Gateway Records to the Historic England system.
+3) Ensure Data Format: Prepare HGR data in accordance with the defined schema outlined in the HGR Schema Documentation.
+4) Testing & Validation: Test the submission process using the provided example JSON record to ensure compatibility and proper handling.
+5) Error Handling: Implement error handling mechanisms as described in the API documentation to manage any issues during data submission.
+6) Feedback & Support: Reach out to the Historic England support team for any assistance or inquiries regarding API integration or data submission.
 
 Additional Resources
 For further information or assistance, refer to the following resources:
