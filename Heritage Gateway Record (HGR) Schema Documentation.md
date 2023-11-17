@@ -10,13 +10,12 @@ This documentation outlines the key aspects of these attributes.
 
 ```
 {
-    "metadata":
-    {
-        "extractedAtTimestamp": "timestamp",
-        "source": "string",
-        "sourceID": "string"
-    },
-    ...
+	"metadata": {
+		"extractedAtTimestamp": "timestamp",
+		"source": "string",
+		"sourceID": "string"
+	},
+	"record": { ... }
 }
 ```
 ---
@@ -54,29 +53,29 @@ This documentation outlines the key aspects of these attributes.
 
 ```
 {
-    "metadata": { ... },
-    "record": {
-        "primaryReferenceNumber": "string",
-        "heritageAssetName": "string",
-        "descriptions": [ ... ],
-        "monumentDatedTypes": [ ... ],
-        "pointGeometry": { ... },
-        "complexGeometries": [ ... ],
-        "monumentSources": [ ... ],
-        "objectFinds": [ ... ],
-        "maritimeCraft": { ... },
-        "historicAircraft": { ... },
-        "relatedRecords": [ ... ],
-        "relatedEvents": [ ... ],
-        "compiler":{ ... },
-        "typeOfRecord": "string",
-        "parish": "string",
-        "streetMapLink": "url",
-        "images": [ ... ],
-        "protectedStatuses": [ ... ],
-        "otherStatuses": [ ... ],
-        "lastUpdated": "YYYY-MM-DD"
-    }
+	"metadata": { ... },
+	"record": {
+		"primaryReferenceNumber": "string",
+		"heritageAssetName": "string",
+		"descriptions": [ ... ],
+		"monumentDatedTypes": [ ... ],
+		"pointGeometry": { ... },
+		"complexGeometries": [ ... ],
+		"monumentSources": [ ... ],
+		"objectFinds": [ ... ],
+		"maritimeCraft": { ... },
+		"historicAircraft": { ... },
+		"relatedRecords": [ ... ],
+		"relatedEvents": [ ... ],
+		"compiler":{ ... },
+		"typeOfRecord": "string",
+		"parish": "string",
+		"streetMapLink": "url",
+		"images": [ ... ],
+		"protectedStatuses": [ ... ],
+		"otherStatuses": [ ... ],
+		"lastUpdated": "YYYY-MM-DD"
+	}
 }
 ```
 ---
@@ -110,12 +109,12 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"descriptions": [
-		    {
-		        "type": "Full|Summary",
-		        "description": "string"
-		    }
+			{
+				"type": "Full|Summary",
+				"description": "string"
+			}
 		],
 		...
 	}
@@ -152,14 +151,14 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"monumentDatedTypes": [
 			{
 				"type": "string",
-		        "startDate": "YYYY-MM-DD",
-		        "endDate": "YYYY-MM-DD",
-		        "period": "string",
-		        "displayDate": "string",
+				"startDate": "YYYY-MM-DD",
+				"endDate": "YYYY-MM-DD",
+				"period": "string",
+				"displayDate": "string",
 				"material": "string",
 				"evidence": "string"
 
@@ -240,12 +239,12 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"pointGeometry": {
-            "referenceSystem": "string",
-            "x_coordintate": "numeric",
-            "y_coordinate": "numeric",
-        },
+			"referenceSystem": "string",
+			"x_coordintate": "numeric",
+			"y_coordinate": "numeric",
+		},
 		...
 	}
 }
@@ -287,15 +286,15 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
-        "complexGeometries": [
-            {
-                "spatialFeatureType": "string",
-                "referenceSystem": "string",
-                "spatialFeatureGeometryFormat": "string",
-                "spatialFeatureGeometry": "string",
-            }
-        ],
+		...
+		"complexGeometries": [
+			{
+				"spatialFeatureType": "string",
+				"referenceSystem": "string",
+				"spatialFeatureGeometryFormat": "string",
+				"spatialFeatureGeometry": "string",
+			}
+		],
 		...
 	}
 }
@@ -348,17 +347,17 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"monumentSources": [
-		    {
-		        "informationSourceTitle": "string",
-		        "statementOfAuthority": "string",
-		        "sourceReference": "string",
-		        "dateOfOrigination": "YYYY-MM-DD",
-		        "sourceDigitalObjectIdentifier": "url",
-		        "bibliographyFootnoteReference": "string",
-		        "sourceURL": "url"
-		    } 
+			{
+				"informationSourceTitle": "string",
+				"statementOfAuthority": "string",
+				"sourceReference": "string",
+				"dateOfOrigination": "YYYY-MM-DD",
+				"sourceDigitalObjectIdentifier": "url",
+				"bibliographyFootnoteReference": "string",
+				"sourceURL": "url"
+			} 
 		],
 		...
 	}
@@ -434,17 +433,17 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"objectFinds": [
-            {
-                "type": "string",
-                "startDate": "YYYY-MM-DD",
-                "endDate": "YYYY-MM-DD",
-                "period": "string",
-                "displayDate": "string",
-                "material": "string"
-            }
-    ],
+			{
+				"type": "string",
+				"startDate": "YYYY-MM-DD",
+				"endDate": "YYYY-MM-DD",
+				"period": "string",
+				"displayDate": "string",
+				"material": "string"
+			}
+		],
 		...
 	}
 }
@@ -516,15 +515,15 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"maritimeCraft": {
-    		"type": "string",
-            "startDate": "YYYY-MM-DD",
-            "endDate": "YYYY-MM-DD",
-            "period": "string",
-            "displayDate": "string",
-    		"material": "string"
-    	}
+			"type": "string",
+			"startDate": "YYYY-MM-DD",
+			"endDate": "YYYY-MM-DD",
+			"period": "string",
+			"displayDate": "string",
+			"material": "string"
+		}
 		...
 	}
 }
@@ -596,15 +595,15 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"historicAircraft": {
-    		"type": "string",
-            "startDate": "YYYY-MM-DD",
-            "endDate": "YYYY-MM-DD",
-            "period": "string",
-            "displayDate": "string",
-    		"material": "string"
-    	}
+			"type": "string",
+			"startDate": "YYYY-MM-DD",
+			"endDate": "YYYY-MM-DD",
+			"period": "string",
+			"displayDate": "string",
+			"material": "string"
+		}
 		...
 	}
 }
@@ -675,15 +674,15 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"relatedRecords": [
-            {
-                "primaryReferenceNumber": "string",
-                "heritageAssetName": "string",
-                "description": "string",
-                "url": "url"
-            }
-        ],
+			{
+				"primaryReferenceNumber": "string",
+				"heritageAssetName": "string",
+				"description": "string",
+				"url": "url"
+			}
+		],
 		...
 	}
 }
@@ -736,15 +735,15 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"relatedEvents": [
-            {
-                "primaryReferenceNumber": "string",
-                "name": "string",
-                "description": "string",
-                "url": "url"
-            }
-        ],
+			{
+				"primaryReferenceNumber": "string",
+				"name": "string",
+				"description": "string",
+				"url": "url"
+			}
+		],
 		...
 	}
 }
@@ -830,13 +829,13 @@ This documentation outlines the key aspects of these attributes.
 {
 	"metadata": { ... },
 	"record": {
-        ...
+		...
 		"images": [
-            {
-                "url": "url",
-                "caption": "string"
-            }
-        ],
+			{
+				"url": "url",
+				"caption": "string"
+			}
+		],
 		...
 	}
 }
@@ -880,11 +879,11 @@ This documentation outlines the key aspects of these attributes.
 	"record": {
 		...
 		"protectedStatuses": [
-            {
-                "description": "string",
-                "url": "url"
-            }
-        ],
+			{
+				"description": "string",
+				"url": "url"
+			}
+		],
 		...
 	}
 }
@@ -903,11 +902,11 @@ This documentation outlines the key aspects of these attributes.
 	"record": {
 		...
 		"otherStatuses": [
-            {
-                "description": "string",
-                "url": "url"
-            }
-        ],
+			{
+				"description": "string",
+				"url": "url"
+			}
+		],
 		...
 	}
 }
