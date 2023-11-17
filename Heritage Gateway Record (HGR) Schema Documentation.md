@@ -6,7 +6,7 @@ This documentation outlines the key aspects of these attributes.
 ### Attribute: `metadata`
 **Mandatory in HGR**: Y\
 **Data Type**: Object\
-**Description**: The metadata attribute is a fundamental part of the HGR schema and is mandatory for all records. It is an object that encapsulates various metadata elements. The creation and validation of this attribute require a third-party process to ensure its accuracy and integrity. This process is essential for maintaining the reliability of the HGR records.\
+**Description**: The metadata attribute is a fundamental part of the HGR schema and is mandatory for all records. It is an object that encapsulates various metadata elements. The creation and validation of this attribute require a third-party process to ensure its accuracy and integrity. This process is essential for maintaining the reliability of the HGR records.
 
 ```
 {
@@ -24,7 +24,7 @@ This documentation outlines the key aspects of these attributes.
 **Mandatory in HGR**: Y\
 **Data Type**: ISO 8601 UTC\
 **Description**: The metadata.extractedAtTimestamp attribute, also mandatory, records the timestamp when the data was extracted. This attribute follows the ISO 8601 UTC format and adheres to a strict validation rule that requires the timestamp to be in the 'Y-m-d H:i:s' format. The precision and standardisation of this timestamp are crucial for maintaining the consistency of temporal data across the HGR system.\
-**Validation Rules**: required, date format:Y-m-d H:i:s\
+**Validation Rules**: required, date format:Y-m-d H:i:s
 
 ---
 
