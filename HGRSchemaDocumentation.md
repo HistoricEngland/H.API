@@ -1,3 +1,10 @@
+# Heritage Gateway Technical Documentation 
+
+Historic Environment Records (sometimes referred to as Sites and Monuments Records) may be held by County Councils, District Councils or Unitary Authorities. In each case, the record will cover the whole of the local authority area. Selected major historic towns and cities are covered by Urban Archaeological Databases (UADs). In many cases, UADs are held as part of, and are accessible via, the local Historic Environment Record. 
+
+Historic England have made available a web service which can be used to submit the UAD information into the Heritage Gatewway through a REStful API. Details can be found here: [
+
+
 # Heritage Gateway Record (HGR) Schema Documentation
 The Heritage Gateway Record (HGR) schema comprises several attributes, each with specific requirements and characteristics.\
 This documentation outlines the key aspects of these attributes.
