@@ -1,0 +1,121 @@
+{
+	"metadata":
+	{
+		"extractedAtTimestamp": "timestamp",
+		"source": "string",
+		"sourceID": "string"
+	},
+	"record":
+	{
+		"primaryReferenceNumber": "string",
+		"heritageAssetName": "string",
+		"descriptions": [
+			{
+				"type": "string",
+				"description": "string"
+			}
+		],
+		"monumentDatedTypes": [
+			{
+				"type": "string",
+				"startDate": "date",
+				"endDate": "date",
+				"period": "string",
+				"displayDate": "string",
+				"material": "string",
+				"evidence": "string"
+			}
+		],
+		"pointGeometry": {
+			"referenceSystem": "string",
+			"x_coordintate": "numeric",
+			"y_coordinate": "numeric"
+		},
+		"complexGeometries": [
+			{
+				"spatialFeatureType": "string",
+				"referenceSystem": "string",
+				"spatialFeatureGeometryFormat": "string",
+				"spatialFeatureGeometry": "string"
+			}
+		],
+		"monumentSources": [
+			{
+				"informationSourceTitle": "string",
+				"statementOfAuthority": "string",
+				"sourceReference": "string",
+				"dateOfOrigination": "date",
+				"sourceDigitalObjectIdentifier": "url",
+				"bibliographyFootnoteReference": "string",
+				"sourceURL": "url"
+			}
+		],
+		"objectFinds": [
+			{
+				"type": "string",
+				"startDate": "date",
+				"endDate": "date",
+				"period": "string",
+				"displayDate": "string",
+				"material": "string"
+			}
+		],
+		"maritimeCraft": {
+			"type": "string",
+			"startDate": "date",
+			"endDate": "date",
+			"period": "string",
+			"displayDate": "string",
+			"material": "string"
+		},
+		"historicAircraft": {
+			"type": "string",
+			"startDate": "date",
+			"endDate": "date",
+			"period": "string",
+			"displayDate": "string",
+			"material": "string"
+		},
+		"relatedRecords": [
+			{
+				"primaryReferenceNumber": "string",
+				"heritageAssetName": "string",
+				"description": "string",
+				"url": "url"
+			}
+		],
+		"relatedEvents": [
+			{
+				"primaryReferenceNumber": "string",
+				"name": "string",
+				"description": "string",
+				"url": "url"
+			}
+		],
+		"compiler": {
+			"organisationName": "string"
+		},
+		"typeOfRecord": "string",
+		"parish": "string",
+		"streetMapLink": "url",
+		"images": [
+			{
+				"url": "url",
+				"caption": "string"
+			}
+		],
+		"protectedStatuses": [
+			{
+				"description": "string",
+				"url": "url"
+			}
+		],
+		"otherStatuses": [
+			{
+				"description": "string",
+				"url": "url"
+			}
+		],
+		"lastUpdated": "date"
+	}
+}
