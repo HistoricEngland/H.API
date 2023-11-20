@@ -260,8 +260,8 @@ This documentation outlines the key aspects of these attributes.
 		...
 		"pointGeometry": {
 			"referenceSystem": "string",
-			"x_coordintate": "numeric",
-			"y_coordinate": "numeric",
+			"xCoordintate": "numeric",
+			"yCoordinate": "numeric",
 		},
 		...
 	}
@@ -278,18 +278,18 @@ This documentation outlines the key aspects of these attributes.
 
 ---
 
-### Attribute: `record.pointGeometry.x_coordinate`
+### Attribute: `record.pointGeometry.xCoordinate`
 **Mandatory in HGR**: Y\
 **Data Type**: Decimal|integer\
-**Description**: This attribute represents the x_coordinate of the record. Depending on the spatial reference system it either stands for latitude or easting values.\
+**Description**: This attribute represents the xCoordinate of the record. Depending on the spatial reference system it either stands for latitude or easting values.\
 **Validation Rules**: required, numeric
 
 ---
 
-### Attribute: `record.pointGeometry.y_coordinate`
+### Attribute: `record.pointGeometry.yCoordinate`
 **Mandatory in HGR**: Y\
 **Data Type**: Decimal|integer\
-**Description**: This attribute represents the y_coordinate of the record. Depending on the spatial reference system it either stands for longitude or northing values.\
+**Description**: This attribute represents the yCoordinate of the record. Depending on the spatial reference system it either stands for longitude or northing values.\
 **Validation Rules**: required, numeric
 
 ---
