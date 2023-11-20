@@ -13,7 +13,7 @@ Description: Details on accessing the web service used for submitting Heritage G
 File: [HGR Schema Documentation](HGRSchemaDocumentation.md)
 Description: Technical documentation outlining the required format and structure of the Heritage Gateway Record for submission via the web service.
 3. Example JSON Record of HGR Schema
-File: [HGR shema in JSON format](HeritageGatewayRecord.json.md)
+File: [HGR shema in JSON format](HeritageGatewayRecord.json)
 Description: An example JSON record demonstrating the structure and content expected for the Heritage Gateway Record, aligned with the specified schema.
 
 # Usage Instructions
