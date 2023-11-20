@@ -28,8 +28,8 @@
 		],
 		"pointGeometry": {
 			"referenceSystem": "string",
-			"x_coordintate": "numeric",
-			"y_coordinate": "numeric"
+			"xCoordintate": "numeric",
+			"yCoordinate": "numeric"
 		},
 		"complexGeometries": [
 			{
