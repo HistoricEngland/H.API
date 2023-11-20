@@ -28,7 +28,7 @@
 		],
 		"pointGeometry": {
 			"referenceSystem": "string",
-			"xCoordintate": "numeric",
+			"xCoordinate": "numeric",
 			"yCoordinate": "numeric"
 		},
 		"complexGeometries": [
