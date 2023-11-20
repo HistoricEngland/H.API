@@ -260,7 +260,7 @@ This documentation outlines the key aspects of these attributes.
 		...
 		"pointGeometry": {
 			"referenceSystem": "string",
-			"xCoordintate": "numeric",
+			"xCoordinate": "numeric",
 			"yCoordinate": "numeric",
 		},
 		...
