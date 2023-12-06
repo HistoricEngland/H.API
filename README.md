@@ -1,7 +1,18 @@
 # Historic England API (H.API) Documentation
 
 # Overview
-Welcome to the Historic England API (H.API) project, designed to facilitate access to Historic Environment Records (HERs) or Sites and Monuments Records managed by various local authorities. These records cover extensive historical information within their respective local authority areas. Additionally, Urban Archaeological Databases (UADs) cover selected major historic towns and cities, often accessible through the local Historic Environment Record.
+Welcome to the Historic England API (H.API) project, designed to facilitate access to national and local heritage information datasets, including Historic Environment Records (HERs) https://historicengland.org.uk/advice/technical-advice/information-management/hers/. 
+
+The project will replace the current Heritage Gateway (https://www.heritagegateway.org.uk/gateway/), which is now 15 years old and fails accessibility and cyber essential standards, with a system that ensures users experience reliable and consistent search results. The new Gateway’s user interface will comprise redesigned search and results display pages on the Historic England website.
+
+Central to the design of a replacement Heritage Gateway is the consolidation of summary data from various providers into a single, searchable GraphDB data store which supports linked open data (LOD) standards and is to be managed by HE. The minimum units of information comprising a core Heritage Gateway Record (HGR) have been defined along with additional optional units. Both sets of units have in turn been mapped to the International Committee for Documentation Conceptual Reference Model (CIDOC CRM).  
+
+Data for inclusion in the Heritage Gateway will be made available by providers on a regular update schedule via a published API or export file. These will be validated against the core HGR. Valid records will be converted to Resource Description Framework (RDF) triples/quads conforming to a CIDOC CRM based RDF schema, then imported to the GraphDB RDF triple store. Invalid records will be logged and reported to the relevant data provider. HE will manage this process in close liaison with the data providers. 
+
+The envisaged overall Extract, Transform and Load (ETL) process flow and components is depicted below: 
+
+![image](https://github.com/ember-technology-ltd/H.API/assets/86000238/da935d03-7c5b-46b4-aba9-c71de88df217)
+
 
 # Accessing Heritage Gateway Record Submission
 This API enables the submission of Heritage Gateway Records (HGRs). Below are the key components and resources available for integration:
