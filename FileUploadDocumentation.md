@@ -6,6 +6,7 @@
 Version| Description | Author 
 --- | --- | --- 
 1.0  | Initial version of the API for the submission of the Heritage Gateway File | Jan Putzan (Ember Technology)
+1.1  | Addition of the dataset creation endpoint | Jan Putzan (Ember Technology)
 
 
 ## Overview
@@ -38,28 +39,106 @@ This document outlines the steps required to upload files to our service using O
   }
   ```
 
+## Dataset Creation
+
+To initiate the file upload process, begin by generating a new dataset. This is achieved by submitting the current counts of monument records to the designated endpoint. Upon successful creation, the system will return a unique DATASET_ID. This DATASET_ID must be included in all subsequent API requests related to the current batch, whether you are performing single file uploads or bulk uploads. Note that for each new batch of files, a fresh DATASET_ID is required. This necessitates the resubmission of the latest monument record counts to generate a new ID. Ensure that the counts are updated accurately with each new batch submission.
+
+### Creating a New Dataset
+
+- **Endpoint**: `https://api.example.com/api/dataset/create`
+- **Method**: `POST`
+- **Headers**:
+  - `Authorization: Bearer YOUR_ACCESS_TOKEN`
+  - `Content-Type: application/json`
+- **Body**:
+  ```json
+  {
+    "total_count": integer,
+    "published_count": integer,
+    "submitted_count": integer
+  }
+  ```
+- **Response** A JSON object containing the `dataset_id` required for file upload.
+  ```json
+  {
+    "dataset_id": "DATASET_ID"
+  }
+  ```
+
 ## File Upload
 
-### Uploading a File
+### Uploading a Single File
 
-- **Endpoint**: `https://api.example.com/upload`
+- **Endpoint**: `https://api.example.com/dataset/upload`
 - **Method**: `POST`
 - **Headers**: 
   - `Authorization: Bearer YOUR_ACCESS_TOKEN`
   - `Content-Type: multipart/form-data`
-- **Body**: Include the file in the request as form-data.
+- **Body**:
+```json
+  {
+    "dataset_id": "DATASET_ID"
+  }
+  ```
+  - Include the file in the request as form-data.
+
+### Uploading Files in Bulk
+
+- **Endpoint**: `https://api.example.com/dataset/upload/bulk`
+- **Method**: `POST`
+- **Headers**: 
+  - `Authorization: Bearer YOUR_ACCESS_TOKEN`
+  - `Content-Type: multipart/form-data`
+- **Body**:
+```json
+  {
+    "dataset_id": "DATASET_ID"
+  }
+  ```
+  - Include an array of files in the request as form-data.
 
 ### Steps
 
 1. Obtain an access token from the OAuth endpoint.
-2. Prepare the file for upload according to the API's specifications.
-3. Construct a POST request to the file upload endpoint with the appropriate headers and file data.
-4. Process the API's response to determine the success or failure of the upload.
+2. Construct a POST request to the dataset creation endpoint with the appropriate headers and dataset details.
+3. Process the API's response to retrieve the DATASET_ID for the newly created dataset.
+4. Prepare the file for upload according to the API's specifications.
+5. Construct a POST request to the file upload endpoint with the appropriate headers, DATASET_ID and file data.
+6. Process the API's response to determine the success or failure of the upload.
 
-### Example cURL Command
+### Examples of cURL Commands
 
 ```bash
-curl -X POST https://api.example.com/upload   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"   -H "Content-Type: multipart/form-data"   -F "file=@path_to_your_file"
+curl -X POST https://api.example.com/oauth/token \
+  -H "Content-Type: application/json" \
+  -d '{"username": "your_username","password": "your_password"}'
+```
+
+```bash
+curl -X POST https://api.example.com/api/dataset/create \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"total_count": 100, "published_count": 50, "submitted_count": 30}'
+```
+
+```bash
+curl -X POST https://api.example.com/api/dataset/upload \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: multipart/form-data" \
+  -d '{"dataset_id": DATASET_ID}'
+  -F "file=@path_to_your_file"
+```
+
+```bash
+curl -X POST https://api.example.com/api/dataset/upload/bulk \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: multipart/form-data" \
+  -d '{"dataset_id": DATASET_ID}' \
+  -F "files[]=@path_to_your_first_file" \
+  -F "files[]=@path_to_your_second_file" \
+  ...
+  -F "files[]=@path_to_your_last_file"
+
 ```
 
 ## Error Handling
