@@ -67,24 +67,9 @@ To initiate the file upload process, begin by generating a new dataset. This is 
 
 ## File Upload
 
-### Uploading a Single File
+### Uploading Files
 
 - **Endpoint**: `https://api.example.com/dataset/upload`
-- **Method**: `POST`
-- **Headers**: 
-  - `Authorization: Bearer YOUR_ACCESS_TOKEN`
-  - `Content-Type: multipart/form-data`
-- **Body**:
-```json
-  {
-    "dataset_id": "DATASET_ID"
-  }
-  ```
-  - Include the file in the request as form-data.
-
-### Uploading Files in Bulk
-
-- **Endpoint**: `https://api.example.com/dataset/upload/bulk`
 - **Method**: `POST`
 - **Headers**: 
   - `Authorization: Bearer YOUR_ACCESS_TOKEN`
@@ -123,14 +108,6 @@ curl -X POST https://api.example.com/api/dataset/create \
 
 ```bash
 curl -X POST https://api.example.com/api/dataset/upload \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -H "Content-Type: multipart/form-data" \
-  -d '{"dataset_id": DATASET_ID}'
-  -F "file=@path_to_your_file"
-```
-
-```bash
-curl -X POST https://api.example.com/api/dataset/upload/bulk \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: multipart/form-data" \
   -d '{"dataset_id": DATASET_ID}' \
