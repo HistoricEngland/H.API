@@ -7,6 +7,7 @@ Version| Description | Author
 --- | --- | --- 
 1.0  | Initial version of the API for the submission of the Heritage Gateway File | Jan Putzan (Ember Technology)
 1.1  | Addition of the dataset creation endpoint | Jan Putzan (Ember Technology)
+1.2  | Addition of Swagger API documentation  | Jan Putzan (Ember Technology)
 
 
 ## Overview
@@ -124,6 +125,10 @@ curl -X POST https://api.example.com/api/dataset/upload \
 - **400 Bad Request**: The request is improperly formatted.
 - **413 Payload Too Large**: The file size exceeds the allowed limit.
 - **500 Internal Server Error**: An unexpected error occurred on the server.
+
+## Swagger API documentation
+
+https://hapi-platform-staging.embertech.link/api/documentation
 
 ## Security Notes
 
