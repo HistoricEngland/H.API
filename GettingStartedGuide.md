@@ -12,11 +12,11 @@ Together, these varied pathways cater to diverse user preferences and provides o
 
 ## Direct API Submission
 
-**** Access the API Documentation:
+### Access the API Documentation:
 +	Visit the provided Historic England API documentation here https://github.com/ember-technology-ltd/H.API/.
 +	Read through the guidelines, endpoints, and data submission procedures outlined in the documentation.
 
-**** Obtain Access Credentials:
+### Obtain Access Credentials:
 +	Contact Historic England's support team or designated personnel to acquire your access credentials through XXXXXX@XXXX@XXXX 
 +	Follow the outlined procedure to authenticate and obtain an access token required for data submission.
 
