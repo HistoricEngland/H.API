@@ -5,6 +5,14 @@
 Version| Description | Author 
 --- | --- | --- 
 1.0  | Initial version of the Heritage Gateway Schema| Jan Putzan (Ember Technology)
+1.1  | Addition of Overview section and updates to attribute descriptions | Jan Putzan (Ember Technology)
+
+## Overview
+Historic Environment Records (sometimes referred to as Sites and Monuments Records) may be held by County Councils, District Councils or Unitary Authorities. In each case, the record will cover the whole of the local authority area. Selected major historic towns and cities are covered by Urban Archaeological Databases (UADs). In many cases, UADs are held as part of, and are accessible via, the local Historic Environment Record. 
+
+Historic England have made available a web service which can be used to submit the UAD information into the Heritage Gatewway through a REStful API. Details can be found here: [https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md]
+
+The information submitted through the API must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating the information submitted. This documents is a detailed description of that schema. 
 
 # Heritage Gateway Record (HGR) Schema Documentation
 The Heritage Gateway Record (HGR) schema comprises several attributes, each with specific requirements and characteristics.\
@@ -12,16 +20,18 @@ This documentation outlines the key aspects of these attributes.
 
 
 ### Attribute: `metadata`
+**CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: Object\
-**Description**: The metadata attribute is a fundamental part of the HGR schema and is mandatory for all records. It is an object that encapsulates various metadata elements. The creation and validation of this attribute require a third-party process to ensure its accuracy and integrity. This process is essential for maintaining the reliability of the HGR records.
+**Description**: Object serving as a container for the Heritage Gateway Record’s metadata
 
 ```
 {
 	"metadata": {
 		"extractedAtTimestamp": "timestamp",
-		"source": "string",
-		"sourceID": "string"
+		"compilerOrganisationName": "string",
+		"dataSource": "string",
+		"dataSourceID": "string"
 	},
 	"record": { ... }
 }
@@ -29,35 +39,49 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `metadata.extractedAtTimestamp`
+**CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: ISO 8601 UTC\
-**Description**: The metadata.extractedAtTimestamp attribute, also mandatory, records the timestamp when the data was extracted. This attribute follows the ISO 8601 UTC format and adheres to a strict validation rule that requires the timestamp to be in the 'Y-m-d H:i:s' format. The precision and standardisation of this timestamp are crucial for maintaining the consistency of temporal data across the HGR system.\
-**Validation Rules**: required, date format:Y-m-d H:i:s
+**Description**: Records the timestamp when the data were extracted.\
+**Validation Rules**: required, date, format:Y-m-d H:i:s
 
 ---
 
-### Attribute: `metadata.source`
+### Attribute: `metadata.compilerOrganisationName`
+**CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: Mandatory attribute, it's a string that represents the Historic Environment Record (HER) identifier. It is subject to validation rules that require it to be alphanumeric.\
+**Description**: The name of the organisation responsible for the compilation or curation of entries in a dataset. (MIDAS)\
 **Validation Rules**: required, alpha\
 **Acceptable Values**: Alphanumeric
 
 ---
 
-### Attribute: `meatadata.sourceID`
+### Attribute: `metadata.dataSource`
+**CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: The metadata.sourceID attribute serves as a critical identifier within the Heritage Gateway Record (HGR) schema. This field holds a unique identifier which correlates directly to the original source of the data. The value for this attribute is expected to match one of the predefined values from a dictionary, ensuring that each entry is consistent with a controlled vocabulary or set of identifiers that have been established prior.\
-**Validation Rules**: must be one of the following predefined values: predefined dictionary\
-**Acceptable Values**: Predefined dictionary
+**Description**: Name of the HER dataset\
+**Validation Rules**: required, alpha\
+**Acceptable Values**: Alphanumeric
+
+---
+
+### Attribute: `meatadata.dataSourceID`
+**CORE HGR attribute or OPTIONAL attribute**: N/A\
+**Mandatory in HGR**: Y\
+**Data Type**: String\
+**Description**: Unique identifier for dataSource\
+**Validation Rules**: required, alpha\
+**Acceptable Values**: Alphanumeric
 
 ---
 
 ### Attribute: `record`
+**CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: Object\
-**Description**: The record attribute is a core object in the HGR schema and is mandatory. It serves as a container for the primary data of the HGR record. The integrity and structure of this attribute are pivotal in maintaining the overall coherence and utility of the HGR system.
+**Description**: Object serving as a container for the primary data of the Heritage Gateway Record.
 
 ```
 {
@@ -71,8 +95,8 @@ This documentation outlines the key aspects of these attributes.
 		"complexGeometries": [ ... ],
 		"monumentSources": [ ... ],
 		"objectFinds": [ ... ],
-		"maritimeCraft": { ... },
-		"historicAircraft": { ... },
+		"maritimeCrafts": [ ... ],
+		"historicAircrafts": [ ... ],
 		"relatedRecords": [ ... ],
 		"relatedEvents": [ ... ],
 		"compiler":{ ... },
@@ -89,27 +113,31 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.primaryReferenceNumber`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: It is a key attribute within the record object and is part of the CORE record structure. It is a mandatory string that holds the primary reference number for the record. The data type is a string, and it must adhere to a validation rule that restricts it to alphanumeric characters, explicitly excluding slashes and spaces. This requirement aligns with best practices for open linked data, where URIs are used, and slashes in reference numbers can complicate data management and retrieval.\
+**Description**: A unique number, or number and character combination, allocated to identify one entry in an information system. (MIDAS)\
 **Validation Rules**: required, alpha\
-**Acceptable Values**: Numeric or alphanumeric, must not contain slash characters
+**Acceptable Values**: Alphanumeric
 
 ---
 
 ### Attribute: `record.heritageAssetName`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the name of the heritage asset of the record and while not mandatory for all records, is a core part of the schema when included. The attribute accepts alphanumeric values, and it follows a validation rule that ensures it contains only alphabetic characters. For records where the data provider does not hold a specific name for the asset, a generated or default name should be used to maintain consistency in the dataset.\
+**Description**: A free-text field which records the name by which a Heritage Asset is most commonly known. (MIDAS)\
+For records where the data provider does not hold a specific name for the asset, generate Heritage Asset Name by concatenating Period and Monument Type. Always use the earliest Period and Monument type available.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
 
 ---
 
 ### Attribute: `record.descriptions`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
-**Description**: This attribute is an essential array-type attribute that is mandatory for all records. It consists of one or more description objects that provide detailed information about the heritage asset. Each object within this array must adhere to specific structure and content requirements, ensuring comprehensive and uniform descriptions across all records.\
+**Description**: An array recording free text describing the Heritage Asset. Description Type is used to specialise the nature of the description, for example to distinguish non-technical summary text from more detailed synthesised works.\
 **Validation Rules**: required, array\
 **Acceptable Values**: An array that contains one or more Description objects
 
@@ -131,27 +159,30 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.descriptions.*.type`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: Within each description object, the attribute is a string that specifies the type of description, with allowable values including 'Full' and 'Summary'. This categorization facilitates the appropriate representation and interpretation of the description content.\
-**Validation Rules**: required, must be one of the following predefined values: Full,Summary\
+**Description**: Allows a description to be specialised by level of detail or intended use. Used to distinguish brief summaries from more detailed full descriptions. (MIDAS)\
+**Validation Rules**: required\
 **Acceptable Values**: Full,Summary
 
 ---
 
 ### Attribute: `record.descriptions.*.description`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: It is designed to hold textual information that provides detailed narratives or explanations about the heritage asset. This field is versatile, accepting both rich text and plain text formats. Rich text can include additional formatting such as bolding, italics, bullet points, and other text structuring features, which can enhance the readability and presentation of the information. Plain text, on the other hand, is unformatted and is used for simple, straightforward descriptions without the need for additional text styling.\
+**Description**: Free-text description of the Heritage Asset. (MIDAS)\
 **Validation Rules**: required\
-**Acceptable Values**: Summary: Alphanumeric (255 characters for Summary, truncate if greater).
+**Acceptable Values**: Alphanumeric (255 characters for Summary, truncate if greater).
 
 ---
 
 ### Attribute: `record.monumentDatedTypes`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y \
 **Data Type**: Array\
-**Description**: This attribute captures the historical or archaeological classification of a monument or heritage asset, linked to specific time periods. This field includes information that identifies the monument type with corresponding dates or historical periods.\
+**Description**: An array recording information that describes the construction and use phases of the Heritage Asset.\
 **Validation Rules**: required, array\
 **Acceptable Values**: An array that contains a combination of one or more MonumentDatedType objects.
 
@@ -179,69 +210,77 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.monumentDatedTypes.*.type`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: It is a string that identifies the monument type, adhering to the FISH Thesaurus of Monument Types. This attribute is crucial for categorising the heritage asset accurately, and it requires validation to ensure consistency and accuracy in the classification of assets.\
+**Description**: Term or terms which classify the monument principally with reference to its function or use. (MIDAS)\
 **Validation Rules**: required, alpha\
 **Acceptable Values**: FISH Thesaurus of Monument Types: https://heritagedata.org/live/schemes/eh_tmt2.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
 ### Attribute: `record.monumentDatedTypes.*.startDate`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute marks the beginning of the relevant time period for the monument type. The use of a standardised date format is vital for consistency and facilitates comparative historical analysis.\
+**Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
 ### Attribute: `record.monumentDatedTypes.*.endDate`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute represents the endDate of the record. It also adheres to the ISO 8601 UTC date format (YYYY-MM-DD) and signifies the end of the heritage asset's relevant time period. The inclusion of both start and end dates, when available, offers a comprehensive temporal picture of the asset.\
+**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
 ### Attribute: `record.monumentDatedTypes.*.period`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
-**Description**: It is a string that represents the historical period of the heritage asset, aligning with the Historic England Periods. This attribute provides a broader temporal context when specific dates are not available and is vital for classifying assets into historical timelines.\
+**Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS).\
 **Validation Rules**: required, alpha\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
 ### Attribute: `record.monumentDatedTypes.*.displayDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: It is a string intended to provide a human-readable date or date range, capped at a maximum of 40 alphabetic characters. This attribute enhances the user-friendliness of the record by providing a simplified date display, making it easier for non-specialists or the general public to understand the temporal context of the heritage asset.\
+**Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given (MIDAS)\
 **Validation Rules**: alpha, max:40
 
 ---
 
 ### Attribute: `record.monumentDatedTypes.*.material`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute details the material associated with the heritage asset. It plays a vital role in understanding the construction and preservation state of the asset.\
+**Description**: The basic materials and media of which a Heritage Asset is composed. (MIDAS)\
 **Validation Rules**: alpha\
 **Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
 ### Attribute: `record.monumentDatedTypes.*.evidence`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: It contains evidence type related to the heritage asset.\
+**Description**: A description of the existing physical remains of a Heritage Asset when investigated, or the means by which it was identified where no remains exist or are visible. (MIDAS)\
 **Validation Rules**: alpha\
 **Acceptable Values**: FISH Evidence Thesaurus: https://heritagedata.org/live/schemes/eh_evd.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
 ### Attribute: `record.pointGeometry`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: Object\
-**Description**: It  is responsible for storing the geographical coordinates that define the precise location of a heritage asset. This attribute encompasses a set of numerical values representing latitude and longitude (or absolute easting and norting, depending on the reference system in use), which together describe a singular point in a spatial reference system.
+**Description**: An object recording simple point spatial object information used to depict the spatial element of a Heritage Asset.
 
 ```
 {
@@ -260,34 +299,42 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.pointGeometry.referenceSystem`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: This attribute denotes the spatial reference system used, crucial for ensuring the geographical data's accuracy and interoperability.\
-**Validation Rules**: required, must be one of the following predefined values: EPSG 27700 , WGS84\
-**Acceptable Values**: Valid spatial reference system name
+**Description**: The spatial reference system (or coordinate reference system) framework used to measure the Heritage Asset’s location(s) on the surface of Earth as coordinates.\
+**Validation Rules**: required\
+**Acceptable Values**: EPSG 27700 | EPSG 4326
 
 ---
 
 ### Attribute: `record.pointGeometry.xCoordinate`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: Decimal|integer\
-**Description**: This attribute represents the xCoordinate of the record. Depending on the spatial reference system it either stands for latitude or easting values.\
-**Validation Rules**: required, numeric
+**Description**: The numerical easting (X) coordinate for a feature (MIDAS). Depending on the spatial reference system it either stands for longitude or easting values.\
+**Validation Rules**: required, numeric\
+If record.pointGeometry.referenceSystem = EPSG 4326 must be decimal LONGITUDE value\
+If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute EASTING co-ordinate value
 
 ---
 
 ### Attribute: `record.pointGeometry.yCoordinate`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: Decimal|integer\
-**Description**: This attribute represents the yCoordinate of the record. Depending on the spatial reference system it either stands for longitude or northing values.\
-**Validation Rules**: required, numeric
+**Description**: The numerical northing (Y) coordinate for a feature (MIDAS). Depending on the spatial reference system it either stands for latitude or northing values.\
+**Validation Rules**: required, numeric\
+If record.pointGeometry.referenceSystem = EPSG 4326 must be decimal LATITUDE value\
+If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING co-ordinate value
 
 ---
 
 ### Attribute: `record.complexGeometries`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: This attribute denotes more sophisticated spatial data than a simple point location. This attribute would store information on the shape and boundaries of a heritage asset, potentially encompassing various geometric forms such as polygons, lines, or complex curves that outline the asset's physical footprint.\
+**Description**: An optional array recording more complex spatial object information used to depict the spatial element of a Heritage Asset.\
 **Validation Rules**: array
 
 ```
@@ -310,44 +357,50 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.complexGeometries.*.spatialFeatureType`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: This attribute specifies the type of spatial feature, such as point, line, or area, representing the asset's physical dimensions or boundaries.\
-**Validation Rules**: required, must be one of the following predefined values: point, polygon, multipoint, multipolygon, collection\
+**Description**: The spatial object type used to depict the spatial element of a feature. (MIDAS)\
+**Validation Rules**: required\
 **Acceptable Values**: point|polygon|multipoint|multipolygon|collection
 
 ---
 
 ### Attribute: `record.complexGeometries.*.spatialFeatureGeometryFormat`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: This attribute specifies the format of the spatial feature geometry, such as WKT (Well-Known Text) or GeoJSON, crucial for data standardisation and software compatibility.\
-**Validation Rules**: required, must be one of the following predefined values: wkt, geojson\
+**Description**: Standard format such as WKT (Well-Known Text) or GeoJSON used to describe the specified spatial reference system depicting the spatial feature type.\
+**Validation Rules**: required\
 **Acceptable Values**: wkt|geojson
 
 ---
 
 ### Attribute: `record.complexGeometries.*.referenceSystem`
-**Mandatory in HGR**: nan\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: This attribute denotes the spatial reference system used, crucial for ensuring the geographical data's accuracy and interoperability.\
-**Validation Rules**: required, must be one of the following predefined values: EPSG 27700 , WGS84
+**Description**: The spatial reference system(or coordinate reference system) framework used to measure the Heritage Asset’s location(s )on the surface of Earth as coordinates \
+**Validation Rules**: required\
+**Acceptable Values**: EPSG 27700 | EPSG 4326
 
 ---
 
 ### Attribute: `record.complexGeometries.*.spatialFeatureGeometry`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: This attribute contains the actual spatial geometry data of the heritage asset, encoded in the specified format.\
+**Description**: Records the spatial geometry data describing the Heritage Asset’s locations, encoded in the specified format.\
 **Validation Rules**: required, string\
 **Acceptable Values**: WKT or geojson representation
 
 ---
 
 ### Attribute: `record.monumentSources`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
-**Description**: This attribute is an array detailing the sources of information for the monument. It includes various sub-attributes like source title, authority statement, and source reference, providing a comprehensive understanding of the asset's informational background.\
+**Description**: An array documenting references to sources of information about the Heritage Asset.\
 **Validation Rules**: required, array\
 **Acceptable Values**: An array that contains one or more MonumentSource objects
 
@@ -374,66 +427,74 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.monumentSources.*.informationSourceTitle`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y (if attribute bibliographyFootnoteReference is empty)\
 **Data Type**: String\
-**Description**: This attribute represents the source title of the information.\
+**Description**: A name assigned to an information source, generally by its creator, to assist in identification. (MIDAS)\
 **Validation Rules**: required without:bibliographyFootnoteReference, alpha, max:255
 
 ---
 
 ### Attribute: `record.monumentSources.*.statementOfAuthority`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y (if attribute bibliographyFootnoteReference is empty)\
 **Data Type**: String\
-**Description**: This attribute represents the statement of authority.\
+**Description**: A statement of the origin of an information source. (Statement of Responsibility - MIDAS). Typically, this will be personal names for the author, editor, photographer, cartographer, etc., but may also be used for publishers or issuing organisation names if individual names are not known.\
 **Validation Rules**: required without:bibliographyFootnoteReference, alpha, max:255
 
 ---
 
 ### Attribute: `record.monumentSources.*.sourceReference`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the source reference.\
+**Description**: Specific reference within a bibliographic or archive item. (MIDAS). Used to record details specific to the volume number, chronological designation, page numbers, figures and plates etc.\
 **Validation Rules**: alpha, max:255
 
 ---
 
 ### Attribute: `record.monumentSources.*.dateOfOrigination`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y (if attribute bibliographyFootnoteReference is empty)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute represents the date of origination.\
+**Description**: The date of creation of an information Source. The year of publication or issue of a bibliographic item.\
 **Validation Rules**: required without:bibliographyFootnoteReference, date format:YYYY-MM-DD
 
 ---
 
 ### Attribute: `record.monumentSources.*.sourceDigitalObjectIdentifier`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the source digital object indentifier of the record.\
+**Description**: A unique set of letters, characters and numbers which gives a persistent link to a resource on the internet, e.g. https://doi.org/10.5284/1092416.\
 **Validation Rules**: url\
 **Acceptable Values**: Must have text segment "doi" in URL
 
 ---
 
 ### Attribute: `record.monumentSources.*.bibliographyFootnoteReference`
-**Mandatory in HGR**: Y (if attributes informationSourceTitle, statementOfAuthority, sourceReference are empty)\
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
+**Mandatory in HGR**: Y (if attributes informationSourceTitle, statementOfAuthority, dateOfOrigination are empty)\
 **Data Type**: String\
-**Description**: This attribute represents the bibliography footnote reference.\
-**Validation Rules**: required without:informationSourceTitle,statementOfAuthority,sourceReference, max:255
+**Description**: A free text source reference.\
+**Validation Rules**: required without:informationSourceTitle,statementOfAuthority,dateOfOrigination, max:255
 
 ---
 
 ### Attribute: `record.monumentSources.*.sourceURL`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the source URL.\
+**Description**: A unique set of letters, characters and numbers referencing a web resource that specifies its location and a mechanism for retrieving it.\
 **Validation Rules**: url
 
 ---
 
 ### Attribute: `record.objectFinds`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: This is an array-type attribute that documents any objects found in association with the heritage asset. It contains sub-attributes detailing the type of objects, their production and use dates, materials, etc.\
+**Description**: An optional array documenting artefacts and ecofacts found in association with the Heritage Asset. \
 **Validation Rules**: array\
 **Acceptable Values**: An array that contains one or more ObjectFinds objects
 
@@ -459,51 +520,57 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.objectFinds.*.type`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: string\
-**Description**: It is a string that identifies the object finds type, adhering to the FISH Thesaurus of Archaeological Objects. This attribute is crucial for categorising the heritage asset accurately, and it requires validation to ensure consistency and accuracy in the classification of assets.\
+**Description**: A description of the form, function or type of artefact/ecofact. (MIDAS)\
 **Validation Rules**: alpha\
 **Acceptable Values**: FISH Archaeological Objects Thesaurus: https://heritagedata.org/live/schemes/mda_obj.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
 ### Attribute: `record.objectFinds.*.startDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute marks the beginning of the relevant time period for the object find. The use of a standardised date format is vital for consistency and facilitates comparative historical analysis.\
+**Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials).(MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
 ### Attribute: `record.objectFinds.*.endDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute marks the end of the relevant time period for the object find. The use of a standardised date format is vital for consistency and facilitates comparative historical analysis.\
+**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials). (MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
 ### Attribute: `record.objectFinds.*.period`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
-**Description**: It is a string that represents the historical period of the heritage asset, aligning with the Historic England Periods. This attribute provides a broader temporal context when specific dates are not available and is vital for classifying assets into historical timelines.\
+**Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the period of manufacture, deposition or death (for biological materials).\
 **Validation Rules**: alpha\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
 ### Attribute: `record.objectFinds.*.displayDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: It is a string intended to provide a human-readable date or date range, capped at a maximum of 40 alphabetic characters. This attribute enhances the user-friendliness of the record by providing a simplified date display, making it easier for non-specialists or the general public to understand the temporal context of the heritage asset.\
+**Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given. (MIDAS)\
 **Validation Rules**: alpha, max:40
 
 ---
 
 ### Attribute: `record.objectFinds.*.material`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute details the material associated with the object find. It plays a vital role in understanding the construction and preservation state of the asset.\
+**Description**: The basic materials and media of which the Object is composed. (MIDAS)\
 **Validation Rules**: alpha\
 **Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
@@ -512,78 +579,87 @@ This documentation outlines the key aspects of these attributes.
 
 ---
 
-### Attribute: `record.maritimeCraft`
+### Attribute: `record.maritimeCrafts`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
-**Data Type**: Object\
-**Description**: This attribute represents the maritimeCraft of the record.\
+**Data Type**: Array\
+**Description**: Array used to record information about watercraft (vessels of every description that ply on or in the water) associated with the Historic Asset. \
 **Validation Rules**: No specific validation rules apply.\
-**Acceptable Values**: MaritimeCraft object
+**Acceptable Values**: An array that contains one or more MaritimeCraft object
 
 ```
 {
 	"metadata": { ... },
 	"record": {
 		...
-		"maritimeCraft": {
-			"type": "string",
-			"startDate": "YYYY-MM-DD",
-			"endDate": "YYYY-MM-DD",
-			"period": "string",
-			"displayDate": "string",
-			"material": "string"
-		}
+		"maritimeCrafts": [
+			{
+				"type": "string",
+				"startDate": "YYYY-MM-DD",
+				"endDate": "YYYY-MM-DD",
+				"period": "string",
+				"displayDate": "string",
+				"material": "string"
+			}
+		],
 		...
 	}
 }
 ```
 ---
 
-### Attribute: `record.maritimeCraft.type`
+### Attribute: `record.maritimeCrafts.*.type`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: It is a string that identifies the maritime craft type, adhering to the FISH Thesaurus of Maritime Craft types.\
+**Description**: A term describing a watercraft by form or function.\
 **Validation Rules**: alpha\
 **Acceptable Values**: FISH Maritime Craft Types: https://heritagedata.org/live/schemes/eh_tmc.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
-### Attribute: `record.maritimeCraft.startDate`
+### Attribute: `record.maritimeCrafts.*.startDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute marks the beginning of the relevant time period for the maritime craft. The use of a standardised date format is vital for consistency and facilitates comparative historical analysis.\
+**Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
-### Attribute: `record.maritimeCraft.endDate`
+### Attribute: `record.maritimeCrafts.*.endDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute marks the end of the relevant time period for the maritime craft. The use of a standardised date format is vital for consistency and facilitates comparative historical analysis.\
+**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. . Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
-### Attribute: `record.maritimeCraft.period`
+### Attribute: `record.maritimeCrafts.*.period`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
-**Description**: It is a string that represents the historical period of the maritime craft, aligning with the Historic England Periods. This attribute provides a broader temporal context when specific dates are not available and is vital for classifying assets into historical timelines.\
+**Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
-### Attribute: `record.maritimeCraft.displayDate`
+### Attribute: `record.maritimeCrafts.*.displayDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: It is a string intended to provide a human-readable date or date range, capped at a maximum of 40 alphabetic characters. This attribute enhances the user-friendliness of the record by providing a simplified date display, making it easier for non-specialists or the general public to understand the temporal context of the heritage asset.\
+**Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given (MIDAS)\
 **Validation Rules**: alpha, max:40
 
 ---
 
-### Attribute: `record.maritimeCraft.material`
+### Attribute: `record.maritimeCrafts.*.material`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute details the material associated with the maritime craft. It plays a vital role in understanding the construction and preservation state of the asset.\
+**Description**: The basic materials and media of which a Maritime Craft is constructed.\
 **Validation Rules**: alpha\
 **Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
@@ -592,78 +668,87 @@ This documentation outlines the key aspects of these attributes.
 
 ---
 
-### Attribute: `record.historicAircraft`
+### Attribute: `record.historicAircrafts`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
-**Data Type**: Object\
-**Description**: This attribute represents the historicAircraft of the record.\
+**Data Type**: Array\
+**Description**: Array used to record information about aircraft (all heavier-than-air flying machines including airships, balloons, unmanned aerial vehicles etc.) associated with the Historic Asset\
 **Validation Rules**: No specific validation rules apply.\
-**Acceptable Values**: HistoricAircraft object
+**Acceptable Values**: An array that contains one or more HistoricAircraft objects
 
 ```
 {
 	"metadata": { ... },
 	"record": {
 		...
-		"historicAircraft": {
-			"type": "string",
-			"startDate": "YYYY-MM-DD",
-			"endDate": "YYYY-MM-DD",
-			"period": "string",
-			"displayDate": "string",
-			"material": "string"
-		}
+		"historicAircrafts": [
+			{
+				"type": "string",
+				"startDate": "YYYY-MM-DD",
+				"endDate": "YYYY-MM-DD",
+				"period": "string",
+				"displayDate": "string",
+				"material": "string"
+			}
+		],
 		...
 	}
 }
 ```
 ---
 
-### Attribute: `record.historicAircraft.type`
+### Attribute: `record.historicAircrafts.*.type`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: It is a string that identifies the historic aircraft craft type, adhering to the FISH Thesaurus of Historic Aircraft types.\
+**Description**: A term describing an aircraft by form or function.\
 **Validation Rules**: alpha\
 **Acceptable Values**: FISH Historic Aircraft Types: https://heritagedata.org/live/schemes/225.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
-### Attribute: `record.historicAircraft.startDate`
+### Attribute: `record.historicAircrafts.*.startDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute marks the beginning of the relevant time period for the maritime craft. The use of a standardised date format is vital for consistency and facilitates comparative historical analysis.\
+**Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
-### Attribute: `record.historicAircraft.endDate`
+### Attribute: `record.historicAircrafts.*.endDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute marks the end of the relevant time period for the maritime craft. The use of a standardised date format is vital for consistency and facilitates comparative historical analysis.\
+**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. . Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
 
 ---
 
-### Attribute: `record.historicAircraft.period`
+### Attribute: `record.historicAircrafts.*.period`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
-**Description**: It is a string that represents the historical period of the historical aircraft, aligning with the Historic England Periods. This attribute provides a broader temporal context when specific dates are not available and is vital for classifying assets into historical timelines.\
+**Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
-### Attribute: `record.historicAircraft.displayDate`
+### Attribute: `record.historicAircrafts.*.displayDate`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: It is a string intended to provide a human-readable date or date range, capped at a maximum of 40 alphabetic characters. This attribute enhances the user-friendliness of the record by providing a simplified date display, making it easier for non-specialists or the general public to understand the temporal context of the heritage asset.\
+**Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given (MIDAS)\
 **Validation Rules**: alpha, max:40
 
 ---
 
-### Attribute: `record.historicAircraft.material`
+### Attribute: `record.historicAircrafts.*.material`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute details the material associated with the historic aircraft. It plays a vital role in understanding the construction and preservation state of the asset.\
+**Description**: The basic materials and media of which a Historic Aircraft is constructed.\
 **Validation Rules**: alpha\
 **Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
@@ -672,10 +757,11 @@ This documentation outlines the key aspects of these attributes.
 
 ---
 
-### Attribute: `record.relatedRecords`
+### Attribute: `record.relatedMonumentRecords`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: This attribute is an array-type that references other records related to the heritage asset. It includes sub-attributes like primary reference number, heritage asset name, description, and URL, facilitating a networked understanding of related heritage assets.\
+**Description**: An array recording information on records of Monument Heritage Assets related to the Heritage Asset in question.\
 **Validation Rules**: array
 
 ```
@@ -683,7 +769,7 @@ This documentation outlines the key aspects of these attributes.
 	"metadata": { ... },
 	"record": {
 		...
-		"relatedRecords": [
+		"relatedMonumentRecords": [
 			{
 				"primaryReferenceNumber": "string",
 				"heritageAssetName": "string",
@@ -697,46 +783,51 @@ This documentation outlines the key aspects of these attributes.
 ```
 ---
 
-### Attribute: `record.relatedRecord.primaryReferenceNumber`
+### Attribute: `record.relatedMonumentRecords.*.primaryReferenceNumber`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the primaryReferenceNumber of the related record.\
+**Description**: The primaryReferenceNumber of the related Monument Heritage Asset record.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
 
 ---
 
-### Attribute: `record.relatedRecord.heritageAssetName`
+### Attribute: `record.relatedMonumentRecords.*.heritageAssetName`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the heritageAssetName of the related record.\
+**Description**: The heritageAssetName of the related Monument Heritage Asset record.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
 
 ---
 
-### Attribute: `record.relatedRecord.description`
+### Attribute: `record.relatedMonumentRecords.*.description`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the description of the related record.\
+**Description**: Free-text description of the related Monument Heritage Asset.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Phil to check with Jane - regarding max characters
 
 ---
 
-### Attribute: `record.relatedRecord.url`
+### Attribute: `record.relatedMonumentRecords.*.url`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the url of the related record.\
+**Description**: The URL of the related Monument Heritage Asset record.\
 **Validation Rules**: url\
 **Acceptable Values**: Must be a HE gateway URL
 
 ---
 
 ### Attribute: `record.relatedEvents`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: This attribute represents an array of the related event objects for the record.\
+**Description**: An array recording events (i.e., investigative activities) associated with the Historic Asset.\
 **Validation Rules**: array
 
 ```
@@ -758,79 +849,68 @@ This documentation outlines the key aspects of these attributes.
 ```
 ---
 
-### Attribute: `record.relatedEvent.primaryReferenceNumber`
+### Attribute: `record.relatedEvents.*.primaryReferenceNumber`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the primaryReferenceNumber of the related event record.\
+**Description**: The primaryReferenceNumber of the related event record.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
 
 ---
 
-### Attribute: `record.relatedEvent.name`
+### Attribute: `record.relatedEvents.*.name`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the name of the related event record.\
+**Description**: The name of the related event record.\
 **Validation Rules**: alpha, max:100\
 **Acceptable Values**: Alphanumeric
 
 ---
 
-### Attribute: `record.relatedEvent.description`
+### Attribute: `record.relatedEvents.*.description`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the description of the related event record.\
+**Description**: The free text description of the related event record.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Phil to check with Jane - regarding max characters
 
 ---
 
-### Attribute: `record.relatedEvent.url`
+### Attribute: `record.relatedEvents.*.url`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the url of the related event record.\
+**Description**: The url of the related event record.\
 **Validation Rules**: url
 
 ---
 
-### Attribute: `record.compiler.organisationName`
-**Mandatory in HGR**: N\
-**Data Type**: String\
-**Description**: This attribute represents the organisationName of the compiler.\
-**Validation Rules**: max:100\
-**Acceptable Values**: Alphanumeric
-
----
-
-### Attribute: `record.typeOfRecord`
-**Mandatory in HGR**: Y\
-**Data Type**: String\
-**Description**: This attribute represents the typeOfRecord of the record.\
-**Validation Rules**: No specific validation rules apply.\
-**Acceptable Values**: Default to Monument
-
----
-
 ### Attribute: `record.parish`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the parish of the record.\
+**Description**: The name of the parish type administrative area within which the Heritage Asset is located.\
 **Validation Rules**: max:100
 
 ---
 
 ### Attribute: `record.streetMapLink`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the streetMapLink of the record.\
+**Description**: streetMapLink  e.g. http://www.streetmap.co.uk/map?x=501003&y=228939&title=HER+number+962 \
 **Validation Rules**: url
 
 ---
 
 ### Attribute: `record.images`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: This attribute represents the images of the record.\
+**Description**: Array of displayed images and captions. \
 **Validation Rules**: array
 
 ```
@@ -841,7 +921,8 @@ This documentation outlines the key aspects of these attributes.
 		"images": [
 			{
 				"url": "url",
-				"caption": "string"
+				"caption": "string",
+				"copyright": "string"
 			}
 		],
 		...
@@ -851,33 +932,46 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.images.*.url`
-**Mandatory in HGR**: N\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: This attribute represents the url of the image.\
+**Description**: The url of the image.\
 **Validation Rules**: url
 
 ---
 
 ### Attribute: `record.images.*.caption`
-**Mandatory in HGR**: N\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: This attribute represents the caption of the image.\
+**Description**: The caption of the image.\
+**Validation Rules**: max:100
+
+---
+
+### Attribute: `record.images.*.copyright`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: Y\
+**Data Type**: String\
+**Description**: The copyright text of the image.\
 **Validation Rules**: max:100
 
 ---
 
 ### Attribute: `record.protectedStatuses`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: This attribute represents the protected statuses of the record.\
+**Description**: Array of protected statuses (e.g. Conservation Area, Listed Building etc.)  to which the Heritage Asset is subject.\
 **Validation Rules**: array
 
 ---
 
 ### Attribute: `record.protectedStatuses.*`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the actual protected status object.\
+**Description**: The protected status of the Heritage Asset.\
 **Validation Rules**: alpha\
 **Acceptable Values**: OASIS Protection Status: https://heritagedata.org/live/schemes/ef5ebc5b-abd6-44c5-a9d6-83a16f2b66ae.html (including narrower concepts) prefLabel or altLabel.
 
@@ -887,10 +981,7 @@ This documentation outlines the key aspects of these attributes.
 	"record": {
 		...
 		"protectedStatuses": [
-			{
-				"description": "string",
-				"url": "url"
-			}
+			"string"
 		],
 		...
 	}
@@ -899,9 +990,10 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.otherStatuses`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: This attribute represents the other statuses of the record.\
+**Description**: An array recording combinations of text and links, including those that are dead or redirected, e.g.: http://pastscape.english-heritage.org.uk/hob.aspx?hob_id=1003343 \
 **Validation Rules**: array
 
 ```
@@ -910,10 +1002,7 @@ This documentation outlines the key aspects of these attributes.
 	"record": {
 		...
 		"otherStatuses": [
-			{
-				"description": "string",
-				"url": "url"
-			}
+			"string"
 		],
 		...
 	}
@@ -922,15 +1011,17 @@ This documentation outlines the key aspects of these attributes.
 ---
 
 ### Attribute: `record.otherStatuses.*`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: This attribute represents the actual other status object.\
+**Description**: A combinations of text and links, including those that are dead or redirected, e.g.: http://pastscape.english-heritage.org.uk/hob.aspx?hob_id=1003343 \
 **Validation Rules**: alpha
 
 ---
 
 ### Attribute: `record.lastUpdated`
+**CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: ISO 8601 UTC\
-**Description**: This attribute represents the lastUpdated of the record.\
+**Description**: The date on which an inventory entry was most recently revised or updated (MIDAS)\
 **Validation Rules**: required, date format:Y-m-d H:i:s
