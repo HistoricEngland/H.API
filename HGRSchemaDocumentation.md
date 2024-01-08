@@ -99,8 +99,6 @@ This documentation outlines the key aspects of these attributes.
 		"historicAircrafts": [ ... ],
 		"relatedRecords": [ ... ],
 		"relatedEvents": [ ... ],
-		"compiler":{ ... },
-		"typeOfRecord": "string",
 		"parish": "string",
 		"streetMapLink": "url",
 		"images": [ ... ],
