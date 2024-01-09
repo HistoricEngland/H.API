@@ -31,7 +31,8 @@ This documentation outlines the key aspects of these attributes.
 		"extractedAtTimestamp": "timestamp",
 		"compilerOrganisationName": "string",
 		"dataSource": "string",
-		"dataSourceID": "string"
+		"dataSourceID": "string",
+		"typeOfRecord": "string"
 	},
 	"record": { ... }
 }
@@ -72,6 +73,16 @@ This documentation outlines the key aspects of these attributes.
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: Unique identifier for dataSource\
+**Validation Rules**: required, alpha\
+**Acceptable Values**: Alphanumeric
+
+---
+
+### Attribute: `meatadata.typeOfRecord`
+**CORE HGR attribute or OPTIONAL attribute**: N/A\
+**Mandatory in HGR**: Y\
+**Data Type**: String\
+**Description**: Type of the record, programmatically defaulted to MONUMENT \
 **Validation Rules**: required, alpha\
 **Acceptable Values**: Alphanumeric
 
@@ -618,7 +629,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.maritimeCrafts.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
@@ -627,7 +638,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.maritimeCrafts.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. . Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
@@ -636,7 +647,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.maritimeCrafts.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
+**Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
@@ -707,7 +718,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.historicAircrafts.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
@@ -716,7 +727,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.historicAircrafts.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. . Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY
@@ -725,7 +736,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.historicAircrafts.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
+**Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
