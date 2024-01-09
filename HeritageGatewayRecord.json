@@ -2,8 +2,10 @@
 	"metadata":
 	{
 		"extractedAtTimestamp": "timestamp",
-		"source": "string",
-		"sourceID": "string"
+		"compilerOrganisationName": "string",
+		"dataSource": "string",
+		"dataSourceID": "string",
+		"typeOfRecord": "string"
 	},
 	"record":
 	{
@@ -60,23 +62,27 @@
 				"material": "string"
 			}
 		],
-		"maritimeCraft": {
-			"type": "string",
-			"startDate": "date",
-			"endDate": "date",
-			"period": "string",
-			"displayDate": "string",
-			"material": "string"
-		},
-		"historicAircraft": {
-			"type": "string",
-			"startDate": "date",
-			"endDate": "date",
-			"period": "string",
-			"displayDate": "string",
-			"material": "string"
-		},
-		"relatedRecords": [
+		"maritimeCrafts": [
+			{
+				"type": "string",
+				"startDate": "date",
+				"endDate": "date",
+				"period": "string",
+				"displayDate": "string",
+				"material": "string"
+			}
+		],
+		"historicAircrafts": [
+			{
+				"type": "string",
+				"startDate": "date",
+				"endDate": "date",
+				"period": "string",
+				"displayDate": "string",
+				"material": "string"
+			}
+		],
+		"relatedMonumentRecords": [
 			{
 				"primaryReferenceNumber": "string",
 				"heritageAssetName": "string",
@@ -92,29 +98,20 @@
 				"url": "url"
 			}
 		],
-		"compiler": {
-			"organisationName": "string"
-		},
-		"typeOfRecord": "string",
 		"parish": "string",
 		"streetMapLink": "url",
 		"images": [
 			{
 				"url": "url",
-				"caption": "string"
+				"caption": "string",
+				"copyright": "string"
 			}
 		],
 		"protectedStatuses": [
-			{
-				"description": "string",
-				"url": "url"
-			}
+			"string"
 		],
 		"otherStatuses": [
-			{
-				"description": "string",
-				"url": "url"
-			}
+			"string"
 		],
 		"lastUpdated": "date"
 	}
