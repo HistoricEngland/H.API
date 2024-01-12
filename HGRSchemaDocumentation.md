@@ -10,7 +10,7 @@ Version| Description | Author
 ## Overview
 Historic Environment Records (sometimes referred to as Sites and Monuments Records) may be held by County Councils, District Councils or Unitary Authorities. In each case, the record will cover the whole of the local authority area. Selected major historic towns and cities are covered by Urban Archaeological Databases (UADs). In many cases, UADs are held as part of, and are accessible via, the local Historic Environment Record. 
 
-Historic England have made available a web service which can be used to submit the UAD information into the Heritage Gatewway through a REStful API. Details can be found here: [https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md]
+Historic England have made available a web service that can be used to submit the UAD information into the Heritage Gatewway through a REStful API. Details can be found here: [https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md]
 
 The information submitted through the API must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating the information submitted. This documents is a detailed description of that schema. 
 
@@ -135,7 +135,7 @@ This documentation outlines the key aspects of these attributes.
 **CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: A free-text field which records the name by which a Heritage Asset is most commonly known. (MIDAS)\
+**Description**: A free-text field that records the name by which a Heritage Asset is most commonly known. (MIDAS)\
 For records where the data provider does not hold a specific name for the asset, generate Heritage Asset Name by concatenating Period and Monument Type. Always use the earliest Period and Monument type available.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
@@ -146,7 +146,7 @@ For records where the data provider does not hold a specific name for the asset,
 **CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
-**Description**: An array recording free text describing the Heritage Asset. Description Type is used to specialise the nature of the description, for example to distinguish non-technical summary text from more detailed synthesised works.\
+**Description**: An array recording free text describing the Heritage Asset. Description Type is used to specialise the nature of the description. For example to distinguish non-technical summary text from more detailed synthesised works.\
 **Validation Rules**: required, array\
 **Acceptable Values**: An array that contains one or more Description objects
 
@@ -222,7 +222,7 @@ For records where the data provider does not hold a specific name for the asset,
 **CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: Term or terms which classify the monument principally with reference to its function or use. (MIDAS)\
+**Description**: Term or terms that classify the monument principally with reference to its function or use. (MIDAS)\
 **Validation Rules**: required, alpha\
 **Acceptable Values**: FISH Thesaurus of Monument Types: https://heritagedata.org/live/schemes/eh_tmt2.html (including narrower concepts) prefLabel or altLabel.
 
@@ -391,7 +391,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: The spatial reference system(or coordinate reference system) framework used to measure the Heritage Asset’s location(s )on the surface of Earth as coordinates \
+**Description**: The spatial reference system (or coordinate reference system) framework used to measure the Heritage Asset’s location(s )on the surface of Earth as coordinates.\
 **Validation Rules**: required\
 **Acceptable Values**: EPSG 27700 | EPSG 4326
 
@@ -477,7 +477,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: A unique set of letters, characters and numbers which gives a persistent link to a resource on the internet, e.g. https://doi.org/10.5284/1092416.\
+**Description**: A unique set of letters, characters and numbers that gives a persistent link to a resource on the internet, e.g. https://doi.org/10.5284/1092416.\
 **Validation Rules**: url\
 **Acceptable Values**: Must have text segment "doi" in URL
 
@@ -645,7 +645,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
-**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. . Most significantly the dates of construction, loss or recovery.\
+**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
 
@@ -736,7 +736,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
-**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. . Most significantly the dates of construction, loss or recovery.\
+**Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
 
@@ -979,7 +979,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: Array of protected statuses (e.g. Conservation Area, Listed Building etc.)  to which the Heritage Asset is subject.\
+**Description**: Array of protected statuses (e.g. Conservation Area, Listed Building etc.) to which the Heritage Asset is subject.\
 **Validation Rules**: array
 
 ---
@@ -1031,7 +1031,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
-**Description**: A combinations of text and links, including those that are dead or redirected, e.g.: http://pastscape.english-heritage.org.uk/hob.aspx?hob_id=1003343 \
+**Description**: A combination of text and links, including those that are dead or redirected, e.g.: http://pastscape.english-heritage.org.uk/hob.aspx?hob_id=1003343 \
 **Validation Rules**: alpha
 
 ---
