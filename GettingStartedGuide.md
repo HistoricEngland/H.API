@@ -1,16 +1,22 @@
 # H.API Getting started Guide
 
-The Heritage Gateway provides three distinct options for data submission and retrieval of HGR standard compliant records into the gateway. Offering these three approaches caters to both technical and non-technical users. 
+The Heritage Gateway provides three distinct options for data submission and retrieval of Heritage Gateway Record (HGR) standard compliant records into the gateway. Offering these three approaches caters to both technical and non-technical users. These three options are:
+
+1. Direct API Submission
 
 The first approach, the Direct API Submission, requires some Technical Resource to be deployed on the partner's side to write an integration that will upload HGR standard compliant data directly into the system through a RESTFul API. This approach allows for files to be submitted from any system that can accommodate an API request from the system. 
 
+2.External API Harvesting
+
 The second approach, External API Harvesting, operates as an automated retrieval process, fetching HGR compliant records from external sources at scheduled intervals. This method involves the partner providing Historic England with access to the HGR compliant data through an API that we can then use to fetch the data on an agreed schedule. If you have an API available already then all you need to do is send us details of that API. 
+
+3. FTP Server Access for File Uploads
 
 The third approach, FTP Server Access, offers a more traditional route, resembling a familiar file-sharing system. Here, partners, irrespective of technical expertise, can upload HGR compliant data files onto the server periodically. It’s a simple and effective means for data contribution and can be done either manually, by non-technical users, or by using a technical resource to develop functionality into your existing system to send the HGR standard compliant data automatically at scheduled intervals. 
 
 Together, these varied approaches cater to diverse user preferences and provides options for an easy integration of HGR Standard Compliant records into the Gateway. 
 
-## Direct API Submission
+## 1. Direct API Submission
 
 Full details of the available API are contained here https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md.  To get access to the API, you need to be setup with an account on the gatway, which can be requested by sending an email to heritagegateway@HistoricEngland.org.uk containing your name, organisation and the reason for the access request. 
 
@@ -36,7 +42,7 @@ Full details of the available API are contained here https://github.com/ember-te
 +	Check the API response for confirmation of the successful submission.
 +	Confirm that your data is accessible and accurately represented within the system.
 
-## External API Harvesting:
+## 2. External API Harvesting:
 
 #### Identify the External API:
 +	Locate and access the external API that contains the necessary data.
@@ -54,7 +60,7 @@ Full details of the available API are contained here https://github.com/ember-te
 +	Execute the integration to ensure it fetches data accurately and consistently.
 +	Monitor the process regularly to detect any issues and ensure continuous and error-free data retrieval.
 
-## FTP Server Access for File Uploads:
+## 3. FTP Server Access for File Uploads:
 
 ### Get Started Guide:
 +	Access the Provided FTP Server:
