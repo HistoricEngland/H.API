@@ -1,18 +1,18 @@
 # H.API Getting started Guide
 
-The Heritage Gateway provides three distinct options for data submission/retreavel of HGR standard compliant records into the gateway, offering these three approaches caters to both technical and non-technical users. 
+The Heritage Gateway provides three distinct options for data submission and retrieval of HGR standard compliant records into the gateway. Offering these three approaches caters to both technical and non-technical users. 
 
-The first approach, the Direct API Submission, requires some Technical Resource to be deployed on the partners side to write an integration which will upload HGR standard compliant data directly into the system though a RESTFul API. This approach allows for files to be submitted from any system that can accomodate an API request from the system. 
+The first approach, the Direct API Submission, requires some Technical Resource to be deployed on the partner's side to write an integration that will upload HGR standard compliant data directly into the system through a RESTFul API. This approach allows for files to be submitted from any system that can accommodate an API request from the system. 
 
 The second approach, External API Harvesting, operates as an automated retrieval process, fetching HGR compliant records from external sources at scheduled intervals. This method involves the partner providing Historic England with access to the HGR compliant data through an API that we can then use to fetch the data on an agreed schedule. If you have an API available already then all you need to do is send us details of that API. 
 
-The third approach, FTP Server Access, offers a more traditional route, resembling a familiar file-sharing system. Here, partners, irrespective of technical expertise, can upload HGR compliant data files onto the server periodically. It’s a simple and effective means for data contribution and can be done either manually, by non-technical users, or using a technical reource to develop functionality into  your existing system to send the HGR standard compliant data automatically on scheduled intervals. 
+The third approach, FTP Server Access, offers a more traditional route, resembling a familiar file-sharing system. Here, partners, irrespective of technical expertise, can upload HGR compliant data files onto the server periodically. It’s a simple and effective means for data contribution and can be done either manually, by non-technical users, or by using a technical resource to develop functionality into your existing system to send the HGR standard compliant data automatically at scheduled intervals. 
 
 Together, these varied approaches cater to diverse user preferences and provides options for an easy integration of HGR Standard Compliant records into the Gateway. 
 
 ## Direct API Submission
 
-Full details of the available API are contained here https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md.  To get access to the API you need to be setup with an account on the gatway, this can be requested by sending an email to the email address heritagegateway@HistoricEngland.org.uk containing your name, organisation and reason for the access request. 
+Full details of the available API are contained here https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md.  To get access to the API, you need to be setup with an account on the gatway, which can be requested by sending an email to heritagegateway@HistoricEngland.org.uk containing your name, organisation and the reason for the access request. 
 
 ### Instructions 
 
@@ -22,7 +22,7 @@ Full details of the available API are contained here https://github.com/ember-te
 
 #### Obtain Access Credentials:
 +	Contact Historic England's support team or designated personnel to acquire your access credentials through XXXXXX@XXXX@XXXX 
-+	Follow the outlined procedure to authenticate and obtain an access token required for data submission.
++	Follow the outlined procedure to authenticate and obtain an access token required for the data submission.
 
 #### Prepare Your Data:
 +	Organize your data according to the specified format detailed in the API documentation.
@@ -33,7 +33,7 @@ Full details of the available API are contained here https://github.com/ember-te
 +	Authenticate using the obtained access token and follow the documented steps to submit your prepared data.
 
 ### Verify Submission:
-+	Check the API response for confirmation of successful submission.
++	Check the API response for confirmation of the successful submission.
 +	Confirm that your data is accessible and accurately represented within the system.
 
 ## External API Harvesting:
@@ -44,7 +44,7 @@ Full details of the available API are contained here https://github.com/ember-te
 
 ### Determine Data Retrieval Intervals:
 + Plan and set intervals (e.g., hourly, daily) for gathering data from the external API.
-Consider scheduling tools or scripting languages (like Python) for automated data retrieval.
++ Consider scheduling tools or scripting languages (like Python) for automated data retrieval.
 
 ### Develop Integration:
 +	Use programming languages or tools to create a script that interacts with the external API endpoints.
