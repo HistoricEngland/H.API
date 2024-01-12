@@ -42,5 +42,6 @@ Additional Resources
 For further information or assistance, refer to the following resources:
 
 Historic England Website: https://historicengland.org.uk/
-Support and Contact Information: 
+
+Support and Contact Information: heritagegateway@HistoricEngland.org.uk
 
