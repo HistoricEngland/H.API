@@ -62,7 +62,7 @@ This documentation outlines the key aspects of these attributes.
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: Name of the HER dataset\
+**Description**: The name of the resource i.e. the dataset from which the HGR is extracted.\
 **Validation Rules**: required, alpha\
 **Acceptable Values**: Alphanumeric
 
@@ -72,7 +72,7 @@ This documentation outlines the key aspects of these attributes.
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: Unique identifier for dataSource\
+**Description**: A unique number, or number and character combination, used to identify the resource.\
 **Validation Rules**: required, alpha\
 **Acceptable Values**: Alphanumeric
 
