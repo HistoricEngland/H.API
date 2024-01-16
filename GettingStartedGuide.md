@@ -4,7 +4,7 @@ The Heritage Gateway provides three distinct options for data submission and ret
 
 # 1. Direct API Submission
 
-The first approach, the Direct API Submission, requires some Technical Resource to be deployed on the partner's side to write an integration that will upload HGR standard compliant data directly into the system through a RESTFul API. This approach allows for files to be submitted from any system that can accommodate an API request from the system. 
+The first approach, the Direct API Submission, requires some Technical Resource to be deployed on the partner's side to write an integration that will upload HGR standard compliant data directly into the system through a RESTFul API. This approach allows for files to be submitted from any system that can accommodate an API request from the system.
 
 # 2.External API Harvesting
 
@@ -18,12 +18,12 @@ Together, these varied approaches cater to diverse user preferences and provides
 
 ## 1. Direct API Submission
 
-Full details of the available API are contained here https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md.  To get access to the API, you need to be setup with an account on the gatway, which can be requested by sending an email to heritagegateway@HistoricEngland.org.uk containing your name, organisation and the reason for the access request. 
+Full details of the available API are contained here [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md).  To get access to the API, you need to be setup with an account on the gatway, which can be requested by sending an email to heritagegateway@HistoricEngland.org.uk containing your name, organisation and the reason for the access request. 
 
 ### Instructions 
 
 #### Access the API Documentation:
-+	Visit the provided Historic England API documentation here https://github.com/ember-technology-ltd/H.API/.
++	Visit the provided Historic England API documentation [here](DirectAPISubmissionDocumentation.md).
 +	Read through the guidelines, endpoints, and data submission procedures outlined in the documentation.
 
 #### Obtain Access Credentials:
