@@ -367,7 +367,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.complexGeometries.*.spatialFeatureType`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: The spatial object type used to depict the spatial element of a feature. (MIDAS)\
 **Validation Rules**: required\
@@ -377,7 +377,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.complexGeometries.*.spatialFeatureGeometryFormat`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: Standard format such as WKT (Well-Known Text) or GeoJSON used to describe the specified spatial reference system depicting the spatial feature type.\
 **Validation Rules**: required\
@@ -387,7 +387,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.complexGeometries.*.referenceSystem`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: The spatial reference system (or coordinate reference system) framework used to measure the Heritage Asset’s location(s )on the surface of Earth as coordinates.\
 **Validation Rules**: required\
@@ -397,7 +397,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.complexGeometries.*.spatialFeatureGeometry`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: Records the spatial geometry data describing the Heritage Asset’s locations, encoded in the specified format.\
 **Validation Rules**: required, string\
@@ -530,7 +530,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.objectFinds.*.type`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.objectFinds` attribute is present)\
 **Data Type**: string\
 **Description**: A description of the form, function or type of artefact/ecofact. (MIDAS)\
 **Validation Rules**: alpha\
@@ -540,7 +540,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ### Attribute: `record.objectFinds.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials).(MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -550,7 +550,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.objectFinds.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials). (MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -560,7 +560,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.objectFinds.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
+**Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the period of manufacture, deposition or death (for biological materials).\
 **Validation Rules**: alpha\
@@ -621,7 +621,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.maritimeCraft.*.type`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present)\
 **Data Type**: String\
 **Description**: A term describing a watercraft by form or function.\
 **Validation Rules**: alpha\
@@ -631,7 +631,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.maritimeCraft.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -641,7 +641,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.maritimeCraft.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -651,7 +651,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.maritimeCraft.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present AND if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
@@ -712,7 +712,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.historicAircraft.*.type`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present)\
 **Data Type**: String\
 **Description**: A term describing an aircraft by form or function.\
 **Validation Rules**: alpha\
@@ -722,7 +722,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.historicAircraft.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -732,7 +732,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.historicAircraft.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -742,7 +742,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.historicAircraft.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present AND if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
@@ -800,7 +800,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.relatedMonumentRecords.*.primaryReferenceNumber`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.relatedMonumentRecords` attribute is present)\
 **Data Type**: String\
 **Description**: The primaryReferenceNumber of the related Monument Heritage Asset record.\
 **Validation Rules**: alpha\
@@ -810,7 +810,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.relatedMonumentRecords.*.heritageAssetName`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.relatedMonumentRecords` attribute is present)\
 **Data Type**: String\
 **Description**: The heritageAssetName of the related Monument Heritage Asset record.\
 **Validation Rules**: alpha\
@@ -830,7 +830,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.relatedMonumentRecords.*.url`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.relatedMonumentRecords` attribute is present)\
 **Data Type**: String\
 **Description**: The URL of the related Monument Heritage Asset record.\
 **Validation Rules**: url\
@@ -866,7 +866,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.relatedEvents.*.primaryReferenceNumber`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
 **Data Type**: String\
 **Description**: The primaryReferenceNumber of the related event record.\
 **Validation Rules**: alpha\
@@ -876,7 +876,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.relatedEvents.*.name`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
 **Data Type**: String\
 **Description**: The name of the related event record.\
 **Validation Rules**: alpha, max:100\
@@ -896,7 +896,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.relatedEvents.*.url`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
+**Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
 **Data Type**: String\
 **Description**: The url of the related event record.\
 **Validation Rules**: url
@@ -948,7 +948,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.images.*.url`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.images` attribute is present)\
 **Data Type**: String\
 **Description**: The url of the image.\
 **Validation Rules**: url
@@ -957,7 +957,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.images.*.caption`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.images` attribute is present)\
 **Data Type**: String\
 **Description**: The caption of the image.\
 **Validation Rules**: max:100
@@ -966,7 +966,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.images.*.copyright`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y\
+**Mandatory in HGR**: Y (if `record.images` attribute is present)\
 **Data Type**: String\
 **Description**: The copyright text of the image.\
 **Validation Rules**: max:100
