@@ -544,7 +544,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials).(MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar).
 
 ---
 
@@ -554,7 +554,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials). (MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar).
 
 ---
 
@@ -635,7 +635,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). 
 
 ---
 
@@ -645,7 +645,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar).
 
 ---
 
@@ -726,7 +726,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar).
 
 ---
 
@@ -736,7 +736,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar).
 
 ---
 
