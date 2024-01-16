@@ -1,5 +1,5 @@
 
-# File Upload API Documentation
+# Direct API Submission Documentation
 
 ## Version History 
 
@@ -11,8 +11,6 @@ Version| Description | Author
 
 
 ## Overview
-
-Historic Environment Records (sometimes referred to as Sites and Monuments Records) may be held by County Councils, District Councils or Unitary Authorities. In each case, the record will cover the whole of the local authority area. Selected major historic towns and cities are covered by Urban Archaeological Databases (UADs). In many cases, UADs are held as part of, and are accessible via, the local Historic Environment Record.
 
 This document outlines the steps required to upload files to our service using OAuth authentication into the Heritage Gateway.
 
