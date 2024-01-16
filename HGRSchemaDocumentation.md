@@ -590,7 +590,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.maritimeCrafts`
+### Attribute: `record.maritimeCraft`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
@@ -603,7 +603,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 	"metadata": { ... },
 	"record": {
 		...
-		"maritimeCrafts": [
+		"maritimeCraft": [
 			{
 				"type": "string",
 				"startDate": "YYYY-MM-DD",
@@ -619,7 +619,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 ```
 ---
 
-### Attribute: `record.maritimeCrafts.*.type`
+### Attribute: `record.maritimeCraft.*.type`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
@@ -629,7 +629,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.maritimeCrafts.*.startDate`
+### Attribute: `record.maritimeCraft.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
@@ -639,7 +639,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.maritimeCrafts.*.endDate`
+### Attribute: `record.maritimeCraft.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
@@ -649,7 +649,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.maritimeCrafts.*.period`
+### Attribute: `record.maritimeCraft.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -659,7 +659,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.maritimeCrafts.*.displayDate`
+### Attribute: `record.maritimeCraft.*.displayDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -668,7 +668,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.maritimeCrafts.*.material`
+### Attribute: `record.maritimeCraft.*.material`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -681,7 +681,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.historicAircrafts`
+### Attribute: `record.historicAircraft`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
@@ -694,7 +694,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 	"metadata": { ... },
 	"record": {
 		...
-		"historicAircrafts": [
+		"historicAircraft": [
 			{
 				"type": "string",
 				"startDate": "YYYY-MM-DD",
@@ -710,7 +710,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 ```
 ---
 
-### Attribute: `record.historicAircrafts.*.type`
+### Attribute: `record.historicAircraft.*.type`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
@@ -720,7 +720,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.historicAircrafts.*.startDate`
+### Attribute: `record.historicAircraft.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
@@ -730,7 +730,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.historicAircrafts.*.endDate`
+### Attribute: `record.historicAircraft.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
@@ -740,7 +740,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.historicAircrafts.*.period`
+### Attribute: `record.historicAircraft.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -750,7 +750,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.historicAircrafts.*.displayDate`
+### Attribute: `record.historicAircraft.*.displayDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -759,7 +759,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.historicAircrafts.*.material`
+### Attribute: `record.historicAircraft.*.material`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
