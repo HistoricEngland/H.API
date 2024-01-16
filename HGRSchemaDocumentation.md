@@ -980,16 +980,6 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Description**: Array of protected statuses (e.g. Conservation Area, Listed Building etc.) to which the Heritage Asset is subject.\
 **Validation Rules**: array
 
----
-
-### Attribute: `record.protectedStatuses.*`
-**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
-**Data Type**: String\
-**Description**: The protected status of the Heritage Asset.\
-**Validation Rules**: alpha\
-**Acceptable Values**: OASIS Protection Status: https://heritagedata.org/live/schemes/ef5ebc5b-abd6-44c5-a9d6-83a16f2b66ae.html (including narrower concepts) prefLabel or altLabel.
-
 ```
 {
 	"metadata": { ... },
@@ -1002,6 +992,16 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 	}
 }
 ```
+---
+
+### Attribute: `record.protectedStatuses.*`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: String\
+**Description**: The protected status of the Heritage Asset.\
+**Validation Rules**: alpha\
+**Acceptable Values**: OASIS Protection Status: https://heritagedata.org/live/schemes/ef5ebc5b-abd6-44c5-a9d6-83a16f2b66ae.html (including narrower concepts) prefLabel or altLabel.
+
 ---
 
 ### Attribute: `record.otherStatuses`
