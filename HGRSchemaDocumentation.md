@@ -14,8 +14,8 @@ The information submitted must be compliant with the Heritage Gateway Record Sch
 
 # Heritage Gateway Record (HGR) Schema Documentation
 The Heritage Gateway Record (HGR) schema comprises several attributes, each with specific requirements and characteristics.\
-This documentation outlines the key aspects of these attributes.
-
+This documentation outlines the key aspects of these attributes.\
+The minimum attributes comprising a CORE HGR are defined along with additional OPTIONAL attributes.
 
 ### Attribute: `metadata`
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
