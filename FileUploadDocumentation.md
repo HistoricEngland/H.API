@@ -12,7 +12,7 @@ Version| Description | Author
 
 ## Overview
 
-This document outlines the steps required to upload files to our service using OAuth authentication into the Heritage Gateway.
+This document outlines the steps required to submit files to our service using OAuth authentication into the Heritage Gateway.
 
 ## Authentication
 
