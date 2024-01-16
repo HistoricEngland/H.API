@@ -8,11 +8,9 @@ Version| Description | Author
 1.1  | Addition of Overview section and updates to attribute descriptions | Jan Putzan (Ember Technology)
 
 ## Overview
-Historic Environment Records (sometimes referred to as Sites and Monuments Records) may be held by County Councils, District Councils or Unitary Authorities. In each case, the record will cover the whole of the local authority area. Selected major historic towns and cities are covered by Urban Archaeological Databases (UADs). In many cases, UADs are held as part of, and are accessible via, the local Historic Environment Record. 
+Historic England have made available a web service that can be used to submit your Heritage Gateway Records (HGR) into the Heritage Gateway through a REStful API. Details can be found here: [https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md]
 
-Historic England have made available a web service that can be used to submit the UAD information into the Heritage Gatewway through a REStful API. Details can be found here: [https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md]
-
-The information submitted through the API must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating the information submitted. This documents is a detailed description of that schema. 
+The information submitted must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating the information submitted. This documents is a detailed description of that schema. 
 
 # Heritage Gateway Record (HGR) Schema Documentation
 The Heritage Gateway Record (HGR) schema comprises several attributes, each with specific requirements and characteristics.\
@@ -68,7 +66,7 @@ This documentation outlines the key aspects of these attributes.
 
 ---
 
-### Attribute: `meatadata.dataSourceID`
+### Attribute: `metadata.dataSourceID`
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
@@ -78,7 +76,7 @@ This documentation outlines the key aspects of these attributes.
 
 ---
 
-### Attribute: `meatadata.typeOfRecord`
+### Attribute: `metadata.typeOfRecord`
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
@@ -136,7 +134,7 @@ This documentation outlines the key aspects of these attributes.
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: A free-text field that records the name by which a Heritage Asset is most commonly known. (MIDAS)\
-For records where the data provider does not hold a specific name for the asset, generate Heritage Asset Name by concatenating Period and Monument Type. Always use the earliest Period and Monument type available.\
+For records where the data provider does not hold a specific name for the asset, HE will generate the Heritage Asset Name by concatenating Period and Monument Type using the earliest Period and Monument type available.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
 
@@ -234,7 +232,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar).
 
 ---
 
@@ -244,7 +242,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
-BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar). The negative year indicates it's a BCE date.
+BCE dates are represented using a negative year format. For example, 500 BCE becomes -499 (this is because there is no year 0 in the Gregorian calendar).
 
 ---
 
@@ -826,7 +824,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: String\
 **Description**: Free-text description of the related Monument Heritage Asset.\
 **Validation Rules**: alpha\
-**Acceptable Values**: Phil to check with Jane - regarding max characters
+**Acceptable Values**: 255 max characters truncated as necessary
 
 ---
 
@@ -892,7 +890,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Data Type**: String\
 **Description**: The free text description of the related event record.\
 **Validation Rules**: alpha\
-**Acceptable Values**: Phil to check with Jane - regarding max characters
+**Acceptable Values**: 255 max characters truncated as necessary
 
 ---
 
