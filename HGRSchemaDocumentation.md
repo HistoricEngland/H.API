@@ -68,7 +68,7 @@ The minimum attributes comprising a CORE HGR are defined along with additional O
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: String\
-**Description**: A unique number, or number and character combination, used to identify the data source, programatically populated during the submission process.\
+**Description**: A unique number, or number and character combination, used to identify the data source, programmatically populated by HE during the submission process.\
 **Validation Rules**: required, alpha\
 **Acceptable Values**: Alphanumeric
 
