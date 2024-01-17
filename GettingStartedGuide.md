@@ -18,7 +18,7 @@ Together, these varied approaches cater to diverse user preferences and provides
 
 ## 1. Direct API Submission
 
-Full details of the available API are contained here [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md).  To get access to the API, you need to be setup with an account on the gatway, which can be requested by sending an email to heritagegateway@HistoricEngland.org.uk containing your name, organisation and the reason for the access request. 
+Full details of the available API are contained here [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md). To request information on how to get access to the API please email heritagegateway@HistoricEngland.org.uk .
 
 ### Instructions 
 
