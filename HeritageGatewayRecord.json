@@ -62,7 +62,7 @@
 				"material": "string"
 			}
 		],
-		"maritimeCrafts": [
+		"maritimeCraft": [
 			{
 				"type": "string",
 				"startDate": "date",
@@ -72,7 +72,7 @@
 				"material": "string"
 			}
 		],
-		"historicAircrafts": [
+		"historicAircraft": [
 			{
 				"type": "string",
 				"startDate": "date",
