@@ -32,7 +32,7 @@ Full details of the available API are contained here [Direct API Submission Docu
 
 #### Prepare Your Data:
 +	Organize your data according to the specified format detailed in the API documentation.
-+	Ensure your data structure aligns with the provided example or schema.
++	Ensure your data structure aligns with the provided [example](HeritageGatewayRecord.json) or [schema](HGRSchemaDocumentation.md).
 
 #### Submit Your Data:
 +	Use tools like cURL or Postman to interact with the API endpoints.
