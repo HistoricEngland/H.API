@@ -8,9 +8,7 @@ Version| Description | Author
 1.1  | Addition of Overview section and updates to attribute descriptions | Jan Putzan (Ember Technology)
 
 ## Overview
-Historic England have made available a web service that can be used to submit your Heritage Gateway Records (HGR) into the Heritage Gateway through a REStful API. Details can be found here: [https://github.com/ember-technology-ltd/H.API/blob/master/FileUploadDocumentation.md]
-
-The information submitted must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating the information submitted. This documents is a detailed description of that schema. 
+The submitted records must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating. This documents is a detailed description of that schema. 
 
 # Heritage Gateway Record (HGR) Schema Documentation
 The Heritage Gateway Record (HGR) schema comprises several attributes, each with specific requirements and characteristics.\
@@ -21,7 +19,7 @@ The minimum attributes comprising a CORE HGR are defined along with additional O
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
 **Mandatory in HGR**: Y\
 **Data Type**: Object\
-**Description**: Object serving as a container for the Heritage Gateway Record’s metadata
+**Description**: Object serving as a container for the Heritage Gateway Record’s metadata.
 
 ```
 {
@@ -631,7 +629,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.maritimeCraft.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -641,7 +639,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.maritimeCraft.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -651,7 +649,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.maritimeCraft.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present AND if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
+**Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
@@ -722,7 +720,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.historicAircraft.*.startDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -732,7 +730,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.historicAircraft.*.endDate`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
+**Mandatory in HGR**: N\
 **Data Type**: ISO 8601 UTC\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
@@ -742,7 +740,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ### Attribute: `record.historicAircraft.*.period`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present AND if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
+**Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
 **Validation Rules**: alpha\
