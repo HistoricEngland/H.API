@@ -7,7 +7,7 @@ The project will replace the current Heritage Gateway (https://www.heritagegatew
 
 Central to the design of a replacement Heritage Gateway is the consolidation of summary data from various providers into a single, searchable GraphDB data store that supports linked open data (LOD) standards and is to be managed by HE. The minimum attributes comprising a CORE Heritage Gateway Record (HGR) have been defined along with additional OPTIONAL attributes. Both sets of attributes have in turn been mapped to the International Committee for Documentation Conceptual Reference Model (CIDOC CRM).  
 
-Data for inclusion in the Heritage Gateway will be made available by providers on a regular update schedule via a published API or export file. These will be validated against the core HGR. Valid records will be converted to Resource Description Framework (RDF) triples/quads conforming to a CIDOC CRM based RDF schema, then imported to the GraphDB RDF triple store. Invalid records will be logged and reported to the relevant data provider. HE will manage this process in close liaison with the data providers. 
+Data for inclusion in the Heritage Gateway will be made available by providers on a regular update schedule via a Direct API Submission, External API Harvesting or FTP Server Access. These will be validated against the core HGR. Valid records will be converted to Resource Description Framework (RDF) triples/quads conforming to a CIDOC CRM based RDF schema, then imported to the GraphDB RDF triple store. Invalid records will be logged and reported to the relevant data provider. HE will manage this process in close liaison with the data providers. 
 
 The envisaged overall Extract, Transform and Load (ETL) process flow and components is depicted below: 
 
