@@ -24,10 +24,10 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": [
+				"materials": [
 					"string"
 				],
-				"evidence": [
+				"evidences": [
 					"string"
 				]
 			}
@@ -63,7 +63,7 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": [
+				"materials": [
 					"string"
 				]
 			}
@@ -75,7 +75,7 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": [
+				"materials": [
 					"string"
 				]
 			}
@@ -87,7 +87,7 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": [
+				"materials": [
 					"string"
 				]
 			}
