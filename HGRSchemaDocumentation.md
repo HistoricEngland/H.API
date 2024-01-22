@@ -179,7 +179,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Data Type**: String\
 **Description**: Free-text description of the Heritage Asset. (MIDAS)\
 **Validation Rules**: required\
-**Acceptable Values**: Alphanumeric (255 characters for Summary, truncate if greater).
+**Acceptable Values**: Alphanumeric (If Full Description is available then 255 characters for Summary, truncate if greater).
 
 ---
 
@@ -203,8 +203,12 @@ For records where the data provider does not hold a specific name for the asset,
 				"endDate": "YYYY-MM-DD",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string",
-				"evidence": "string"
+				"materials": [
+					"string"
+				],
+				"evidences": [
+					"string"
+				]
 
 			}
 		],
@@ -263,7 +267,17 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.monumentDatedTypes.*.material`
+### Attribute: `record.monumentDatedTypes.*.materials`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: Array\
+**Description**: An array that contains one or more strings representing basic materials and media of which Herritage Asset is composed. (MIDAS)\
+**Validation Rules**: array\
+**Acceptable Values**: An array that contains one or more material strings.
+
+---
+
+### Attribute: `record.monumentDatedTypes.*.materials.*`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -273,7 +287,17 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.monumentDatedTypes.*.evidence`
+### Attribute: `record.monumentDatedTypes.*.evidences`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: Array\
+**Description**: An array that contains one or more strings representing evidence of Herritage Asset remains. (MIDAS)\
+**Validation Rules**: array\
+**Acceptable Values**: An array that contains one or more evidence strings.
+
+---
+
+### Attribute: `record.monumentDatedTypes.*.evidences.*`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -354,7 +378,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 				"spatialFeatureType": "string",
 				"referenceSystem": "string",
 				"spatialFeatureGeometryFormat": "string",
-				"spatialFeatureGeometry": "string",
+				"spatialFeatureGeometry": "string|JSON",
 			}
 		],
 		...
@@ -398,8 +422,8 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: Records the spatial geometry data describing the Heritage Asset’s locations, encoded in the specified format.\
-**Validation Rules**: required, string\
-**Acceptable Values**: WKT or geojson representation
+**Validation Rules**: required, string|JSON\
+**Acceptable Values**: WKT or GeoJSON
 
 ---
 
@@ -517,7 +541,9 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 				"endDate": "YYYY-MM-DD",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string"
+				"materials": [
+					"string"
+				]
 			}
 		],
 		...
@@ -575,7 +601,18 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.objectFinds.*.material`
+### Attribute: `record.objectFinds.*.materials`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: Array\
+**Description**: An array that contains one or more strings representing basic materials and media of which the Object is composed. (MIDAS)\
+**Validation Rules**: array\
+**Acceptable Values**: An array that contains one or more material strings.
+
+
+---
+
+### Attribute: `record.objectFinds.*.materials.*`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -608,7 +645,9 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 				"endDate": "YYYY-MM-DD",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string"
+				"materials": [
+					"string"
+				]
 			}
 		],
 		...
@@ -666,7 +705,18 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.maritimeCraft.*.material`
+### Attribute: `record.maritimeCraft.*.materials`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: Array\
+**Description**: An array that contains one or more strings representing basic materials and media of which Maritime Craft is composed. (MIDAS)\
+**Validation Rules**: array\
+**Acceptable Values**: An array that contains one or more material strings.
+
+
+---
+
+### Attribute: `record.maritimeCraft.*.materials.*`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
@@ -699,7 +749,9 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 				"endDate": "YYYY-MM-DD",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string"
+				"materials": [
+					"string"
+				]
 			}
 		],
 		...
@@ -757,7 +809,18 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.historicAircraft.*.material`
+### Attribute: `record.historicAircraft.*.materials`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: Array\
+**Description**: An array that contains one or more strings representing basic materials and media of which Historic Aircraft is composed. (MIDAS)\
+**Validation Rules**: array\
+**Acceptable Values**: An array that contains one or more material strings.
+
+
+---
+
+### Attribute: `record.historicAircraft.*.materials.*`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
