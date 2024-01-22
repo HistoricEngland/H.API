@@ -24,8 +24,12 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string",
-				"evidence": "string"
+				"material": [
+					"string"
+				],
+				"evidence": [
+					"string"
+				]
 			}
 		],
 		"pointGeometry": {
@@ -59,7 +63,9 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string"
+				"material": [
+					"string"
+				]
 			}
 		],
 		"maritimeCraft": [
@@ -69,7 +75,9 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string"
+				"material": [
+					"string"
+				]
 			}
 		],
 		"historicAircraft": [
@@ -79,7 +87,9 @@
 				"endDate": "date",
 				"period": "string",
 				"displayDate": "string",
-				"material": "string"
+				"material": [
+					"string"
+				]
 			}
 		],
 		"relatedMonumentRecords": [
