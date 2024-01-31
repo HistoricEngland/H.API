@@ -19,7 +19,7 @@ Together, these varied approaches cater to diverse user preferences and provide 
 ### 1. Direct API Submission Instructions:
 
 #### Access the Historic England API Documentation:
-+	Review [the HE API documentation](DirectAPISubmissionDocumentation.md).
++	Review the [HE API documentation](DirectAPISubmissionDocumentation.md).
 
 #### Obtain Access Credentials:
 +	Contact HE’s Heritage Gateway support team to acquire your access credentials via heritagegateway@HistoricEngland.org.uk 
