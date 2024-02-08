@@ -448,7 +448,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 				"dateOfOrigination": "YYYY-MM-DD",
 				"sourceDigitalObjectIdentifier": "url",
 				"bibliographyFootnoteReference": "string",
-				"sourceURL": "url"
+				"sourceUrl": "url"
 			} 
 		],
 		...
@@ -512,7 +512,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ---
 
-### Attribute: `record.monumentSources.*.sourceURL`
+### Attribute: `record.monumentSources.*.sourceUrl`
 **CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: String\
