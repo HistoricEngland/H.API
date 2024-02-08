@@ -53,7 +53,7 @@
 				"dateOfOrigination": "date",
 				"sourceDigitalObjectIdentifier": "url",
 				"bibliographyFootnoteReference": "string",
-				"sourceURL": "url"
+				"sourceUrl": "url"
 			}
 		],
 		"objectFinds": [
