@@ -1,20 +1,18 @@
 # H.API Getting started Guide
 
-Three distinct options are available to data providers for their submission of Heritage Gateway Record (HGR) standard compliant records to Historic England (HE) for validation and inclusion in the Heritage Gateway. Offering these three approaches allows for differing levels of technical input on the part of the data provider. These three options are:
+Three options are available to data providers for their submission of Heritage Gateway Record (HGR) standard compliant records to Historic England (HE) for validation and inclusion in the Heritage Gateway. These three approaches allow for differing levels of technical input on the part of the data provider.
 
 ## 1. Direct API Submission
 
-The first approach, Direct API Submission, requires some technical input on the data provider's side to write an integration that will submit HGR standard compliant records directly to HE through a RESTFul API provided by HE. This push approach, managed by the data provider, allows for HGR standard compliant records to be submitted to HE from any system.
+Direct API Submission requires the data provider to write an integration that will submit HGR compliant [JSON](https://www.json.org/json-en.html) files directly to HE through a RESTFul API provided by HE. A separate JSON file generated from the datasets maintained by a provider is required for each monument record in the provider’s datasets. These files must conform to the HGR standards as defined in the [schema documentation](HGRSchemaDocumentation.md) which will involve mapping providers’ current data to the HGR schema. This push approach, managed by the data provider, allows for HGR standard compliant records to be submitted to HE from any system.
 
 ## 2.External API Harvesting
 
-The second approach, External API Harvesting, operates as an automated retrieval process, with HE pulling data providers’ HGR compliant records at scheduled intervals. This method requires the data provider to give HE access to an API which we can use to fetch HGR compliant records on an agreed schedule. If you have such an API available already then all you need to do is send us details of that API.
+External API Harvesting, operates as an automated retrieval process, with HE pulling data providers’ HGR compliant records at scheduled intervals. This method requires the data provider to give HE access to an API with an endpoint that EH can call and which will return HGR compliant JSON records on an agreed schedule. If you have such an API available already then all you need to do is provide us with the details.
 
 ## 3. FTP Server Access for File Uploads
 
-The third approach, FTP Server Access, offers a more traditional route, resembling a familiar file-sharing system. Here, data providers can upload data files with HGR compliant records onto HE’s Heritage Gateway FTP server periodically. It’s a simple and effective means for data submission and can be done either manually or by developing functionality into your existing system to send the HGR standard compliant data automatically at scheduled intervals.
-
-Together, these varied approaches cater to diverse user preferences and provide options for an easy submission of HGR standard compliant records to HE.
+The third approach, FTP Server Access, offers a more traditional route, resembling a familiar file-sharing system. Here, data providers can upload data files with HGR compliant records onto HE’s Heritage Gateway FTP server periodically. It’s a simple and effective means for data submission and can be done either manually or by developing functionality into your existing system to send the HGR standard compliant data automatically at scheduled intervals. As with the Direct API Submission option, HGR compliant JSON files will need to be generated from the datasets maintained by a provider with a separate JSON file required for each monument record.
 
 ### 1. Direct API Submission Instructions:
 
@@ -38,7 +36,20 @@ Together, these varied approaches cater to diverse user preferences and provide 
 
 ### 2. External API Harvesting Instructions:
 
-**Detail TBC**
+#### Provide API details
++ Contact HE’s Heritage Gateway support team via heritagegateway@HistoricEngland.org.uk to provide URL of the API endpoint and the frequency of data gathering.
+
+#### Prepare Your Data
++ Ensure your data structure aligns with the [schema](HGRSchemaDocumentation.md).
+
+#### API Preparation Guidelines
++ Ensure your API supports a paginated retrieval of compliant HGR records and allows `page` and `per_page` parameters within the request structure to facilitate efficient data navigation and extraction.
++ Ensure your API supports an `updated_at` query parameter, allowing for the refinement of result sets based on the temporal attribute indicating the last modification timestamp.
++ Your API's response payload should include a `metadata` object, detailing the counts of monument records (`total_count`, `published_count`, `submitted_count`). This should dynamically adjust in accordance with the `updated_at` parameter, providing a granular view of the dataset's state over time.
+
+#### Monitoring and Error Handling
++ Implement a monitoring strategy for your API, prioritizing the assurance of uninterrupted and faultless data transmission processes. This involves real-time surveillance of API performance metrics and operational health indicators.
++ Implement the error handling mechanism by providing detailed and informative error messages upon request failures.
 
 ### 3. FTP Server Access for File Uploads Instructions:
 
