@@ -104,7 +104,7 @@ The minimum attributes comprising a CORE HGR are defined along with additional O
 		"objectFinds": [ ... ],
 		"maritimeCraft": [ ... ],
 		"historicAircraft": [ ... ],
-		"relatedRecords": [ ... ],
+		"relatedMonumentRecordPrimaryReferenceNumbers": [ ... ],
 		"relatedEvents": [ ... ],
 		"parish": "string",
 		"streetMapLink": "url",
@@ -179,7 +179,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Data Type**: String\
 **Description**: Free-text description of the Heritage Asset. (MIDAS)\
 **Validation Rules**: required\
-**Acceptable Values**: Alphanumeric (If Full Description is available then 255 characters for Summary, truncate if greater).
+**Acceptable Values**: Alphanumeric.
 
 ---
 
@@ -833,11 +833,11 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 
 ---
 
-### Attribute: `record.relatedMonumentRecords`
+### Attribute: `record.relatedMonumentRecordPrimaryReferenceNumbers`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
-**Description**: An array recording information on records of Monument Heritage Assets related to the Heritage Asset in question.\
+**Description**: An array containing primaryReferenceNumbers of Monument Heritage Assets related to the Heritage Asset in question.\
 **Validation Rules**: array
 
 ```
@@ -845,13 +845,8 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 	"metadata": { ... },
 	"record": {
 		...
-		"relatedMonumentRecords": [
-			{
-				"primaryReferenceNumber": "string",
-				"heritageAssetName": "string",
-				"description": "string",
-				"url": "url"
-			}
+		"relatedMonumentRecordPrimaryReferenceNumbers": [
+			"string"
 		],
 		...
 	}
@@ -859,43 +854,13 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 ```
 ---
 
-### Attribute: `record.relatedMonumentRecords.*.primaryReferenceNumber`
+### Attribute: `record.relatedMonumentRecordPrimaryReferenceNumbers.*`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.relatedMonumentRecords` attribute is present)\
+**Mandatory in HGR**: Y (if `record.relatedMonumentRecordPrimaryReferenceNumbers` attribute is present)\
 **Data Type**: String\
 **Description**: The primaryReferenceNumber of the related Monument Heritage Asset record.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
-
----
-
-### Attribute: `record.relatedMonumentRecords.*.heritageAssetName`
-**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.relatedMonumentRecords` attribute is present)\
-**Data Type**: String\
-**Description**: The heritageAssetName of the related Monument Heritage Asset record.\
-**Validation Rules**: alpha\
-**Acceptable Values**: Alphanumeric
-
----
-
-### Attribute: `record.relatedMonumentRecords.*.description`
-**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: N\
-**Data Type**: String\
-**Description**: Free-text description of the related Monument Heritage Asset.\
-**Validation Rules**: alpha\
-**Acceptable Values**: 255 max characters truncated as necessary
-
----
-
-### Attribute: `record.relatedMonumentRecords.*.url`
-**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.relatedMonumentRecords` attribute is present)\
-**Data Type**: String\
-**Description**: The URL of the related Monument Heritage Asset record.\
-**Validation Rules**: url\
-**Acceptable Values**: Must be a HE gateway URL
 
 ---
 
@@ -914,6 +879,7 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 		"relatedEvents": [
 			{
 				"primaryReferenceNumber": "string",
+				"type": "string",
 				"name": "string",
 				"description": "string",
 				"url": "url"
@@ -932,6 +898,16 @@ BCE dates are represented using a negative year format. For example, 500 BCE bec
 **Description**: The primaryReferenceNumber of the related event record.\
 **Validation Rules**: alpha\
 **Acceptable Values**: Alphanumeric
+
+---
+
+### Attribute: `record.relatedEvents.*.type`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
+**Data Type**: String\
+**Description**: The type of the related event record.\
+**Validation Rules**: alpha\
+**Acceptable Values**: Historic England Event Types: https://heritagedata.org/live/schemes/agl_et.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
