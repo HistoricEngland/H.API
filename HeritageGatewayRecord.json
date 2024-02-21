@@ -92,17 +92,13 @@
 				]
 			}
 		],
-		"relatedMonumentRecords": [
-			{
-				"primaryReferenceNumber": "string",
-				"heritageAssetName": "string",
-				"description": "string",
-				"url": "url"
-			}
+		"relatedMonumentRecordPrimaryReferenceNumbers": [
+			"string"
 		],
 		"relatedEvents": [
 			{
 				"primaryReferenceNumber": "string",
+				"type": "string",
 				"name": "string",
 				"description": "string",
 				"url": "url"
