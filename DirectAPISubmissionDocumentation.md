@@ -8,7 +8,7 @@ Version| Description | Author
 1.0  | Initial version of the API for the submission of the Heritage Gateway File | Jan Putzan (Ember Technology)
 1.1  | Addition of the batch creation endpoint | Jan Putzan (Ember Technology)
 1.2  | Addition of Swagger API documentation  | Jan Putzan (Ember Technology)
-1.3  | Changed the transmission method for record submission endpoint  | Jan Putzan (Ember Technology)
+1.3  | Changed the transmission method for batch submission endpoint  | Jan Putzan (Ember Technology)
 
 
 ## Overview
@@ -65,9 +65,9 @@ To initiate the record submission process, begin by generating a new batch. This
   }
   ```
 
-## Record Submission
+## Batch Submission
 
-### Submit Records
+### Submit Batch
 
 - **Endpoint**: `https://api.example.com/batch/submit`
 - **Method**: `POST`
