@@ -51,7 +51,7 @@ The minimum attributes comprising a CORE HGR are defined along with additional O
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: A unique number, or number and character combination, allocated to identify one entry in an information system. (MIDAS)\
-**Validation Rules**: required, alpha\
+**Validation Rules**: Required, String\
 **Acceptable Values**: Alphanumeric
 
 ---
@@ -62,7 +62,7 @@ The minimum attributes comprising a CORE HGR are defined along with additional O
 **Data Type**: String\
 **Description**: A free-text field that records the name by which a Heritage Asset is most commonly known. (MIDAS)\
 For records where the data provider does not hold a specific name for the asset, HE will generate the Heritage Asset Name by concatenating Period and Monument Type using the earliest Period and Monument type available.\
-**Validation Rules**: alpha\
+**Validation Rules**: String\
 **Acceptable Values**: Alphanumeric
 
 ---
@@ -72,7 +72,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
 **Description**: An array recording free text describing the Heritage Asset. Description Type is used to specialise the nature of the description. For example to distinguish non-technical summary text from more detailed synthesised works.\
-**Validation Rules**: required, array\
+**Validation Rules**: Required, Array, Min:1\
 **Acceptable Values**: An array that contains one or more Description objects
 
 ```
@@ -96,7 +96,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: Allows a description to be specialised by level of detail or intended use. Used to distinguish brief summaries from more detailed full descriptions. (MIDAS)\
-**Validation Rules**: required\
+**Validation Rules**: Required, String, In\
 **Acceptable Values**: Full,Summary
 
 ---
@@ -106,7 +106,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: Free-text description of the Heritage Asset. (MIDAS)\
-**Validation Rules**: required\
+**Validation Rules**: Required, String\
 **Acceptable Values**: Alphanumeric.
 
 ---
@@ -116,7 +116,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y \
 **Data Type**: Array\
 **Description**: An array recording information that describes the construction and use phases of the Heritage Asset.\
-**Validation Rules**: required, array\
+**Validation Rules**: Required, Array, Min:1\
 **Acceptable Values**: An array that contains a combination of one or more MonumentDatedType objects.
 
 ```
@@ -151,7 +151,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: Term or terms that classify the monument principally with reference to its function or use. (MIDAS)\
-**Validation Rules**: required, alpha\
+**Validation Rules**: Required, SchemeConcept\
 **Acceptable Values**: FISH Thesaurus of Monument Types: https://heritagedata.org/live/schemes/eh_tmt2.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -161,7 +161,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -171,7 +171,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -181,7 +181,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing periods for Herritage Asset. (MIDAS)\
-**Validation Rules**: required, array
+**Validation Rules**: Array
 
 ---
 
@@ -190,7 +190,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS).\
-**Validation Rules**: required, alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -200,7 +200,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given (MIDAS)\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -209,7 +209,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which Herritage Asset is composed. (MIDAS)\
-**Validation Rules**: array\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more material strings.
 
 ---
@@ -219,7 +219,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The basic materials and media of which a Heritage Asset is composed. (MIDAS)\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -229,7 +229,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing evidence of Herritage Asset remains. (MIDAS)\
-**Validation Rules**: array\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more evidence strings.
 
 ---
@@ -239,7 +239,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: A description of the existing physical remains of a Heritage Asset when investigated, or the means by which it was identified where no remains exist or are visible. (MIDAS)\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: FISH Evidence Thesaurus: https://heritagedata.org/live/schemes/eh_evd.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -270,7 +270,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: The spatial reference system (or coordinate reference system) framework used to measure the Heritage Asset’s location(s) on the surface of Earth as coordinates.\
-**Validation Rules**: required\
+**Validation Rules**: Required, String, In\
 **Acceptable Values**: EPSG 27700 | EPSG 4326
 
 ---
@@ -280,7 +280,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y\
 **Data Type**: Decimal|integer\
 **Description**: The numerical easting (X) coordinate for a feature (MIDAS). Depending on the spatial reference system it either stands for longitude or easting values.\
-**Validation Rules**: required, numeric\
+**Validation Rules**: Required, Numeric, SpatialCoordinate\
 **Acceptable Values**: If record.pointGeometry.referenceSystem = EPSG 4326 must be decimal LONGITUDE value\
 If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute EASTING co-ordinate value
 
@@ -291,7 +291,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute EASTING 
 **Mandatory in HGR**: Y\
 **Data Type**: Decimal|integer\
 **Description**: The numerical northing (Y) coordinate for a feature (MIDAS). Depending on the spatial reference system it either stands for latitude or northing values.\
-**Validation Rules**: required, numeric\
+**Validation Rules**: Required, Numeric, SpatialCoordinate\
 **Acceptable Values**: If record.pointGeometry.referenceSystem = EPSG 4326 must be decimal LATITUDE value\
 If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING co-ordinate value
 
@@ -302,7 +302,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An optional array recording more complex spatial object information used to depict the spatial element of a Heritage Asset.\
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ```
 {
@@ -327,7 +327,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: The spatial object type used to depict the spatial element of a feature. (MIDAS)\
-**Validation Rules**: required\
+**Validation Rules**: Required, String, In\
 **Acceptable Values**: point|polygon|multipoint|multipolygon|collection
 
 ---
@@ -337,7 +337,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: Standard format such as WKT (Well-Known Text) or GeoJSON used to describe the specified spatial reference system depicting the spatial feature type.\
-**Validation Rules**: required\
+**Validation Rules**: Required, String, In\
 **Acceptable Values**: wkt|geojson
 
 ---
@@ -347,7 +347,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String\
 **Description**: The spatial reference system (or coordinate reference system) framework used to measure the Heritage Asset’s location(s )on the surface of Earth as coordinates.\
-**Validation Rules**: required\
+**Validation Rules**: Required, String, In\
 **Acceptable Values**: EPSG 27700 | EPSG 4326
 
 ---
@@ -357,7 +357,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.complexGeometries` attribute is present)\
 **Data Type**: String|object\
 **Description**: Records the spatial geometry data describing the Heritage Asset’s locations, encoded in the specified format.\
-**Validation Rules**: required, string|JSON\
+**Validation Rules**: Required, SpatialFeatureGeometry\
 **Acceptable Values**: WKT string or GeoJSON object
 
 ---
@@ -367,7 +367,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
 **Description**: An array documenting references to sources of information about the Heritage Asset.\
-**Validation Rules**: required, array\
+**Validation Rules**: Required, Array\
 **Acceptable Values**: An array that contains one or more MonumentSource objects
 
 ```
@@ -397,7 +397,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if attribute bibliographyFootnoteReference is empty)\
 **Data Type**: String\
 **Description**: A name assigned to an information source, generally by its creator, to assist in identification. (MIDAS)\
-**Validation Rules**: required without:bibliographyFootnoteReference, alpha
+**Validation Rules**: RequiredWithout:bibliographyFootnoteReference, String
 
 ---
 
@@ -406,7 +406,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if attribute bibliographyFootnoteReference is empty)\
 **Data Type**: String\
 **Description**: A statement of the origin of an information source. (Statement of Responsibility - MIDAS). Typically, this will be personal names for the author, editor, photographer, cartographer, etc., but may also be used for publishers or issuing organisation names if individual names are not known.\
-**Validation Rules**: required without:bibliographyFootnoteReference, alpha
+**Validation Rules**: RequiredWithout:bibliographyFootnoteReference, String
 
 ---
 
@@ -415,7 +415,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Descriptions often include numbered references to a bibliographic, archival, or personal communication source. The number relates to the sources listed in association with the record and helps indicate which part of the description relates to which source.\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -424,7 +424,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Specific reference within a bibliographic or archive item. (MIDAS). Used to record details specific to the volume number, chronological designation, page numbers, figures and plates etc.\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -433,7 +433,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if attribute bibliographyFootnoteReference is empty)\
 **Data Type**: String\
 **Description**: The date of creation of an information Source. The year of publication or issue of a bibliographic item.\
-**Validation Rules**: required without:bibliographyFootnoteReference, date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY
+**Validation Rules**: RequiredWithout:bibliographyFootnoteReference, DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY
 
 ---
 
@@ -442,7 +442,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: A unique set of letters, characters and numbers that gives a persistent link to a resource on the internet, e.g. https://doi.org/10.5284/1092416.\
-**Validation Rules**: url\
+**Validation Rules**: Url, DigitalObjectIdentifier\
 **Acceptable Values**: Must have text segment "doi" in URL
 
 ---
@@ -452,7 +452,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if attributes informationSourceTitle, statementOfAuthority, dateOfOrigination are empty)\
 **Data Type**: String\
 **Description**: A free text source reference.\
-**Validation Rules**: required without:informationSourceTitle,statementOfAuthority,dateOfOrigination
+**Validation Rules**: RequiredWithout:informationSourceTitle,statementOfAuthority,dateOfOrigination
 
 ---
 
@@ -461,7 +461,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: A unique set of letters, characters and numbers referencing a web resource that specifies its location and a mechanism for retrieving it.\
-**Validation Rules**: url
+**Validation Rules**: Url
 
 ---
 
@@ -470,7 +470,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An optional array documenting artefacts and ecofacts found in association with the Heritage Asset. \
-**Validation Rules**: array\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more ObjectFinds objects
 
 ```
@@ -500,9 +500,9 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 ### Attribute: `record.objectFinds.*.type`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if `record.objectFinds` attribute is present)\
-**Data Type**: string\
+**Data Type**: String\
 **Description**: A description of the form, function or type of artefact/ecofact. (MIDAS)\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: FISH Archaeological Objects Thesaurus: https://heritagedata.org/live/schemes/mda_obj.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -512,7 +512,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials).(MIDAS)\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -522,7 +522,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials). (MIDAS)\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -532,7 +532,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing periods for Herritage Asset. (MIDAS)\
-**Validation Rules**: required, array
+**Validation Rules**: Array
 
 ---
 
@@ -541,7 +541,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the period of manufacture, deposition or death (for biological materials).\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -551,7 +551,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given. (MIDAS)\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -560,7 +560,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which the Object is composed. (MIDAS)\
-**Validation Rules**: array\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more material strings.
 
 
@@ -571,7 +571,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The basic materials and media of which the Object is composed. (MIDAS)\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 - Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html
@@ -584,7 +584,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array used to record information about watercraft (vessels of every description that ply on or in the water) associated with the Historic Asset. \
-**Validation Rules**: No specific validation rules apply.\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more MaritimeCraft object
 
 ```
@@ -616,7 +616,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.maritimeCraft` attribute is present)\
 **Data Type**: String\
 **Description**: A term describing a watercraft by form or function.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: FISH Maritime Craft Types: https://heritagedata.org/live/schemes/eh_tmc.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -626,7 +626,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -636,7 +636,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -646,7 +646,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing periods for Herritage Asset. (MIDAS)\
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ---
 
@@ -655,7 +655,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -665,7 +665,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given (MIDAS)\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -674,7 +674,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which Maritime Craft is composed. (MIDAS)\
-**Validation Rules**: array\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more material strings.
 
 
@@ -685,7 +685,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The basic materials and media of which a Maritime Craft is constructed.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 - Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html
@@ -698,7 +698,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array used to record information about aircraft (all heavier-than-air flying machines including airships, balloons, unmanned aerial vehicles etc.) associated with the Historic Asset\
-**Validation Rules**: No specific validation rules apply.\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more HistoricAircraft objects
 
 ```
@@ -730,7 +730,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.historicAircraft` attribute is present)\
 **Data Type**: String\
 **Description**: A term describing an aircraft by form or function.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: FISH Historic Aircraft Types: https://heritagedata.org/live/schemes/225.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -740,7 +740,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -750,7 +750,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: date format:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
+**Validation Rules**: DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -760,7 +760,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing periods for Herritage Asset. (MIDAS)\
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ---
 
@@ -769,7 +769,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The name given to the period when an event in the history of a Heritage Asset is thought to have occurred, or the archaeological period to which it is thought to belong (MIDAS). Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: Historic England Periods: https://heritagedata.org/live/schemes/eh_period.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -779,7 +779,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Free-text field used to qualify or expand upon the date information recorded in Start Date and End Date, or Period (Name). May also include a brief description of what is referred to by the date given (MIDAS)\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -788,7 +788,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which Historic Aircraft is composed. (MIDAS)\
-**Validation Rules**: array\
+**Validation Rules**: Array\
 **Acceptable Values**: An array that contains one or more material strings.
 
 
@@ -799,7 +799,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The basic materials and media of which a Historic Aircraft is constructed.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 - Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html
@@ -812,7 +812,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array containing primaryReferenceNumbers of Monument Heritage Assets related to the Heritage Asset in question.\
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ```
 {
@@ -832,7 +832,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.relatedMonumentRecordPrimaryReferenceNumbers` attribute is present)\
 **Data Type**: String\
 **Description**: The primaryReferenceNumber of the related Monument Heritage Asset record.\
-**Validation Rules**: alpha\
+**Validation Rules**: String\
 **Acceptable Values**: Alphanumeric
 
 ---
@@ -842,7 +842,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array recording events (i.e., investigative activities) associated with the Historic Asset.\
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ```
 {
@@ -868,7 +868,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
 **Data Type**: String\
 **Description**: The primaryReferenceNumber of the related event record.\
-**Validation Rules**: alpha\
+**Validation Rules**: String\
 **Acceptable Values**: Alphanumeric
 
 ---
@@ -878,7 +878,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
 **Data Type**: String\
 **Description**: The type of the related event record.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: Historic England Event Types: https://heritagedata.org/live/schemes/agl_et.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -888,7 +888,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
 **Data Type**: String\
 **Description**: The name of the related event record.\
-**Validation Rules**: alpha\
+**Validation Rules**: String\
 **Acceptable Values**: Alphanumeric
 
 ---
@@ -898,7 +898,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The free text description of the related event record.\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -907,7 +907,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The url of the related event record.\
-**Validation Rules**: url
+**Validation Rules**: Url
 
 ---
 
@@ -916,7 +916,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array of displayed images and captions. \
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ```
 {
@@ -940,7 +940,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.images` attribute is present)\
 **Data Type**: String\
 **Description**: The url of the image.\
-**Validation Rules**: url
+**Validation Rules**: Url
 
 ---
 
@@ -949,7 +949,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.images` attribute is present)\
 **Data Type**: String\
 **Description**: The caption of the image.\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -958,7 +958,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if `record.images` attribute is present)\
 **Data Type**: String\
 **Description**: The copyright text of the image.\
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -967,7 +967,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array of protected statuses (e.g. Conservation Area, Listed Building etc.) to which the Heritage Asset is subject.\
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ```
 {
@@ -987,7 +987,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The protected status of the Heritage Asset.\
-**Validation Rules**: alpha\
+**Validation Rules**: String, SchemeConcept\
 **Acceptable Values**: OASIS Protection Status: https://heritagedata.org/live/schemes/ef5ebc5b-abd6-44c5-a9d6-83a16f2b66ae.html (including narrower concepts) prefLabel or altLabel.
 
 ---
@@ -997,7 +997,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array recording combinations of text and links, including those that are dead or redirected, e.g.: http://pastscape.english-heritage.org.uk/hob.aspx?hob_id=1003343 \
-**Validation Rules**: array
+**Validation Rules**: Array
 
 ```
 {
@@ -1017,7 +1017,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: A combination of text and links, including those that are dead or redirected, e.g.: http://pastscape.english-heritage.org.uk/hob.aspx?hob_id=1003343 \
-**Validation Rules**: alpha
+**Validation Rules**: String
 
 ---
 
@@ -1026,4 +1026,4 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: The date on which an inventory entry was most recently revised or updated (MIDAS)\
-**Validation Rules**: required, date format:Y-m-d H:i:s
+**Validation Rules**: Required, Date
