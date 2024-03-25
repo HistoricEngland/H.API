@@ -3,6 +3,9 @@
 ## `Required`
 The `Required` rule means that the field must be present in the input data and cannot be empty. This ensures that a value for the specified field is provided and is not null or an empty string.
 
+## `RequiredWithout`
+The "RequiredWithout" rule when applied to a field specifies that the field under validation must be present and not empty only if any of the other specified fields are not present or empty in the input data.
+
 ## `String`
 The `String` rule checks that the field's value is a string. This means that the value must consist of text and cannot be a number, boolean, array, or any other non-string data type.
 
