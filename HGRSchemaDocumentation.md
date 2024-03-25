@@ -77,7 +77,6 @@ For records where the data provider does not hold a specific name for the asset,
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"descriptions": [
@@ -122,7 +121,6 @@ For records where the data provider does not hold a specific name for the asset,
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"monumentDatedTypes": [
@@ -254,7 +252,6 @@ For records where the data provider does not hold a specific name for the asset,
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"pointGeometry": {
@@ -309,7 +306,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"complexGeometries": [
@@ -376,7 +372,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"monumentSources": [
@@ -480,7 +475,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"objectFinds": [
@@ -595,7 +589,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"maritimeCraft": [
@@ -710,7 +703,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"historicAircraft": [
@@ -824,7 +816,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"relatedMonumentRecordPrimaryReferenceNumbers": [
@@ -855,7 +846,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"relatedEvents": [
@@ -930,7 +920,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"images": [
@@ -982,7 +971,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"protectedStatuses": [
@@ -1013,7 +1001,6 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 
 ```
 {
-	"metadata": { ... },
 	"record": {
 		...
 		"otherStatuses": [
