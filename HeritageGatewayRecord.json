@@ -20,10 +20,12 @@
 		"monumentDatedTypes": [
 			{
 				"type": "string",
-				"startDate": "date",
-				"endDate": "date",
-				"period": "string",
+				"startDate": "string",
+				"endDate": "string",
 				"displayDate": "string",
+				"periods": [
+					"string"
+				],
 				"materials": [
 					"string"
 				],
@@ -50,19 +52,21 @@
 				"informationSourceTitle": "string",
 				"statementOfAuthority": "string",
 				"sourceReference": "string",
-				"dateOfOrigination": "date",
-				"sourceDigitalObjectIdentifier": "url",
+				"dateOfOrigination": "string",
+				"sourceDigitalObjectIdentifier": "string",
 				"bibliographyFootnoteReference": "string",
-				"sourceUrl": "url"
+				"sourceUrl": "string"
 			}
 		],
 		"objectFinds": [
 			{
 				"type": "string",
-				"startDate": "date",
-				"endDate": "date",
-				"period": "string",
+				"startDate": "string",
+				"endDate": "string",
 				"displayDate": "string",
+				"periods": [
+					"string"
+				],
 				"materials": [
 					"string"
 				]
@@ -71,10 +75,12 @@
 		"maritimeCraft": [
 			{
 				"type": "string",
-				"startDate": "date",
-				"endDate": "date",
-				"period": "string",
+				"startDate": "string",
+				"endDate": "string",
 				"displayDate": "string",
+				"periods": [
+					"string"
+				],
 				"materials": [
 					"string"
 				]
@@ -83,10 +89,12 @@
 		"historicAircraft": [
 			{
 				"type": "string",
-				"startDate": "date",
-				"endDate": "date",
-				"period": "string",
+				"startDate": "string",
+				"endDate": "string",
 				"displayDate": "string",
+				"periods": [
+					"string"
+				],
 				"materials": [
 					"string"
 				]
@@ -101,14 +109,12 @@
 				"type": "string",
 				"name": "string",
 				"description": "string",
-				"url": "url"
+				"url": "string"
 			}
 		],
-		"parish": "string",
-		"streetMapLink": "url",
 		"images": [
 			{
-				"url": "url",
+				"url": "string",
 				"caption": "string",
 				"copyright": "string"
 			}
@@ -119,6 +125,6 @@
 		"otherStatuses": [
 			"string"
 		],
-		"lastUpdated": "date"
+		"lastUpdated": "string"
 	}
 }
