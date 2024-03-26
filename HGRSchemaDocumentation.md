@@ -363,7 +363,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
 **Description**: An array documenting references to sources of information about the Heritage Asset.\
-**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array)
+**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array), [Min:1](ValidationRules.md#min)
 
 ```
 {
@@ -447,7 +447,8 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y (if attributes informationSourceTitle, statementOfAuthority, dateOfOrigination are empty)\
 **Data Type**: String\
 **Description**: A free text source reference.\
-**Validation Rules**: [RequiredWithout:informationSourceTitle,statementOfAuthority,dateOfOrigination](ValidationRules.md#requiredwithout)
+**Validation Rules**: [RequiredWithout:informationSourceTitle,statementOfAuthority,dateOfOrigination](ValidationRules.md#requiredwithout)\
+**Acceptable Values**: Alphanumeric. Either rich text format or plain text format is acceptable.
 
 ---
 
@@ -881,7 +882,8 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The free text description of the related event record.\
-**Validation Rules**: [String](ValidationRules.md#string)
+**Validation Rules**: [String](ValidationRules.md#string)\
+**Acceptable Values**: Alphanumeric. Either rich text format or plain text format is acceptable.
 
 ---
 
