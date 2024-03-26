@@ -72,8 +72,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
 **Description**: An array recording free text describing the Heritage Asset. Description Type is used to specialise the nature of the description. For example to distinguish non-technical summary text from more detailed synthesised works.\
-**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array), [Min:1](ValidationRules.md#min)\
-**Acceptable Values**: An array that contains one or more Description objects
+**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array), [Min:1](ValidationRules.md#min)
 
 ```
 {
@@ -97,7 +96,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Data Type**: String\
 **Description**: Allows a description to be specialised by level of detail or intended use. Used to distinguish brief summaries from more detailed full descriptions. (MIDAS)\
 **Validation Rules**: [Required](ValidationRules.md#required), [String](ValidationRules.md#string), [In](ValidationRules.md#in)\
-**Acceptable Values**: Full,Summary
+**Acceptable Values**: Full|Summary
 
 ---
 
@@ -107,7 +106,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Data Type**: String\
 **Description**: Free-text description of the Heritage Asset. (MIDAS)\
 **Validation Rules**: [Required](ValidationRules.md#required), [String](ValidationRules.md#string)\
-**Acceptable Values**: Alphanumeric.
+**Acceptable Values**: Alphanumeric. Either rich text format or plain text format is acceptable.
 
 ---
 
@@ -115,9 +114,8 @@ For records where the data provider does not hold a specific name for the asset,
 **CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: Y \
 **Data Type**: Array\
-**Description**: An array recording information that describes the construction and use phases of the Heritage Asset.\
-**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array), [Min:1](ValidationRules.md#min)\
-**Acceptable Values**: An array that contains a combination of one or more MonumentDatedType objects.
+**Description**: An array that contains a combination of one or more MonumentDatedType objects and recording information that describes the construction and use phases of the Heritage Asset.\
+**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array), [Min:1](ValidationRules.md#min)
 
 ```
 {
@@ -209,8 +207,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which Herritage Asset is composed. (MIDAS)\
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more material strings.
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 ---
 
@@ -229,8 +226,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing evidence of Herritage Asset remains. (MIDAS)\
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more evidence strings.
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 ---
 
@@ -367,8 +363,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y\
 **Data Type**: Array\
 **Description**: An array documenting references to sources of information about the Heritage Asset.\
-**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more MonumentSource objects
+**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array)
 
 ```
 {
@@ -470,8 +465,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An optional array documenting artefacts and ecofacts found in association with the Heritage Asset. \
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more ObjectFinds objects
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 ```
 {
@@ -560,8 +554,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which the Object is composed. (MIDAS)\
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more material strings.
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 
 ---
@@ -572,10 +565,8 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Data Type**: String\
 **Description**: The basic materials and media of which the Object is composed. (MIDAS)\
 **Validation Rules**: [String](ValidationRules.md#string), [SchemeConcept](ValidationRules.md#schemeconcept)\
-**Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
-
-- Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html
- (including narrower concepts) prefLabel or altLabel.
+**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.\
+Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
@@ -584,8 +575,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array used to record information about watercraft (vessels of every description that ply on or in the water) associated with the Historic Asset. \
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more MaritimeCraft object
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 ```
 {
@@ -674,8 +664,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which Maritime Craft is composed. (MIDAS)\
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more material strings.
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 
 ---
@@ -686,10 +675,8 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Data Type**: String\
 **Description**: The basic materials and media of which a Maritime Craft is constructed.\
 **Validation Rules**: [String](ValidationRules.md#string), [SchemeConcept](ValidationRules.md#schemeconcept)\
-**Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
-
-- Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html
- (including narrower concepts) prefLabel or altLabel.
+**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.\
+Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
@@ -698,8 +685,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array used to record information about aircraft (all heavier-than-air flying machines including airships, balloons, unmanned aerial vehicles etc.) associated with the Historic Asset\
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more HistoricAircraft objects
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 ```
 {
@@ -788,8 +774,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing basic materials and media of which Historic Aircraft is composed. (MIDAS)\
-**Validation Rules**: [Array](ValidationRules.md#array)\
-**Acceptable Values**: An array that contains one or more material strings.
+**Validation Rules**: [Array](ValidationRules.md#array)
 
 
 ---
@@ -800,10 +785,8 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Data Type**: String\
 **Description**: The basic materials and media of which a Historic Aircraft is constructed.\
 **Validation Rules**: [String](ValidationRules.md#string), [SchemeConcept](ValidationRules.md#schemeconcept)\
-**Acceptable Values**: - FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
-
-- Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html
- (including narrower concepts) prefLabel or altLabel.
+**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.\
+Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
@@ -1026,4 +1009,5 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: The date on which an inventory entry was most recently revised or updated (MIDAS)\
-**Validation Rules**: [Required](ValidationRules.md#required), [Date](ValidationRules.md#date)
+**Validation Rules**: [Required](ValidationRules.md#required), [Date](ValidationRules.md#date)\
+**Acceptable Values**: A date represented in ISO 8601 UTC format
