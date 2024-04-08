@@ -1,12 +1,4 @@
 {
-	"metadata":
-	{
-		"extractedAtTimestamp": "timestamp",
-		"compilerOrganisationName": "string",
-		"dataSource": "string",
-		"dataSourceID": "string",
-		"typeOfRecord": "string"
-	},
 	"record":
 	{
 		"primaryReferenceNumber": "string",
