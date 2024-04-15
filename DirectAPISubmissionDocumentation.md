@@ -67,6 +67,8 @@ To initiate the record submission process, begin by generating a new batch. This
 
 ## Batch Submission
 
+Each batch should exclusively contain records that have either been newly created or updated since the submission of the previous batch. This ensures that the data collected in subsequent batches is the freshest and most relevant, minimizing redundancy and focusing exclusively on recent changes or additions.
+
 ### Submit Batch
 
 - **Endpoint**: `https://api.example.com/batch/submit`
