@@ -324,7 +324,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Data Type**: String\
 **Description**: The spatial object type used to depict the spatial element of a feature. (MIDAS)\
 **Validation Rules**: [Required](ValidationRules.md#required), [String](ValidationRules.md#string), [In](ValidationRules.md#in)\
-**Acceptable Values**: point|polygon|multipoint|multipolygon|collection
+**Acceptable Values**: point|linestring|polygon|multipoint|multilinestring|multipolygon|collection
 
 ---
 
