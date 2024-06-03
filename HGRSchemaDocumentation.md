@@ -278,7 +278,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Description**: The numerical easting (X) coordinate for a feature (MIDAS). Depending on the spatial reference system it either stands for longitude or easting values.\
 **Validation Rules**: [Required](ValidationRules.md#required), [Numeric](ValidationRules.md#numeric), [SpatialCoordinate](ValidationRules.md#spatialcoordinate)\
 **Acceptable Values**: If record.pointGeometry.referenceSystem = EPSG 4326 must be decimal LONGITUDE value\
-If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute EASTING co-ordinate value
+If record.pointGeometry.referenceSystem =  EPSG 27700  must be EASTING co-ordinate value
 
 ---
 
@@ -289,7 +289,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute EASTING 
 **Description**: The numerical northing (Y) coordinate for a feature (MIDAS). Depending on the spatial reference system it either stands for latitude or northing values.\
 **Validation Rules**: [Required](ValidationRules.md#required), [Numeric](ValidationRules.md#numeric), [SpatialCoordinate](ValidationRules.md#spatialcoordinate)\
 **Acceptable Values**: If record.pointGeometry.referenceSystem = EPSG 4326 must be decimal LATITUDE value\
-If record.pointGeometry.referenceSystem =  EPSG 27700  must be absolute NORTHING co-ordinate value
+If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordinate value
 
 ---
 
