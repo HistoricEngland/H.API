@@ -45,7 +45,7 @@ The third approach, FTP Server Access, offers a more traditional route, resembli
 #### API Preparation Guidelines
 + Ensure your API supports a paginated retrieval of compliant HGR records and allows `page` and `per_page` parameters within the request structure to facilitate efficient data navigation and extraction.
 + Ensure your API supports an `updated_since` query parameter, allowing for the refinement of result sets based on the temporal attribute indicating the last modification timestamp. The ETL process operates on the assumption that only new/updated records are submitted.
-+ Your API's response payload should include a `metadata` object, detailing the counts of monument records (`total_count`, `published_count`, `submitted_count`). This should dynamically adjust in accordance with the `updated_at` parameter, providing a granular view of the dataset's state over time.
++ Your API's response payload should include a `metadata` object, detailing the counts of monument records (`total_count`, `published_count`, `submitted_count`). This should dynamically adjust in accordance with the `updated_since` parameter, providing a granular view of the dataset's state over time.
 
 #### Monitoring and Error Handling
 + Implement a monitoring strategy for your API, prioritizing the assurance of uninterrupted and faultless data transmission processes. This involves real-time surveillance of API performance metrics and operational health indicators.
