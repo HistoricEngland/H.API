@@ -835,7 +835,9 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 		"relatedEvents": [
 			{
 				"primaryReferenceNumber": "string",
-				"type": "string",
+				"types": [
+					"string"
+				],
 				"name": "string",
 				"description": "string",
 				"url": "string"
@@ -857,7 +859,16 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 
 ---
 
-### Attribute: `record.relatedEvents.*.type`
+### Attribute: `record.relatedEvents.*.types`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
+**Data Type**: Array\
+**Description**: An array that contains one or more strings that represent the type of the related event record.\
+**Validation Rules**: [Array](ValidationRules.md#array)
+
+---
+
+### Attribute: `record.relatedEvents.*.types.*`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: Y (if `record.relatedEvents` attribute is present)\
 **Data Type**: String\
