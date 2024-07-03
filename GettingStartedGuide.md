@@ -8,7 +8,7 @@ Direct API Submission requires the data provider to write an integration that wi
 
 ## 2.External API Harvesting
 
-External API Harvesting, operates as an automated retrieval process, with HE pulling data providers’ HGR compliant records at scheduled intervals. This method requires the data provider to give HE access to an API with an endpoint that EH can call and which will return HGR compliant JSON records on an agreed schedule. If you have such an API available already then all you need to do is provide us with the details.
+External API Harvesting, operates as an automated retrieval process, with HE pulling data providers’ HGR compliant records at scheduled intervals. This method requires the data provider to give HE access to an API with an endpoint that HE can call and which will return HGR compliant JSON records on an agreed schedule. If you have such an API available already then all you need to do is provide us with the details.
 
 ## 3. FTP Server Access for File Uploads
 
