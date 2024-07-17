@@ -92,8 +92,11 @@
 				]
 			}
 		],
-		"relatedMonumentRecordPrimaryReferenceNumbers": [
-			"string"
+		"relatedMonumentRecords": [
+			{
+				"primaryReferenceNumber": "string",
+				"relationship": "string"
+			}
 		],
 		"relatedEvents": [
 			{
