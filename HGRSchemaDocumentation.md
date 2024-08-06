@@ -7,6 +7,7 @@ Version| Description | Author
 1.0  | Initial version of the Heritage Gateway Schema | Jan Putzan (Ember Technology)
 1.1  | Addition of Overview section and updates to attribute descriptions | Jan Putzan (Ember Technology)
 1.2  | Changes following the review of the Heritage Gateway Schema | Jan Putzan (Ember Technology)
+1.3  | Capturing optional relationship with the Related Monument Records | Jan Putzan (Ember Technology)
 
 ## Overview
 The submitted records must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating. This documents is a detailed description of that schema. 
@@ -35,7 +36,7 @@ The minimum attributes comprising a CORE HGR are defined along with additional O
 		"objectFinds": [ ... ],
 		"maritimeCraft": [ ... ],
 		"historicAircraft": [ ... ],
-		"relatedMonumentRecordPrimaryReferenceNumbers": [ ... ],
+		"relatedMonumentRecords": [ ... ],
 		"relatedEvents": [ ... ],
 		"images": [ ... ],
 		"protectedStatuses": [ ... ],
@@ -791,7 +792,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 
 ---
 
-### Attribute: `record.relatedMonumentRecordPrimaryReferenceNumbers`
+### Attribute: `record.relatedMonumentRecords`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
@@ -802,8 +803,11 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 {
 	"record": {
 		...
-		"relatedMonumentRecordPrimaryReferenceNumbers": [
-			"string"
+		"relatedMonumentRecords": [
+			{
+				"primaryReferenceNumber": "string",
+				"relationship": "string"
+			}
 		],
 		...
 	}
@@ -811,11 +815,21 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 ```
 ---
 
-### Attribute: `record.relatedMonumentRecordPrimaryReferenceNumbers.*`
+### Attribute: `record.relatedMonumentRecords.*.primaryReferenceNumber`
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
-**Mandatory in HGR**: Y (if `record.relatedMonumentRecordPrimaryReferenceNumbers` attribute is present)\
+**Mandatory in HGR**: Y (if `record.relatedMonumentRecords` attribute is present)\
 **Data Type**: String\
 **Description**: The primaryReferenceNumber of the related Monument Heritage Asset record.\
+**Validation Rules**: [String](ValidationRules.md#string)\
+**Acceptable Values**: Alphanumeric
+
+---
+
+### Attribute: `record.relatedMonumentRecords.*.relationship`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: String\
+**Description**: The relationship of the related Monument Heritage Asset record.\
 **Validation Rules**: [String](ValidationRules.md#string)\
 **Acceptable Values**: Alphanumeric
 
