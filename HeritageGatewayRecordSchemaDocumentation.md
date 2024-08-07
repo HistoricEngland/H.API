@@ -10,12 +10,12 @@ Version| Description | Author
 1.3  | Capturing optional relationship with the Related Monument Records | Jan Putzan (Ember Technology)
 
 ## Overview
-The submitted records must be compliant with the Heritage Gateway Record Schema for the purposes of processing and validating. This documents is a detailed description of that schema. 
 
-# Heritage Gateway Record (HGR) Schema Documentation
-The Heritage Gateway Record (HGR) schema comprises several attributes, each with specific requirements and characteristics.\
-This documentation outlines the key aspects of these attributes.\
-The minimum attributes comprising a CORE HGR are defined along with additional OPTIONAL attributes.
+Records submitted for validation and inclusion in the Heritage Gateway must be compliant with the Heritage Gateway Record (HGR) schema. 
+The HGR schema comprises numerous attributes, each with specific requirements and characteristics. 
+This documents is a detailed description of the schema defining the key aspects of its constituent attributes. 
+The minimum attributes comprising the CORE HGR are defined along with additional OPTIONAL attributes.
+
 
 ### Attribute: `record`
 **CORE HGR attribute or OPTIONAL attribute**: N/A\
