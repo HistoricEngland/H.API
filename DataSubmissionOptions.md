@@ -4,9 +4,9 @@ Three options are available to data providers for their submission of Heritage G
 
 The three data submission options:
 
-Direct API Submission
-External API Harvesting
-FTP Server Access for File Uploads
+- Direct API Submission
+- External API Harvesting
+- FTP Server Access for File Uploads
 
 are outlined below:
 
