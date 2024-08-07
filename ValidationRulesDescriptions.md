@@ -1,4 +1,6 @@
-# Validation Rules Explanation
+# Validation Rules Descriptions
+
+The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchema.md) specifies which validation rules will be applied to each of the HGR’s constituent attributes. These rules are described below. 
 
 ## `Required`
 The `Required` rule means that the field must be present in the input data and cannot be empty. This ensures that a value for the specified field is provided and is not null or an empty string.
