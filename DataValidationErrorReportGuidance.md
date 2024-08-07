@@ -41,7 +41,7 @@ Thus, record.monumentDatedTypes.0.materials.1 indicates that second materials (b
 Similarly, record.monumentDatedTypes.2.evidences.0 indicates that the first evidences type cited for the third monumentDatedTypes (i.e., construction and use phase) has failed validation.
 Error Type
 The type of validation rule which has been breached. For example, Required i.e. the attribute must be present in the submitted data and cannot be empty
-Value
+## Value
 The data value submitted. For example: FIBRE CEMENT SLATE; E263; 10-20016 
 Error Message
 A description of the error identified. For example, “the type field must be a valid concept for MONUMENT_TYPE”
