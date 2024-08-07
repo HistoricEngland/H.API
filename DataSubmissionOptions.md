@@ -57,7 +57,7 @@ External API Harvesting, operates as an automated retrieval process, with HE pul
 
 The third approach, FTP Server Access, offers a more traditional route, resembling a familiar file-sharing system. Here, data providers can upload data files with HGR compliant records onto HE’s Heritage Gateway FTP server periodically. It’s a simple and effective means for data submission and can be done either manually or by developing functionality into your existing system to send the HGR standard compliant data automatically at scheduled intervals. As with the Direct API Submission option, HGR compliant JSON files will need to be generated from the datasets maintained by a provider with a separate JSON file required for each monument record.
 
-### 3. FTP Server Access for File Uploads Instructions:
+### 3. FTP Server Access for File Uploads Steps:
 
 #### Access the HE Heritage Gateway FTP Server:
 +	Detail TBC
