@@ -12,7 +12,7 @@ are outlined below:
 
 ## 1. Direct API Submission
 
-Direct API Submission requires the data provider to write an integration that will submit HGR compliant [JSON](https://www.json.org/json-en.html) files directly to HE through a RESTFul API provided by HE. A separate JSON file generated from the datasets maintained by a provider is required for each monument record in the provider’s datasets. These files must conform to the HGR standards as defined in the [schema documentation](HGRSchemaDocumentation.md) which will involve mapping providers’ current data to the HGR schema. This push approach, managed by the data provider, allows for HGR standard compliant records to be submitted to HE from any system.
+Direct API Submission requires the data provider to write an integration that will submit HGR compliant [JSON](https://www.json.org/json-en.html) files directly to HE through a RESTFul API provided by HE. A separate JSON file generated from the datasets maintained by a provider is required for each monument record in the provider’s datasets. These files must conform to the HGR standards as defined in the [schema documentation](HeritageGatewayRecordSchemaDocumentation.md) which will involve mapping providers’ current data to the HGR schema. This push approach, managed by the data provider, allows for HGR standard compliant records to be submitted to HE from any system.
 
 ## 2.External API Harvesting
 
