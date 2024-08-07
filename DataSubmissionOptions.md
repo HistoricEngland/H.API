@@ -1,6 +1,14 @@
-# H.API Getting started Guide
+# Data Submission Options
 
 Three options are available to data providers for their submission of Heritage Gateway Record (HGR) standard compliant records to Historic England (HE) for validation and inclusion in the Heritage Gateway. These three approaches allow for differing levels of technical input on the part of the data provider. To maintain the integrity and relevance of the data received, it is critical that each submitted batch solely comprises records that are either newly created or have been updated following the last submission. By adhering to this practice, data providers ensure that all information added to the Heritage Gateway is current, reducing unnecessary duplication and emphasizing the latest developments or contributions.
+
+The three data submission options:
+
+Direct API Submission
+External API Harvesting
+FTP Server Access for File Uploads
+
+are outlined below:
 
 ## 1. Direct API Submission
 
