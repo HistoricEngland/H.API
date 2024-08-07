@@ -13,7 +13,7 @@ Version| Description | Author
 
 ## Overview
 
-This document outlines the steps required to submit records to our service using OAuth authentication into the Heritage Gateway.
+This document outlines the steps required to submit Heritage Gateway Record (HGR) compliant records to Historic England (HE) via a RESTful API provided by HE using OAuth authentication.
 
 ## Authentication
 
