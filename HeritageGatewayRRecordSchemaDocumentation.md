@@ -1,4 +1,4 @@
-# Heritage Gateway Technical Documentation 
+# Heritage Gateway Record (HGR) Schema Documentation 
 
 ## Version History 
 
