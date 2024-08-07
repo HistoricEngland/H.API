@@ -1,7 +1,5 @@
 # Data Validation Error Report Guidance
 
-# Data Validation Error Report Guidance
-
 Validation rules are specified for each attribute comprising the Heritage Gateway Record. Non-compliance with these rules, in records submitted for inclusion in the Heritage Gateway, results in the identification of data validation errors.
 A log of data validation errors identified for each batch of records submitted for inclusion in the Heritage Gateway is emailed to the data contact specified at registration for your organisation.
 The data validation error logs include the following information to aid identification and rectification of errors in the source data:
