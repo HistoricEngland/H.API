@@ -59,6 +59,9 @@ The third approach, FTP Server Access, offers a more traditional route, resembli
 
 ### 3. FTP Server Access for File Uploads Steps:
 
+#### Register
++	Follow the [Joining Instructions](JoiningInstructions.md), register to submit data to the Heritage Gateway, select the FTP Server Access data submission method and enter the user name and password you wish to use.  
+
 #### Access the HE Heritage Gateway FTP Server:
 +	Detail TBC
 
