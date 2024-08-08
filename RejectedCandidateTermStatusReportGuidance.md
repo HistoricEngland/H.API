@@ -1,6 +1,17 @@
- | **Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	|  Scheme	| Candidate Term Status	| Preferred Term	| Status Updated |
+**Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	|  Scheme	| Candidate Term Status	| Preferred Term	| Status Updated
+--- | --- | ---
 
 
+
+
+
+
+Version| Description | Author 
+--- | --- | --- 
+1.0  | Initial version of the API for the submission of the Heritage Gateway File | Jan Putzan (Ember Technology)
+1.1  | Addition of the batch creation endpoint | Jan Putzan (Ember Technology)
+1.2  | Addition of Swagger API documentation  | Jan Putzan (Ember Technology)
+1.3  | Changed the transmission method for batch submission endpoint  | Jan Putzan (Ember Technology)
 
 
 
