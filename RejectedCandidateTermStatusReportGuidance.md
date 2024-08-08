@@ -1,10 +1,8 @@
  | **Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	|  Scheme	| Candidate Term Status	| Preferred Term	| Status Updated |
 
 
-
-
 # REJECTED Candidate Term Status Report Guidance
-SchemeConcept data validation errors are reviewed by Historic England as Candidate Terms. Candidate Terms REJECTED by Historic England are reported separately for each dataset from which records failed SchemeConcept data validation . These reports contain the following information to help data providers identify the affected records and update these with the relevant Preferred Term 
+SchemeConcept data validation errors are reviewed by Historic England as *Candidate Terms* on behalf of the [FISH Terminology Working Group](https://heritage-standards.org.uk/working-groups/). A *Candidate Term* is a term (e.g. “Ice cream factory”) that has been used locally in a dataset (e.g. Westshire HER) but has not yet been incorporated into the relevant scheme (e.g. monument types thesaurus). More information on controlled vocabularies, the FISH thesauri and Candidate Terms is documented [here](https://heritage-standards.org.uk/terminology/). Candidate Terms REJECTED by Historic England are reported separately for each dataset from which records failed SchemeConcept data validation . These reports contain the following information to help data providers identify the affected records and update these with the relevant Preferred Term 
 
 ## Dataset name
 The name of the dataset specified at registration for which data validation errors have been logged. For example: *H&BC Historic Environment Record*
@@ -16,8 +14,8 @@ The unique identifier allocated to each entry in the source database and include
 This indicates which attribute in the submitted record’s JSON file failed SchemeConcept data validation and has been processed by Historic England as a Candidate Term. 
 ### Single attribute with multiple values
 All Heritage Gateway Record attributes that are subject to SchemeConcept data validation may have multiple values. 
-For example, each record may include one or more protectedStatuses. The protectedStatuses values are held in a simple array in the submitted JSON file. Each element in the array is indexed; 0 (zero) indicating the first element in the array, 1 the second and so on. 
-So, record.protectedStatuses.0 indicates that the first of the protectedStatuses specified for the record failed validation and has been processed by Historic England as a Candidate Term.
+For example, each record may include one or more **protectedStatuses**. The **protectedStatuses** values are held in a simple array in the submitted JSON file. Each element in the array is indexed; 0 (zero) indicating the first element in the array, 1 the second and so on. 
+So, **record.protectedStatuses.0** indicates that the first of the protectedStatuses specified for the record failed validation and has been processed by Historic England as a Candidate Term.
 ### Multiple attribute object, attribute with single value
 In addition to simple arrays, records contain objects that have multiple constituent attributes. For example, each record may have one or more MonumentDatedType objects each comprising values for different attributes (monument type, start date, end date, period, materials etc.) that describe the different construction and use phases of the Heritage Asset. 
 Again, the information for each MonumentDatedType (i.e., construction and use phase) is held in an array in the submitted JSON file. Again, each element in the array is indexed; 0 (zero) indicating the first element in the array, 1 the second and so on. This time, however, the constituent attribute that failed validation and has been processed as a Candidate Term is also specified. 
