@@ -1,3 +1,8 @@
+| **Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	Scheme	Candidate Term Status	Preferred Term	Status Updated
+
+
+
+
 # REJECTED Candidate Term Status Report Guidance
 SchemeConcept data validation errors are reviewed by Historic England as Candidate Terms. Candidate Terms REJECTED by Historic England are reported separately for each dataset from which records failed SchemeConcept data validation . These reports contain the following information to help data providers identify the affected records and update these with the relevant Preferred Term 
 
