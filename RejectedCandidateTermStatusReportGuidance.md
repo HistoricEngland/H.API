@@ -1,4 +1,4 @@
-| **Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	Scheme	Candidate Term Status	Preferred Term	Status Updated
+ | **Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	|  Scheme	| Candidate Term Status	| Preferred Term	| Status Updated |
 
 
 
@@ -7,7 +7,7 @@
 SchemeConcept data validation errors are reviewed by Historic England as Candidate Terms. Candidate Terms REJECTED by Historic England are reported separately for each dataset from which records failed SchemeConcept data validation . These reports contain the following information to help data providers identify the affected records and update these with the relevant Preferred Term 
 
 ## Dataset name
-The name of the dataset specified at registration for which data validation errors have been logged. For example: H&BC Historic Environment Record
+The name of the dataset specified at registration for which data validation errors have been logged. For example: *H&BC Historic Environment Record*
 ## Submission Batch ID
 A unique system generated identifier for the batch of submitted records for which a SchemeConcept data validation error (i.e., a Candidate Term) was logged
 ## Primary Reference Number.
