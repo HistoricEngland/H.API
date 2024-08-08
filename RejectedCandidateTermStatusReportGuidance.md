@@ -1,6 +1,10 @@
  | **Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	|  Scheme	| Candidate Term Status	| Preferred Term	| Status Updated |
 
 
+
+
+
+
 # REJECTED Candidate Term Status Report Guidance
 SchemeConcept data validation errors are reviewed by Historic England as *Candidate Terms* on behalf of the [FISH Terminology Working Group](https://heritage-standards.org.uk/working-groups/). A *Candidate Term* is a term (e.g. “Ice cream factory”) that has been used locally in a dataset (e.g. Westshire HER) but has not yet been incorporated into the relevant scheme (e.g. monument types thesaurus). More information on controlled vocabularies, the FISH thesauri and Candidate Terms is documented [here](https://heritage-standards.org.uk/terminology/). Candidate Terms REJECTED by Historic England are reported separately for each dataset from which records failed SchemeConcept data validation . These reports contain the following information to help data providers identify the affected records and update these with the relevant Preferred Term 
 
@@ -21,10 +25,10 @@ In addition to simple arrays, records contain objects that have multiple constit
 Again, the information for each **MonumentDatedType** (i.e., construction and use phase) is held in an array in the submitted JSON file. Again, each element in the array is indexed; 0 (zero) indicating the first element in the array, 1 the second and so on. This time, however, the constituent attribute that failed validation and has been processed as a Candidate Term is also specified. 
 So, **record.monumentDatedTypes.0.type** indicates that the **type** (monument type) value specified for the record’s first **monumentDatedTypes** (i.e., construction and use phase) failed validation and has been processed as a Candidate Term.
 
-## Multiple attribute object, attribute with multiple values
-Although each **monumentDatedTypes** (i.e., construction and use phase) will only have one type value, other constituent attributes held in arrays may contain multiple values. For example, each monumentDatedTypes (i.e., construction and use phase) may have one or more materials (building material) values recorded or similarly one or more different evidences (types of evidence) values recorded. These instances of multiple values are handled by nested arrays indexed in the same manner as above.
-Thus, record.monumentDatedTypes.0.materials.1 indicates that second materials (building materials) listed for the record’s first monumentDatedTypes (i.e., construction and use phase) has failed validation and has been processed as a Candidate Term.
-Similarly, record.monumentDatedTypes.2.evidences.0 indicates that the first evidences type cited for the third monumentDatedTypes (i.e., construction and use phase) has failed validation and has been processed as a Candidate Term.
+### Multiple attribute object, attribute with multiple values
+Although each **monumentDatedTypes** (i.e., construction and use phase) will only have one **type** value, other constituent attributes held in arrays may contain multiple values. For example, each **monumentDatedTypes** (i.e., construction and use phase) may have one or more **materials** (building material) values recorded or similarly one or more different **evidences** (types of evidence) values recorded. These instances of multiple values are handled by nested arrays indexed in the same manner as above.
+Thus, **record.monumentDatedTypes.0.materials.1** indicates that second **materials** (building materials) listed for the record’s first **monumentDatedTypes** (i.e., construction and use phase) has failed validation and has been processed as a Candidate Term.
+Similarly, **record.monumentDatedTypes.2.evidences.0** indicates that the first **evidences type** cited for the third **monumentDatedTypes** (i.e., construction and use phase) has failed validation and has been processed as a Candidate Term.
 ## Candidate Term Submitted
 The value submitted that failed SchemeConcept data validation and has been processed by Historic England as a Candidate Term
 ## Scheme
