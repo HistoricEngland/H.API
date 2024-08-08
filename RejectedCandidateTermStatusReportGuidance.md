@@ -7,7 +7,7 @@ The name of the dataset specified at registration for which data validation erro
 ## Submission Batch ID
 A unique system generated identifier for the batch of submitted records for which a SchemeConcept data validation error (i.e., a Candidate Term) was logged
 ## Primary Reference Number.
-The unique identifier allocated to each entry in the source database and included in the corresponding records submitted for inclusion in the Heritage Gateway. The repeat of the Primary Preference Number 790001 and Primary reference Number 790005 above indicates that more than one Candidate Term has been process and rejected by HE for each of those records.
+The unique identifier allocated to each entry in the source database and included in the corresponding records submitted for inclusion in the Heritage Gateway. The repeat of a Primary Preference Number indicates that more than one Candidate Term has been process and rejected by Historic England for each of those records.
 ## Attribute
 This indicates which attribute in the submitted record’s JSON file failed SchemeConcept data validation and has been processed by Historic England as a Candidate Term. 
 ### Single attribute with multiple values
