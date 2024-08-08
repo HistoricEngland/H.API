@@ -35,13 +35,13 @@ In addition to simple arrays, records contain objects that have multiple constit
 
 Again,the information for each **monumentDatedType** (i.e., construction and use phase) is held in an array in the submitted JSON file. Each element in the array is indexed; 0 (zero) indicating the first element in the array, 1 the second and so on. This time however, the constituent attribute that failed the validation is also specified. 
 
-So, **record.monumentDatedTypes.0.type** indicates that the type (monument type) value specified for the record’s first **monumentDatedTypes** (i.e., construction and use phase) has failed validation.
+So, **record.monumentDatedTypes.0.type** indicates that the **type** (monument type) value specified for the record’s first **monumentDatedTypes** (i.e., construction and use phase) has failed validation.
 
-Similarly **record.monumentDatedTypes.1.startDate** indicates that the startDate specified for the record’s second **monumentDatedTypes** (i.e., construction and use phase) has failed validation.
+Similarly **record.monumentDatedTypes.1.startDate** indicates that the **startDate** specified for the record’s second **monumentDatedTypes** (i.e., construction and use phase) has failed validation.
 
 ### Multiple attribute object, attribute with multiple values
 
-Although each **monumentDatedTypes** (i.e., construction and use phase) will only have one type value, other constituent attributes held in arrays may contain multiple values. For example, each **monumentDatedTypes** (i.e., construction and use phase) may have one or more **materials** (building material) values recorded or similarly one or more different **evidences** (types of evidence) values recorded. These instances of multiple values are handled by nested arrays indexed in the same manner as above.
+Although each **monumentDatedTypes** (i.e., construction and use phase) will only have one **type** value, other constituent attributes held in arrays may contain multiple values. For example, each **monumentDatedTypes** (i.e., construction and use phase) may have one or more **materials** (building material) values recorded or similarly one or more different **evidences** (types of evidence) values recorded. These instances of multiple values are handled by nested arrays indexed in the same manner as above.
 
 Thus, **record.monumentDatedTypes.0.materials.1** indicates that second **materials** (building materials) listed for the record’s first **monumentDatedTypes** (i.e., construction and use phase) has failed validation.
 
