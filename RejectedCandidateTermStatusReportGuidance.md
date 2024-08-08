@@ -1,25 +1,8 @@
-**Dataset Name** |	**Submission Batch ID** |	**Primary Reference Number** |	Attribute	Candidate Term Submitted	|  Scheme	| Candidate Term Status	| Preferred Term	| Status Updated
---- | --- | ---
-
-
-
-
-
-
-Version| Description | Author 
---- | --- | --- 
-1.0  | Initial version of the API for the submission of the Heritage Gateway File | Jan Putzan (Ember Technology)
-1.1  | Addition of the batch creation endpoint | Jan Putzan (Ember Technology)
-1.2  | Addition of Swagger API documentation  | Jan Putzan (Ember Technology)
-1.3  | Changed the transmission method for batch submission endpoint  | Jan Putzan (Ember Technology)
-
-
-
 
 # REJECTED Candidate Term Status Report Guidance
 SchemeConcept data validation errors are reviewed by Historic England as *Candidate Terms* on behalf of the [FISH Terminology Working Group](https://heritage-standards.org.uk/working-groups/). A *Candidate Term* is a term (e.g. “Ice cream factory”) that has been used locally in a dataset (e.g. Westshire HER) but has not yet been incorporated into the relevant scheme (e.g. monument types thesaurus). More information on controlled vocabularies, the FISH thesauri and Candidate Terms is documented [here](https://heritage-standards.org.uk/terminology/). Candidate Terms REJECTED by Historic England are reported separately for each dataset from which records failed SchemeConcept data validation . These reports contain the following information to help data providers identify the affected records and update these with the relevant Preferred Term 
 
-## Dataset name
+## Dataset Name
 The name of the dataset specified at registration for which data validation errors have been logged. For example: *H&BC Historic Environment Record*
 ## Submission Batch ID
 A unique system generated identifier for the batch of submitted records for which a SchemeConcept data validation error (i.e., a Candidate Term) was logged
