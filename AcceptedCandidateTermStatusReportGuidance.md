@@ -1,5 +1,7 @@
-ACCEPTED Candidate Term Status Report 
-SchemeConcept data validation errors are reviewed by Historic England as Candidate Terms. ACCEPTED Candidate Terms are reported <specify frequency> to all data providers. This report contains the following information to help ensure data providers are aware of new additions to the schemes maintained by the FISH Terminology Working Group. Updated schemes are typically made available on an annual basis and will be downloadable from https://heritage-standards.org.uk/terminology/ 
+# ACCEPTED Candidate Term Status Report 
+SchemeConcept data validation errors are reviewed by Historic England as Candidate Terms. 
+
+ACCEPTED Candidate Terms are reported <specify frequency> to all data providers. This report contains the following information to help ensure data providers are aware of new additions to the schemes maintained by the FISH Terminology Working Group. Updated schemes are typically made available on an annual basis and will be downloadable from https://heritage-standards.org.uk/terminology/ 
 
 Candidate Term Submitted	Scheme	Candidate Term Status	Status Updated	New Concept URI
 FIBRE CEMENT SLATE	BUILDING_MATERIALS	ACCEPTED	28/05/2024	http://purl.org/heritagedata/schemes/eh_tbm/concepts/97716
