@@ -1,5 +1,11 @@
 # Data Validation Error Report Guidance
 
+Version| Description | Author 
+--- | --- | --- 
+1.0  | Initial version of the Data Validation Error Report Guidance | Phil Turton (Historic England)
+
+## Overview
+
 Validation rules are specified for each attribute comprising the Heritage Gateway Record. Non-compliance with these rules, in records submitted for inclusion in the Heritage Gateway, results in the identification of data validation errors.
 
 A log of data validation errors identified for each batch of records submitted for inclusion in the Heritage Gateway is emailed to the data contact specified at registration.
