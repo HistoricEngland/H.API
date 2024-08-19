@@ -1,5 +1,13 @@
 # Validation Rules Descriptions
 
+## Version History 
+
+Version| Description | Author 
+--- | --- | --- 
+1.0  | Initial version of the Validation Rules Descriptions | Jan Putzan (Ember Technology)
+
+## Overview
+
 The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchema.md) specifies which validation rules will be applied to each of the HGR’s constituent attributes. These rules are described below. 
 
 ## `Required`
