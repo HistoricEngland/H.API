@@ -27,7 +27,7 @@ During July and August 2024, you should have received an invitation to express i
 
 We will ask you when and how you would like to onboard your data to the new Heritage Gateway. This will help us create a schedule to onboard all data providers. 
 
-Three options are available to submit your Heritage Gateway records: 
+Three [Data Submission Options](DataSubmissionOptions.md) are available to submit your records to the Heritage Gateway: 
 
 1.  You can push your data to the Heritage Gateway through a RESTful API provided by Historic England (Direct API Submission). 
 
@@ -91,7 +91,7 @@ You will then be ready to start submitting your first batch of data!
 
 ## Step 5. First Data Batch Submission 
 
-See the [Data Submission Options]( for details of how to verify the success of your data submission. 
+See the [Data Submission Options](DataSubmissionOptions.md) for details of how to verify the success of your data submission. 
 
  
 
@@ -101,19 +101,13 @@ Records submitted for validation and inclusion in the Heritage Gateway must be c
 
 Validation rules are specified for each attribute comprising the Heritage Gateway Record (HGR). Submitted records that do not comply, will be identified as data validation errors. A log of data validation errors identified for each batch of records submitted will be emailed to the data contact specified at registration. These logs will include information to aid identification and rectification of errors in the source data. Guidance on the information contained in the error log report can be found here. 
 
-  
-
 You will be notified separately of the acceptance or rejection of any Candidate Terms arising from SchemeConcept validation errors identified in your data batch submission. 
-
- 
-
- 
 
 ## Step 7. Candidate Term Approval. 
 
-Submitted data values that have failed SchemeConcept validation and are reviewed by Historic England as Candidate Terms on behalf of the FISH Terminology Working Group. A Candidate Term is a term (e.g. “Ice cream factory”) that has been used locally in a dataset (e.g. Westshire HER) but has not yet been incorporated into the relevant scheme (e.g. the FISH Thesaurus of Monument Types ). More information on controlled vocabularies, the FISH thesauri and Candidate Terms is documented here. 
+Submitted data values that have failed SchemeConcept validation and are reviewed by Historic England as Candidate Terms on behalf of the [FISH Terminology Working Group](https://heritage-standards.org.uk/working-groups/). A Candidate Term is a term (e.g. “Ice cream factory”) that has been used locally in a dataset (e.g. Westshire HER) but has not yet been incorporated into the relevant scheme (e.g. the [FISH Thesaurus of Monument Types](https://heritagedata.org/live/schemes/eh_tmt2.html) ). More information on controlled vocabularies, the FISH thesauri and Candidate Terms is documented [here](https://heritage-standards.org.uk/terminology/). 
 
-Candidate Terms REJECTED by Historic England will be reported directly to your data contact specified at registration. The reports will contain information to help you identify the affected records and update these with the relevant Preferred Term. Once updated, the records will resubmit in your next data batch. Guidance on the information contained in the report can be found here  
+Candidate Terms REJECTED by Historic England will be reported directly to your data contact specified at registration. The reports will contain information to help you identify the affected records and update these with the relevant Preferred Term. Once updated, the records will resubmit in your next data batch. Guidance on the information contained in the report can be found [here](https://github.com/HistoricEngland/H.API/blob/5_documentation_updates/RejectedCandidateTermStatusReportGuidance.md)  
 
  
 
