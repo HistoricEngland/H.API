@@ -107,11 +107,11 @@ You will be notified separately of the acceptance or rejection of any Candidate 
 
 Submitted data values that have failed SchemeConcept validation and are reviewed by Historic England as Candidate Terms on behalf of the [FISH Terminology Working Group](https://heritage-standards.org.uk/working-groups/). A Candidate Term is a term (e.g. “Ice cream factory”) that has been used locally in a dataset (e.g. Westshire HER) but has not yet been incorporated into the relevant scheme (e.g. the [FISH Thesaurus of Monument Types](https://heritagedata.org/live/schemes/eh_tmt2.html) ). More information on controlled vocabularies, the FISH thesauri and Candidate Terms is documented [here](https://heritage-standards.org.uk/terminology/). 
 
-Candidate Terms REJECTED by Historic England will be reported directly to your data contact specified at registration. The reports will contain information to help you identify the affected records and update these with the relevant Preferred Term. Once updated, the records will resubmit in your next data batch. Guidance on the information contained in the report can be found [here](https://github.com/HistoricEngland/H.API/blob/5_documentation_updates/RejectedCandidateTermStatusReportGuidance.md)  
+Candidate Terms REJECTED by Historic England will be reported directly to your data contact specified at registration. The reports will contain information to help you identify the affected records and update these with the relevant Preferred Term. Once updated, the records will resubmit in your next data batch. Guidance on the information contained in the report can be found [here](RejectedCandidateTermStatusReportGuidance.md)  
 
  
 
-Records where the Candidate Term is ACCEPTED (and have no other validation errors) are automatically re-submitted to the Heritage Gateway by Historic England. ACCEPTED terms will be reported to all data providers.  
+Records where the Candidate Term is ACCEPTED (and have no other validation errors) are automatically re-submitted to the Heritage Gateway by Historic England. ACCEPTED terms will be reported to all data providers. Guidance on the information contained in the report can be found [here](AcceptedCandidateTermStatusReportGuidance.md) 
 
  
 
