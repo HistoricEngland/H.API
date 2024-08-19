@@ -121,7 +121,7 @@ If you have any queries about Candidate Terms, please contact terminologies@hist
 
 ## Step 8. New and Updated Record Batch Submissions 
 
-Each subsequent batch should exclusively contain records that have either been newly created or updated since the submission of the previous batch. Details of how to initiate batch submission according to your chosen data submission method can be found here. 
+Each subsequent batch should exclusively contain records that have either been newly created or updated since the submission of the previous batch. Details of how to initiate batch submission according to your chosen data submission method can be found [here](DataSubmissionOptions.md). 
 
  
 
