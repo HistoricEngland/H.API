@@ -1,9 +1,16 @@
 # ACCEPTED Candidate Term Status Report Guidance
+
+## Version History 
+
+Version| Description | Author 
+--- | --- | --- 
+1.0  | Initial version of the ACCEPTED Candidate Term Status Report Guidance | Phil Turton (Historic England)
+
+
+## Overview
 SchemeConcept data validation errors are reviewed by Historic England as *Candidate Terms* on behalf of the [Forum on Information Standards in Heritage (FISH)](https://heritage-standards.org.uk/)   [Terminology Working Group](https://heritage-standards.org.uk/working-groups/). A *Candidate Term* is a term (e.g. “Ice cream factory”) that has been used locally in a dataset (e.g. Westshire HER) but has not yet been incorporated into the relevant scheme (e.g. the [FISH Thesaurus of Monument Types](https://heritagedata.org/live/schemes/eh_tmt2.html) ). More information on controlled vocabularies, the FISH thesauri and Candidate Terms is documented [here](https://heritage-standards.org.uk/terminology/). 
 
-ACCEPTED Candidate Terms are reported <specify frequency> to all data providers. This report contains the following information to help ensure data providers are aware of new additions to the schemes maintained by the FISH Terminology Working Group. 
-
-Updated schemes are typically made available on an annual basis and will be downloadable from https://heritage-standards.org.uk/terminology/ 
+ACCEPTED Candidate Terms are reported <specify frequency> to all data providers. This report contains the following information to help ensure data providers are aware of new additions to the schemes maintained by the FISH Terminology Working Group: 
 
 ## Candidate Term Submitted
 This column records submitted data values (*e.g. FIBRE CEMENT SLATE*) that failed SchemeConcept validation that have been reviewed by Historic England as *Candidate Terms* on behalf of the [FISH Terminology Working Group](https://heritage-standards.org.uk/working-groups/). and confirmed as ACCEPTED. 
