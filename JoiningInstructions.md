@@ -99,7 +99,7 @@ See the [Data Submission Options](DataSubmissionOptions.md) for details of how t
 
 Records submitted for validation and inclusion in the Heritage Gateway must be compliant with the Heritage Gateway Record (HGR) schema. 
 
-[Validation rules](DataValidationRulesDescriptions.md) are specified for each attribute comprising the Heritage Gateway Record (HGR). Submitted records that do not comply, will be identified as data validation errors. A log of data validation errors identified for each batch of records submitted will be emailed to the data contact specified at registration. These logs will include information to aid identification and rectification of errors in the source data. Guidance on the information contained in the error log report can be found here. 
+[Validation rules](DataValidationRulesDescriptions.md) are specified for each attribute comprising the Heritage Gateway Record (HGR). Submitted records that do not comply, will be identified as data validation errors. A log of data validation errors identified for each batch of records submitted will be emailed to the data contact specified at registration. These logs will include information to aid identification and rectification of errors in the source data. Guidance on the information contained in the error log report can be found [here](DataValidationErrorReportGuidance.md). 
 
 You will be notified separately of the acceptance or rejection of any Candidate Terms arising from SchemeConcept validation errors identified in your data batch submission. 
 
