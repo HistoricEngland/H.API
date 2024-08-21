@@ -1,5 +1,14 @@
 # New Heritage Gateway - Overview 
 
+## Version History 
+
+Version| Description | Author 
+--- | --- | --- 
+1.0  | Initial version of the New Heritage Gateway - Overview | Phil Turton (Historic England)
+
+
+## Overview
+
 Welcome to the Historic England API (H.API) project, designed to facilitate access to national and local heritage information datasets, including [Historic Environment Records](https://historicengland.org.uk/advice/technical-advice/information-management/hers/) (HERS). 
 
 The project will replace the [current Heritage Gateway](https://www.heritagegateway.org.uk/gateway/) (which is now 15 years old and fails accessibility and cyber essential standards), with a system that ensures users experience reliable and consistent search results. The new Gateway’s user interface will comprise of redesigned search and results display pages on the Historic England website.
