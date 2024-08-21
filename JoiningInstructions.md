@@ -11,7 +11,7 @@ Welcome to the Heritage Gateway. This short guide takes you through each step to
 
 ## Background 
 
-The Heritage Gateway is managed by Historic England in partnership with ALGAO and IHBC. A key objective of this partnership is to provide integrated access to local and national historic environment information resources under the Heritage [Information Access Simplified](https://historicengland.org.uk/research/support-and-collaboration/heritage-information-access-simplified/strategic-background-to-hias/) (HIAS) strategy. We are replacing the current website, now 15 years old, to improve user experience and to meet present-day accessibility and cyber essential standards. 
+The Heritage Gateway is managed by Historic England in partnership with ALGAO and IHBC. A key objective of this partnership is to provide integrated access to local and national historic environment information resources under the [Heritage Information Access Simplified](https://historicengland.org.uk/research/support-and-collaboration/heritage-information-access-simplified/strategic-background-to-hias/) (HIAS) strategy. We are replacing the current website, now 15 years old, to improve user experience and to meet present-day accessibility and cyber essential standards. 
 
 Data you provide to the new Heritage Gateway will be uploaded to a GraphDB data store before being published to the Heritage Gateway user interface on the Historic England website. Making this change to the Heritage Gateway standardises the data, giving the end user consistent results to search requests. 
 
@@ -39,7 +39,7 @@ Three [Data Submission Options](DataSubmissionOptions.md) are available to submi
 
 The method best suiting your circumstance will depend on factors, such as, the level of in-house IT support you can call on and if you use a third-party service. 
 
-We are supporting the implementation of API services by third-party suppliers (e.g. HBSMR Gateway 2.0) who will be able to handle the new process for you.  
+We are supporting the implementation of API services by third-party suppliers (e.g. HBSMR API 2.0) who will be able to handle the new process for you.  
 
 Records submitted for validation and inclusion in the Heritage Gateway must be compliant with the Heritage Gateway Record (HGR) schema. Under options one and three, we can help you map your data to the schema. 
 
@@ -55,7 +55,7 @@ We will send you an email ahead of your actual joining date that will:
 
 Confirm the date agreed to start your joining process 
 
-Give details of your funding offer (typically this will be £1,500 per dataset). We will request financial information that will allow us to raise a purchase order for you to return a corresponding invoice. 
+Give details of your funding offer. We will request financial information that will allow us to raise a purchase order for you to return a corresponding invoice. 
 
 Contain a link to your Content Provision Agreement (CPA) for reading and signing. The areas that have been updated in this revised CPA will be highlighted to assist with understanding the changes. 
 
@@ -99,7 +99,7 @@ See the [Data Submission Options](DataSubmissionOptions.md) for details of how t
 
 Records submitted for validation and inclusion in the Heritage Gateway must be compliant with the Heritage Gateway Record (HGR) schema. 
 
-Validation rules are specified for each attribute comprising the Heritage Gateway Record (HGR). Submitted records that do not comply, will be identified as data validation errors. A log of data validation errors identified for each batch of records submitted will be emailed to the data contact specified at registration. These logs will include information to aid identification and rectification of errors in the source data. Guidance on the information contained in the error log report can be found here. 
+[Validation rules]( are specified for each attribute comprising the Heritage Gateway Record (HGR). Submitted records that do not comply, will be identified as data validation errors. A log of data validation errors identified for each batch of records submitted will be emailed to the data contact specified at registration. These logs will include information to aid identification and rectification of errors in the source data. Guidance on the information contained in the error log report can be found here. 
 
 You will be notified separately of the acceptance or rejection of any Candidate Terms arising from SchemeConcept validation errors identified in your data batch submission. 
 
