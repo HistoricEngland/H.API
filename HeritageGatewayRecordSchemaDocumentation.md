@@ -52,7 +52,7 @@ The minimum attributes comprising the CORE HGR are defined along with additional
 **Mandatory in HGR**: Y\
 **Data Type**: String\
 **Description**: A unique number, or number and character combination, allocated to identify one entry in an information system. (MIDAS)\
-**Validation Rules**: [Required](ValidationRules.md#required), [String](ValidationRules.md#string)\
+**Validation Rules**: [Required](ValidationRules.md#required), [String](ValidationRules.md#string), [PrimaryReferenceNumberUnique](ValidationRules.md#primaryreferencenumberunique)\
 **Acceptable Values**: Alphanumeric
 
 ---
@@ -116,7 +116,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y \
 **Data Type**: Array\
 **Description**: An array that contains a combination of one or more MonumentDatedType objects and recording information that describes the construction and use phases of the Heritage Asset.\
-**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array), [Min:1](ValidationRules.md#min)
+**Validation Rules**: [Required](ValidationRules.md#required), [Array](ValidationRules.md#array), [Min:1](ValidationRules.md#min), [HeritagePeriodRequired](ValidationRules.md#heritageperiodrequired), [HeritageDatesRequired](ValidationRules.md#heritagedatesrequired), [HeritageDatesOmitted](ValidationRules.md#heritagedatesomitted), [DatesOrder](ValidationRules.md#datesorder)
 
 ```
 {
@@ -160,7 +160,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -170,7 +170,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -467,7 +467,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An optional array documenting artefacts and ecofacts found in association with the Heritage Asset. \
-**Validation Rules**: [Array](ValidationRules.md#array)
+**Validation Rules**: [Array](ValidationRules.md#array), [HeritagePeriodRequired](ValidationRules.md#heritageperiodrequired), [HeritageDatesRequired](ValidationRules.md#heritagedatesrequired), [HeritageDatesOmitted](ValidationRules.md#heritagedatesomitted), [DatesOrder](ValidationRules.md#datesorder)
 
 ```
 {
@@ -508,7 +508,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials).(MIDAS)\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -518,7 +518,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials). (MIDAS)\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -577,7 +577,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array used to record information about watercraft (vessels of every description that ply on or in the water) associated with the Historic Asset. \
-**Validation Rules**: [Array](ValidationRules.md#array)
+**Validation Rules**: [Array](ValidationRules.md#array), [HeritagePeriodRequired](ValidationRules.md#heritageperiodrequired), [HeritageDatesRequired](ValidationRules.md#heritagedatesrequired), [HeritageDatesOmitted](ValidationRules.md#heritagedatesomitted), [DatesOrder](ValidationRules.md#datesorder)
 
 ```
 {
@@ -618,7 +618,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -628,7 +628,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -687,7 +687,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: Array used to record information about aircraft (all heavier-than-air flying machines including airships, balloons, unmanned aerial vehicles etc.) associated with the Historic Asset\
-**Validation Rules**: [Array](ValidationRules.md#array)
+**Validation Rules**: [Array](ValidationRules.md#array), [HeritagePeriodRequired](ValidationRules.md#heritageperiodrequired), [HeritageDatesRequired](ValidationRules.md#heritagedatesrequired), [HeritageDatesOmitted](ValidationRules.md#heritagedatesomitted), [DatesOrder](ValidationRules.md#datesorder)
 
 ```
 {
@@ -728,7 +728,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The earliest date of a date range. Associated with an End Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -738,7 +738,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](ValidationRules.md#dateformats), [DateInPast](ValidationRules.md#dateinpast)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
