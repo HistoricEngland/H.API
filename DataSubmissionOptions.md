@@ -55,7 +55,7 @@ External API Harvesting, operates as an automated retrieval process, with HE pul
 #### API Preparation Guidelines
 + Ensure that your API supports OAuth for authorization and that the specified API endpoint is secured using an Authorization header. We assume that the authorization endpoint is located at `/connect/token` and it accepts POST requests with the following payload:
 
-```json
+```
 {
     'grant_type': 'client_credentials',
     'scope': 'openid',
