@@ -53,8 +53,18 @@ External API Harvesting, operates as an automated retrieval process, with HE pul
 + Ensure your data structure aligns with the [schema](HGRSchemaDocumentation.md).
 
 #### API Preparation Guidelines
-+ Ensure your API supports a paginated retrieval of compliant HGR records and allows `page` and `per_page` parameters within the request structure to facilitate efficient data navigation and extraction.
-+ Ensure your API supports an `updated_since` query parameter, allowing for the refinement of result sets based on the temporal attribute indicating the last modification timestamp. The ETL process operates on the assumption that only new/updated records are submitted.
++ Ensure that your API supports OAuth for authorization and that the specified API endpoint is secured using an Authorization header. We assume that the authorization endpoint is located at `/connect/token` and it accepts POST requests with the following payload:
+
+```json
+{
+    'grant_type': 'client_credentials',
+    'scope': 'openid',
+    'client_id': 'PROVIDED_USERNAME',
+    'client_secret': 'PROVIDED_PASSWORD'
+}
+```
++ Ensure that your API supports a paginated retrieval of compliant HGR records and allows `page` and `per_page` parameters within the request structure to facilitate efficient data navigation and extraction.
++ Ensure that your API supports an `updated_since` query parameter, allowing for the refinement of result sets based on the temporal attribute indicating the last modification timestamp. The ETL process operates on the assumption that only new/updated records are submitted.
 + Your API's response payload should include a `metadata` object, detailing the counts of monument records (`total_count`, `published_count`, `submitted_count`). This should dynamically adjust in accordance with the `updated_since` parameter, providing a granular view of the dataset's state over time.
 
 #### Monitoring and Error Handling
