@@ -1,4 +1,14 @@
-# Validation Rules Explanation
+# Validation Rules Descriptions
+
+## Version History 
+
+Version| Description | Author 
+--- | --- | --- 
+1.0  | Initial version of the Validation Rules Descriptions | Jan Putzan (Ember Technology)
+
+## Overview
+
+The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchema.md) specifies which validation rules will be applied to each of the HGR’s constituent attributes. These rules are described below. 
 
 ## `Required`
 The `Required` rule means that the field must be present in the input data and cannot be empty. This ensures that a value for the specified field is provided and is not null or an empty string.
@@ -42,3 +52,22 @@ The `SpatialFeatureGeometry` rule validates that the field contains a geometric 
 
 ## `DigitalObjectIdentifier`
 The `DigitalObjectIdentifier` rule verifies that the field contains a valid DOI. DOIs are standardized identifiers used to uniquely identify and provide a permanent link to digital objects, such as academic publications.
+
+## HeritagePeriodRequired
+The `HeritagePeriodRequired` rule ensures at least one period is provided if start and end dates are not included.
+
+## HeritageDatesRequired
+The `HeritageDatesRequired` rule requires both start and end dates to be included if no periods are provided.
+
+## HeritageDatesOmitted
+The `HeritageDatesOmitted` rule ensures no start and end dates are provided if one of the supplied period is UNCERTAIN. 
+
+## DateInPast
+The `DateInPast` makes sure all dates are in the past.
+
+## DatesOrder
+The `DatesOrder` rule validates the sequence of dates: the start date must precede the end date.
+
+## PrimaryReferenceNumberUnique
+The `PrimaryReferenceNumberUnique` verifies the uniqueness of the primary reference number within the current submission batch.
+
