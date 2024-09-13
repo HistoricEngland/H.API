@@ -31,7 +31,7 @@ Direct API Submission requires the data provider to write an integration that wi
 +	Follow the procedure outlined the [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md) using your username and password to authenticate and obtain an access token required for the data submission.
 #### Prepare Your Data:
 +	Organise your data into a submission batch according to the API documentation.
-+	Ensure your data structure aligns with the [schema](HGRSchemaDocumentation.md).
++	Ensure your data structure aligns with the [schema](HeritageGatewayRecordSchemaDocumentation.md).
 
 #### Submit Your Data:
 +	Use tools like cURL or Postman to interact with the HE Heritage Gateway API endpoints.
@@ -50,7 +50,7 @@ External API Harvesting, operates as an automated retrieval process, with HE pul
 +	Follow the [Joining Instructions](JoiningInstructions.md), register to submit data to the Heritage Gateway, select the External API Harvesting data submission method and provide the URL of the API endpoint and the user name and password needed by HE to access this.
 
 #### Prepare Your Data
-+ Ensure your data structure aligns with the [schema](HGRSchemaDocumentation.md).
++ Ensure your data structure aligns with the [schema](HeritageGatewayRecordSchemaDocumentation.md).
 
 #### API Preparation Guidelines
 + Ensure that your API supports OAuth for authorization and that the specified API endpoint is secured using an Authorization header. We assume that the authorization endpoint is located at `/connect/token` and it accepts POST requests with the following payload:
@@ -86,7 +86,7 @@ The third approach, FTP Server Access, offers a more traditional route, resembli
 
 #### Prepare Your Data Files:
 +	Organise your data (detail TBC)
-+	Ensure your data structure aligns with the [schema](HGRSchemaDocumentation.md).
++	Ensure your data structure aligns with the [schema](HeritageGatewayRecordSchemaDocumentation.md).
 
 #### Upload Your Data:
 +	Open your FTP client and enter the server details (host, username, password) to establish a connection.
