@@ -743,7 +743,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 
 ---
 
-### Attribute: `record.historicCraft.*.periods`
+### Attribute: `record.historicAircraft.*.periods`
 **CORE HGR attribute or OPTIONAL attribute**: CORE\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
