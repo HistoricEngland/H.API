@@ -130,7 +130,7 @@ curl -X POST https://api.example.com/api/batch/submit \
 
 ## Swagger API documentation
 
-https://hapi-platform-staging.embertech.link/api/documentation
+https://hapi-platform-demo.embertech.link/api/documentation
 
 ## Security Notes
 
