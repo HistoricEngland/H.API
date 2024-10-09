@@ -29,9 +29,9 @@ We will ask you when and how you would like to onboard your data to the new Heri
 
 Three [Data Submission Options](DataSubmissionOptions.md) are available to submit your records to the Heritage Gateway: 
 
-1.  You can push your data to the Heritage Gateway through a RESTful API provided by Historic England (Direct API Submission). 
+1.  You can push your data to the Heritage Gateway through a RESTful API provided by Historic England (Direct API Submission). Interfaces are being written for Arches and HEROS software systems for this option
 
-2.  You can give us access to an endpoint of an API we can call to pull your records at scheduled intervals (External API Harvesting). 
+2.  You can give us access to an endpoint of an API we can call to pull your records at scheduled intervals (External API Harvesting). HBSMR API 2.0 Gateway Service supplied by Idox is utilising this option.
 
 3.  You can upload data files periodically onto an FTP server we provide (FTP Server Access for File Uploads).  
 
@@ -39,7 +39,7 @@ Three [Data Submission Options](DataSubmissionOptions.md) are available to submi
 
 The method best suiting your circumstance will depend on factors, such as, the level of in-house IT support you can call on and if you use a third-party service. 
 
-We are supporting the implementation of API services by third-party suppliers (e.g. HBSMR API 2.0) who will be able to handle the new process for you.  
+We are supporting the implementation of API services by third-party suppliers (see under options one and two above) who will be able to handle the new process for you.  
 
 Records submitted for validation and inclusion in the Heritage Gateway must be compliant with the Heritage Gateway Record (HGR) schema. Under options one and three, we can help you map your data to the schema. 
 
@@ -69,7 +69,7 @@ Registration to submit data is via a secure online form and we will send you a l
 
 - Dataset name (the formal name of the heritage dataset from which you wish to submit records to the Heritage Gateway. A separate registration is required for each dataset). 
 
-- Technical contact email address (the principal point of contact within your organisation or IT contact for queries and issues related to technical aspects of your data and their submission to HE).  
+- Technical contact email address (the principal point of contact within your organisation or IT contact for queries and issues related to technical aspects of your data and their submission to Historic England).  
 
 - Data contact email address (the principal point of contact for data content queries and issues, and for receipt of data validation error reports). 
 
