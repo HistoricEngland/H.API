@@ -1,16 +1,6 @@
 # Heritage Gateway Documentation
 
-Welcome to the Heritage Gateway documentation repository. This repository contains various guides and documentation to help you understand and interact with the Heritage Gateway system.
-
-## Table of Contents
-
-1. Overview
-2. Guides
-3. [Schemas and Validation](#schemas-and-validation)
-4. [API Documentation](#api-documentation)
-5. Reports
-6. License
-7. Contact
+Welcome to the Heritage API documentation repository. This repository contains various guides and documentation to allow you to submit data to the Heritage Gateway.
 
 ## Overview
 
@@ -39,11 +29,7 @@ The Heritage Gateway is managed by Historic England in partnership with ALGAO an
 
 ## License
 
-This project is licensed under the MIT License. See the 
-
-LICENSE.txt
-
- file for details.
+This project is licensed under the MIT License. For more information, see the [LICENSE](LICENSE) file.
 
 ## Contact
 
