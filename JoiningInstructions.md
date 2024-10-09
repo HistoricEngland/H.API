@@ -5,7 +5,7 @@
 Version| Description | Author 
 --- | --- | --- 
 1.0  | Initial version of the Joining Instructions | Jane Golding (Historic England)
-1.1  | Minor revision | Jane Golding (Historic England)
+1.1  | Minor revisions | Jane Golding (Historic England)
 
 Welcome to the Heritage Gateway. This short guide takes you through each step to join the Heritage Gateway. 
 
