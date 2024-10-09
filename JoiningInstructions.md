@@ -29,9 +29,9 @@ We will ask you when and how you would like to onboard your data to the new Heri
 
 Three [Data Submission Options](DataSubmissionOptions.md) are available to submit your records to the Heritage Gateway: 
 
-1.  You can push your data to the Heritage Gateway through a RESTful API provided by Historic England **(Direct API Submission)**. Interfaces are being written for Arches and HEROS software systems for this option
+1.  You can push your data to the Heritage Gateway through a RESTful API provided by Historic England **(Direct API Submission)**. Interfaces are being written for Arches and HEROS software systems for this option.
 
-2.  You can give us access to an endpoint of an API we can call to pull your records at scheduled intervals **(External API Harvesting)**. HBSMR API 2.0 Gateway Service supplied by Idox is utilising this option.
+2.  You can give us access to an endpoint of an API we can call to pull your records at scheduled intervals **(External API Harvesting)**. The HBSMR API 2.0 Gateway Service supplied by Idox is utilising this option.
 
 3.  You can upload data files periodically onto an FTP server we provide **(FTP Server Access for File Uploads)**.  
 
