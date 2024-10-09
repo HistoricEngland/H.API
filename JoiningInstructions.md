@@ -44,7 +44,7 @@ We are supporting the implementation of API services by third-party suppliers (s
 
 Records submitted for validation and inclusion in the Heritage Gateway must be compliant with the Heritage Gateway Record (HGR) schema. Under options one and three, we can help you map your data to the schema. 
 
-You can read more about the background to the redevelopment work  [here](NewHeritageGatewayOverview.md)  and the different methods made available for data supply [here](DataSubmissionOptions.md)  
+You can read more about the background to the redevelopment work  [here](NewHeritageGatewayOverview.md)  and the different methods made available for data supply [here](DataSubmissionOptions.md) . 
 
 Please do contact us at this point to talk through any queries. Once you are happy to proceed, we will send you an invitation to join. 
 
