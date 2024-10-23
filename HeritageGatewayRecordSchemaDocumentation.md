@@ -8,6 +8,7 @@ Version| Description | Author
 1.1  | Addition of Overview section and updates to attribute descriptions | Jan Putzan (Ember Technology)
 1.2  | Changes following the review of the Heritage Gateway Schema | Jan Putzan (Ember Technology)
 1.3  | Capturing optional relationship with the Related Monument Records | Jan Putzan (Ember Technology)
+1.4  | Addition of "delete" flag to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -41,7 +42,8 @@ The minimum attributes comprising the CORE HGR are defined along with additional
 		"images": [ ... ],
 		"protectedStatuses": [ ... ],
 		"otherStatuses": [ ... ],
-		"lastUpdated": "string"
+		"lastUpdated": "string",
+		"delete": boolean
 	}
 }
 ```
@@ -1038,3 +1040,13 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Description**: The date on which an inventory entry was most recently revised or updated (MIDAS)\
 **Validation Rules**: [Required](DataValidationRulesDescriptions.md#required), [Date](DataValidationRulesDescriptions.md#date)\
 **Acceptable Values**: A date represented in ISO 8601 UTC format
+
+---
+
+### Attribute: `record.delete`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: N\
+**Data Type**: Boolean|Integer|String\
+**Description**: A flag which determines if a record should be deleted. \
+**Validation Rules**: [Boolean](DataValidationRulesDescriptions.md#boolean)\
+**Acceptable Values**: true|false|1|0|"1"|"0"
