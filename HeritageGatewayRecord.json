@@ -122,6 +122,7 @@
 		"otherStatuses": [
 			"string"
 		],
-		"lastUpdated": "string"
+		"lastUpdated": "string",
+		"delete": boolean
 	}
 }
