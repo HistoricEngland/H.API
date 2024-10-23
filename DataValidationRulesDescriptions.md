@@ -71,3 +71,6 @@ The `DatesOrder` rule validates the sequence of dates: the start date must prece
 ## PrimaryReferenceNumberUnique
 The `PrimaryReferenceNumberUnique` verifies the uniqueness of the primary reference number within the current submission batch.
 
+## Boolean
+The field under validation must be able to be cast as a boolean. Accepted input are true, false, 1, 0, "1", and "0".
+
