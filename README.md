@@ -12,17 +12,13 @@ The Heritage Gateway is managed by Historic England in partnership with ALGAO an
 - [Data Submission Options](DataSubmissionOptions.md): Details the three available methods for submitting data to the Heritage Gateway.
 - [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md): Instructions for submitting data via the RESTful API provided by Historic England.
 
-## Schemas and Validation
+## Schema and Validation
 
 - [Heritage Gateway Record Schema Documentation](HeritageGatewayRecordSchemaDocumentation.md): Detailed description of the schema defining the key aspects of Heritage Gateway Records.
 - [Data Validation Rules Descriptions](DataValidationRulesDescriptions.md): Specifies the validation rules applied to each attribute of the Heritage Gateway Record.
 - [Data Validation Error Report Guidance](DataValidationErrorReportGuidance.md): Information on the data validation error logs and how to rectify errors in the source data.
 
-## API Documentation
-
-- [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md): Steps required to submit Heritage Gateway Record compliant records via the RESTful API.
-
-## Reports
+## Candidate Terms
 
 - [Accepted Candidate Term Status Report Guidance](AcceptedCandidateTermStatusReportGuidance.md): Information on the reporting of accepted candidate terms.
 - [Rejected Candidate Term Status Report Guidance](RejectedCandidateTermStatusReportGuidance.md): Information on the reporting of rejected candidate terms.
