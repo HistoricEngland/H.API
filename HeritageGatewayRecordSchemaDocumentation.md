@@ -1047,6 +1047,6 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Boolean|Integer|String\
-**Description**: A flag which determines if a record should be deleted. \
+**Description**: A flag which determines if a record should be deleted. If included and evaluates to true no other attributes apart from `record.primaryReferenceNumber` are required. \
 **Validation Rules**: [Boolean](DataValidationRulesDescriptions.md#boolean)\
 **Acceptable Values**: true|false|1|0|"1"|"0"
