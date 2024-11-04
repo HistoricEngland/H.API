@@ -29,7 +29,7 @@ The `Url` rule verifies that the field's value is a valid URL. This means that t
 
 The rule `Min` when applied to an array ensures that the array contains at least a minimum specified number of elements.
 
-## `In`
+## `In`/`InCaseInsensitive`
 The `In` rule checks if the field's value is within a specific set of values. This rule is used to validate that the value is one of the allowed options.
 
 ## `Array`
