@@ -9,6 +9,7 @@ Version| Description | Author
 1.2  | Changes following the review of the Heritage Gateway Schema | Jan Putzan (Ember Technology)
 1.3  | Capturing optional relationship with the Related Monument Records | Jan Putzan (Ember Technology)
 1.4  | Addition of "delete" flag to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
+1.5  | Corrected CORE/OPTIONAL status for `periods` attribute and clarified its mandatory logic in `objectFinds` object | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -526,8 +527,8 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 ---
 
 ### Attribute: `record.objectFinds.*.periods`
-**CORE HGR attribute or OPTIONAL attribute**: CORE\
-**Mandatory in HGR**: Y (if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
+**Mandatory in HGR**: Y (if record.objectFinds attribute is present AND if attribute startDate and endDate have been omitted, if 'UNCERTAIN' then attribute startDate and endDate must have been omitted)\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing periods for Herritage Asset. (MIDAS)\
 **Validation Rules**: [Array](DataValidationRulesDescriptions.md#array)
@@ -636,7 +637,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 ---
 
 ### Attribute: `record.maritimeCraft.*.periods`
-**CORE HGR attribute or OPTIONAL attribute**: CORE\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing periods for Herritage Asset. (MIDAS)\
@@ -746,7 +747,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 ---
 
 ### Attribute: `record.historicAircraft.*.periods`
-**CORE HGR attribute or OPTIONAL attribute**: CORE\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: Array\
 **Description**: An array that contains one or more strings representing periods for Herritage Asset. (MIDAS)\
