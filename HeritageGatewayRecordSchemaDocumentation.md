@@ -10,6 +10,7 @@ Version| Description | Author
 1.3  | Capturing optional relationship with the Related Monument Records | Jan Putzan (Ember Technology)
 1.4  | Addition of "delete" flag to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
 1.5  | Corrected CORE/OPTIONAL status for `periods` attribute and clarified its mandatory logic in `objectFinds` object | Jan Putzan (Ember Technology)
+1.6  | Corrected CORE/OPTIONAL status for attributes in `record.monumentSources` object | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -410,7 +411,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 ---
 
 ### Attribute: `record.monumentSources.*.sourceNo`
-**CORE HGR attribute or OPTIONAL attribute**: CORE\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Descriptions often include numbered references to a bibliographic, archival, or personal communication source. The number relates to the sources listed in association with the record and helps indicate which part of the description relates to which source.\
@@ -419,7 +420,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 ---
 
 ### Attribute: `record.monumentSources.*.sourceReference`
-**CORE HGR attribute or OPTIONAL attribute**: CORE\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: Specific reference within a bibliographic or archive item. (MIDAS). Used to record details specific to the volume number, chronological designation, page numbers, figures and plates etc.\
@@ -437,7 +438,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 ---
 
 ### Attribute: `record.monumentSources.*.sourceDigitalObjectIdentifier`
-**CORE HGR attribute or OPTIONAL attribute**: CORE\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: A unique set of letters, characters and numbers that gives a persistent link to a resource on the internet, e.g. https://doi.org/10.5284/1092416. \
@@ -457,7 +458,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 ---
 
 ### Attribute: `record.monumentSources.*.sourceUrl`
-**CORE HGR attribute or OPTIONAL attribute**: CORE\
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL\
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: A unique set of letters, characters and numbers referencing a web resource that specifies its location and a mechanism for retrieving it.\
