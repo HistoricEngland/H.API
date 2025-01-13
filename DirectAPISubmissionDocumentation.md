@@ -9,6 +9,7 @@ Version| Description | Author
 1.1  | Addition of the batch creation endpoint | Jan Putzan (Ember Technology)
 1.2  | Addition of Swagger API documentation  | Jan Putzan (Ember Technology)
 1.3  | Changed the transmission method for batch submission endpoint  | Jan Putzan (Ember Technology)
+1.4  | Addition of Counting Explained section and updates to Batch Creation | Jan Putzan (Ember Technology)
 
 
 ## Overview
@@ -41,7 +42,12 @@ This document outlines the steps required to submit Heritage Gateway Record (HGR
 
 ## Batch Creation
 
-To initiate the record submission process, begin by generating a new batch. This is achieved by submitting the current counts of monument records to the designated endpoint. Upon successful creation, the system will return a unique BATCH_ID. This BATCH_ID must be included in all subsequent API requests related to the current batch. Note that for each new batch of records, a fresh BATCH_ID is required. This necessitates the resubmission of the latest monument record counts to generate a new ID. Ensure that the counts are updated accurately with each new batch submission.
+To initiate the record submission process, begin by generating a new batch. This is achieved by submitting the current counts of monument records to the designated endpoint. Upon successful creation, the system will return a unique `BATCH_ID`. This `BATCH_ID` must be included in all subsequent API requests related to the current batch. You can make multiple requests to the API breaking down the process of sending data, but all requests should contribute to the same submission. Note that for each new submission, a fresh `BATCH_ID` is required. This necessitates the resubmission of the latest monument record counts to generate a new ID. Ensure that the counts are updated accurately with each new batch submission.
+
+### Counting Explained
+**Total Count**: The total count of records in your entire dataset. \
+**Published Count**: The total count of published (not private) records in your dataset. \
+**Submitted Count**: The total number of records to be submitted in the current submission batch. \
 
 ### Creating a New Batch
 
