@@ -47,7 +47,7 @@ To initiate the record submission process, begin by generating a new batch. This
 ### Counting Explained
 **Total Count**: The total count of records in your entire dataset. \
 **Published Count**: The total count of published (not private) records in your dataset. \
-**Submitted Count**: The total number of records to be submitted in the current submission batch. \
+**Submitted Count**: The total number of records to be submitted in the current submission batch.
 
 ### Creating a New Batch
 
