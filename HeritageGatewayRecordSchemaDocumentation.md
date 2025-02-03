@@ -9,8 +9,9 @@ Version| Description | Author
 1.2  | Changes following the review of the Heritage Gateway Schema | Jan Putzan (Ember Technology)
 1.3  | Capturing optional relationship with the Related Monument Records | Jan Putzan (Ember Technology)
 1.4  | Addition of "delete" flag to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
-1.5  | Corrected CORE/OPTIONAL status for `periods` attribute and clarified its mandatory logic in `objectFinds` object | Jan Putzan (Ember Technology)
+1.5  | Corrected CORE/OPTIONAL status for `periods` attribute and clarified its mandatory logic in `record.objectFinds` object | Jan Putzan (Ember Technology)
 1.6  | Corrected CORE/OPTIONAL status for attributes in `record.monumentSources` object | Jan Putzan (Ember Technology)
+1.7  | Addition of `record.publishedRecordUrl` attribute to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -1042,6 +1043,15 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Description**: The date on which an inventory entry was most recently revised or updated (MIDAS)\
 **Validation Rules**: [Required](DataValidationRulesDescriptions.md#required), [Date](DataValidationRulesDescriptions.md#date)\
 **Acceptable Values**: A date represented in ISO 8601 UTC format
+
+---
+
+### Attribute: `record.publishedRecordUrl`
+**CORE HGR attribute or OPTIONAL attribute**: OPTIONAL \
+**Mandatory in HGR**: N \
+**Data Type**: String \
+**Description**: A unique set of letters, characters and numbers referencing a web resource that specifies its location and a mechanism for retrieving it. The URL of the record where published and publicly available on the internet; e.g.  https://www.somersetheritage.org.uk/record/10013 \
+**Validation Rules**: [Url](DataValidationRulesDescriptions.md#url)
 
 ---
 
