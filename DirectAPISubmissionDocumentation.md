@@ -10,7 +10,7 @@ Version| Description | Author
 1.2  | Addition of Swagger API documentation  | Jan Putzan (Ember Technology)
 1.3  | Changed the transmission method for batch submission endpoint  | Jan Putzan (Ember Technology)
 1.4  | Addition of Record Counts Explained section and updates to Batch Creation | Jan Putzan (Ember Technology)
-
+1.5  | Updated the API endpoint to point to production environment | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -20,7 +20,7 @@ This document outlines the steps required to submit Heritage Gateway Record (HGR
 
 ### Obtaining an Access Token
 
-- **Endpoint**: `https://api.example.com/oauth/token`
+- **Endpoint**: `https://provider.historicenglandservices.org.uk/oauth/token`
 - **Method**: `POST`
 - **Headers**: 
   - `Content-Type: application/json`
@@ -51,7 +51,7 @@ To initiate the record submission process, begin by generating a new submission 
 
 ### Creating a New Batch
 
-- **Endpoint**: `https://api.example.com/api/batch/create`
+- **Endpoint**: `https://provider.historicenglandservices.org.uk/api/batch/create`
 - **Method**: `POST`
 - **Headers**:
   - `Authorization: Bearer YOUR_ACCESS_TOKEN`
@@ -77,7 +77,7 @@ Each batch should exclusively contain records that have either been newly create
 
 ### Submit Batch
 
-- **Endpoint**: `https://api.example.com/batch/submit`
+- **Endpoint**: `https://provider.historicenglandservices.org.uk/api/batch/submit`
 - **Method**: `POST`
 - **Headers**: 
   - `Authorization: Bearer YOUR_ACCESS_TOKEN`
@@ -107,20 +107,20 @@ Each batch should exclusively contain records that have either been newly create
 ### Examples of cURL Commands
 
 ```bash
-curl -X POST https://api.example.com/oauth/token \
+curl -X POST https://provider.historicenglandservices.org.uk/oauth/token \
   -H "Content-Type: application/json" \
   -d '{"username": "your_username","password": "your_password"}'
 ```
 
 ```bash
-curl -X POST https://api.example.com/api/batch/create \
+curl -X POST https://provider.historicenglandservices.org.uk/api/batch/create \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"total_count": 100, "published_count": 50, "submitted_count": 30}'
 ```
 
 ```bash
-curl -X POST https://api.example.com/api/batch/submit \
+curl -X POST https://provider.historicenglandservices.org.uk/api/batch/submit \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"batch_id": BATCH_ID, "records": [{...}, {...}, ...]}' \
@@ -136,7 +136,7 @@ curl -X POST https://api.example.com/api/batch/submit \
 
 ## Swagger API documentation
 
-https://hapi-platform-demo.embertech.link/api/documentation
+https://provider.historicenglandservices.org.uk/api/documentation
 
 ## Security Notes
 
