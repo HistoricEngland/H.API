@@ -12,6 +12,7 @@ Version| Description | Author
 1.5  | Corrected CORE/OPTIONAL status for `periods` attribute and clarified its mandatory logic in `record.objectFinds` object | Jan Putzan (Ember Technology)
 1.6  | Corrected CORE/OPTIONAL status for attributes in `record.monumentSources` object | Jan Putzan (Ember Technology)
 1.7  | Addition of `record.publishedRecordUrl` attribute to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
+1.8  | Removal of multiple scheme concept validation for `materials.*` attribute values | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -572,8 +573,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Data Type**: String\
 **Description**: The basic materials and media of which the Object is composed. (MIDAS)\
 **Validation Rules**: [String](DataValidationRulesDescriptions.md#string), [SchemeConcept](DataValidationRulesDescriptions.md#schemeconcept)\
-**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.\
-Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html (including narrower concepts) prefLabel or altLabel.
+**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
@@ -682,8 +682,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Data Type**: String\
 **Description**: The basic materials and media of which a Maritime Craft is constructed.\
 **Validation Rules**: [String](DataValidationRulesDescriptions.md#string), [SchemeConcept](DataValidationRulesDescriptions.md#schemeconcept)\
-**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.\
-Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html (including narrower concepts) prefLabel or altLabel.
+**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
@@ -792,8 +791,7 @@ Historic England Maritime Object Material: https://heritagedata.org/live/schemes
 **Data Type**: String\
 **Description**: The basic materials and media of which a Historic Aircraft is constructed.\
 **Validation Rules**: [String](DataValidationRulesDescriptions.md#string), [SchemeConcept](DataValidationRulesDescriptions.md#schemeconcept)\
-**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.\
-Historic England Maritime Object Material: https://heritagedata.org/live/schemes/73.html (including narrower concepts) prefLabel or altLabel.
+**Acceptable Values**: FISH Building Materials Thesaurus: https://heritagedata.org/live/schemes/eh_tbm.html (including narrower concepts) prefLabel or altLabel.
 
 ---
 
