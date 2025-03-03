@@ -25,7 +25,7 @@ The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchemaDocumentat
 
 ### `String`
 **What it means**: The value must be text comprising letters, numerals, or symbols, for example "abc", "123", "-456", "abc_123", "123 + 456", "true", "@@@@" etc. It cannot be a number, true/false value, list, or other data type.  
-**Example**: `primaryReferenceNumber:` "4556 7890 3321" is valid;  `primaryReferenceNumber:` 455678903321 (which is a number) is not.
+**Example**: `primaryReferenceNumber:` "4556 7890 3321" is valid as is `primaryReferenceNumber:` "455678903321";  `primaryReferenceNumber:` 455678903321 (which is a number) is not.
 
 ---
 
