@@ -19,7 +19,7 @@ The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchemaDocumentat
 
 ### `RequiredWithout`
 **What it means**: This field becomes mandatory if another specified field is missing or empty.  
-**Example**: If you don't provide a `bibliographyFootnoteReference` for a source, you must fill in `informationSourceTitle`, `statementOfAuthority`, and `dateOfOrigination`.
+**Example**: If you don't provide a `bibliographyFootnoteReference` for a source, you must submit `informationSourceTitle`, `statementOfAuthority`, and `dateOfOrigination`.
 
 ---
 
