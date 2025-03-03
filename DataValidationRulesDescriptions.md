@@ -61,7 +61,7 @@ The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchemaDocumentat
 
 ### `Numeric`
 **What it means**: The value must be a number (whole or decimal).  
-**Example**: `xCoordinate: 51.5074` is valid; `xCoordinate: "51.5074"` (which is a string) is invalid.
+**Example**: `xCoordinate: 51.5074` is valid; `xCoordinate: "51.5074"` (which is a text string) is invalid.
 
 ---
 
