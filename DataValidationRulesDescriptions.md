@@ -5,6 +5,7 @@
 Version| Description | Author 
 --- | --- | --- 
 1.0  | Initial version of the Validation Rules Descriptions | Jan Putzan (Ember Technology)
+1.1  | Updated version of the Validation Rules Descriptions | Jan Putzan (Ember Technology)
 
 ## Overview
 
