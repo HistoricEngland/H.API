@@ -73,8 +73,8 @@ The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchemaDocumentat
 ---
 
 ### `SchemeConcept`
-**What it means**: The value must come from a specific controlled list (thesaurus or taxonomy). Use exact terms from the linked scheme.  
-**Example**: For `monumentDatedTypes.type`, valid terms include "Castle" or "Roman Villa" from the [FISH Monument Types Thesaurus](https://heritagedata.org/live/schemes/eh_tmt2.html).
+**What it means**: The value must be either a preferred (prefLabel) or alternative (altLabel) from a specific controlled list (thesaurus or taxonomy) such as [FISH Monument Types Thesaurus](https://heritagedata.org/live/schemes/eh_tmt2.html).   
+**Example**: For `monumentDatedTypes.type`, valid terms for a major fortified place include "Fortress" (prefLabel) or "Land Fort" (altLabel) or "Coastal Fort" (altLabel)  from the [FISH Monument Types Thesaurus](https://heritagedata.org/live/schemes/eh_tmt2.html).
 
 ---
 
