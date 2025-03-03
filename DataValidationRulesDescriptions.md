@@ -30,7 +30,7 @@ The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchemaDocumentat
 ---
 
 ### `Date`
-**What it means**: The value must be a valid date in **ISO 8601 UTC format** (e.g., `YYYY-MM-DD`). BCE dates use negative years (e.g., `-0500` for 500 BCE).  
+**What it means**: The value must be a valid date in **ISO 8601 UTC format** (e.g., `YYYY-MM-DD`). 
 **Example**: `lastUpdated: "2023-10-05"` is valid; `lastUpdated: "October 5th"` is not.
 
 ---
