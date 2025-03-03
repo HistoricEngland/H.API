@@ -24,8 +24,8 @@ The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchemaDocumentat
 ---
 
 ### `String`
-**What it means**: The value must be text (letters, numbers, or symbols). It cannot be a number, true/false value, list, or other data type.  
-**Example**: `heritageAssetName` must be text like "Medieval Castle" – not a number like `1234`.
+**What it means**: The value must be text comprising letters, numerals, or symbols, for example "abc", "123", "-456", "abc_123", "123 + 456", "true", "@@@@" etc. It cannot be a number, true/false value, list, or other data type.  
+**Example**: `primaryReferenceNumber:` "4556 7890 3321" is valid  `primaryReferenceNumber:` 455678903321 (which is a number) is not.
 
 ---
 
@@ -73,7 +73,7 @@ The Heritage Gateway Record (HGR) [schema](HeritageGatewayRecordSchemaDocumentat
 ---
 
 ### `SchemeConcept`
-**What it means**: The value must be either a preferred (prefLabel) or alternative (altLabel) from a specific controlled list (thesaurus or taxonomy) such as [FISH Monument Types Thesaurus](https://heritagedata.org/live/schemes/eh_tmt2.html).   
+**What it means**: The value must be either a preferred (prefLabel) or alternative (altLabel) term from a specific controlled list (thesaurus or taxonomy) such as [FISH Monument Types Thesaurus](https://heritagedata.org/live/schemes/eh_tmt2.html).   
 **Example**: For `monumentDatedTypes.type`, valid terms for a major fortified place include "Fortress" (prefLabel) or "Land Fort" (altLabel) or "Coastal Fort" (altLabel)  from the [FISH Monument Types Thesaurus](https://heritagedata.org/live/schemes/eh_tmt2.html).
 
 ---
