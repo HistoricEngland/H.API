@@ -11,6 +11,7 @@ Version| Description | Author
 1.3  | Changed the transmission method for batch submission endpoint  | Jan Putzan (Ember Technology)
 1.4  | Addition of Record Counts Explained section and updates to Batch Creation | Jan Putzan (Ember Technology)
 1.5  | Updated the API endpoint to point to production environment | Jan Putzan (Ember Technology)
+1.6  | Addition of an API endpoint to finalise batch submission | Jan Putzan (Ember Technology) 
 
 ## Overview
 
@@ -95,6 +96,22 @@ Each batch should exclusively contain records that have either been newly create
   ```
   - Include the records as an array of HGR compliant JSON objects within the JSON body.
 
+### Finalise Batch Submission
+
+After successfully submitting all records, the next step is to finalise the batch submission. This process confirms and completes the current batch, ensuring all records within it are processed. Once a batch is finalised, no further records can be added to it.
+
+- **Endpoint**: `https://provider.historicenglandservices.org.uk/api/batch/finalise`
+- **Method**: `POST`
+- **Headers**:
+  - `Authorization: Bearer YOUR_ACCESS_TOKEN`
+  - `Content-Type: application/json`
+- **Body**:
+  ```json
+  {
+    "batch_id": "BATCH_ID"
+  }
+  ```
+
 ### Steps
 
 1. Obtain an access token from the OAuth endpoint.
@@ -103,6 +120,7 @@ Each batch should exclusively contain records that have either been newly create
 4. Prepare the records for submission according to the API's specifications.
 5. Construct a POST request to the batch submission endpoint with the appropriate headers, BATCH_ID and data.
 6. Process the API's response to determine the success or failure of the submission.
+7. Once all records are submitted send a POST request to finalise the batch submission.
 
 ### Examples of cURL Commands
 
@@ -125,6 +143,13 @@ curl -X POST https://provider.historicenglandservices.org.uk/api/batch/submit \
   -H "Content-Type: application/json" \
   -d '{"batch_id": BATCH_ID, "records": [{...}, {...}, ...]}' \
 
+```
+
+```bash
+curl -X POST https://provider.historicenglandservices.org.uk/api/batch/finalise \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"batch_id": "BATCH_ID"}'
 ```
 
 ## Error Handling
