@@ -21,7 +21,7 @@ This document outlines the steps required to submit Heritage Gateway Record (HGR
 
 ### Obtaining an Access Token
 
-- **Endpoint**: `https://provider.historicenglandservices.org.uk/oauth/token`
+- **Endpoint**: `https://provider.historicenglandservices.org.uk/api/auth/token/create`
 - **Method**: `POST`
 - **Headers**: 
   - `Content-Type: application/json`
@@ -125,7 +125,7 @@ After successfully submitting all records, the next step is to finalise the batc
 ### Examples of cURL Commands
 
 ```bash
-curl -X POST https://provider.historicenglandservices.org.uk/oauth/token \
+curl -X POST https://provider.historicenglandservices.org.uk/api/auth/token/create \
   -H "Content-Type: application/json" \
   -d '{"username": "your_username","password": "your_password"}'
 ```
