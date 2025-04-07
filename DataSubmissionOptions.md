@@ -6,6 +6,7 @@ Version| Description | Author
 --- | --- | --- 
 1.0  | Initial version of the Data Submission Options Guidance | Jan Putzan (Ember Technology)
 1.1  | Revision following review | Phil Turton (Historic England)
+1.2  | Updates to the FTP Server Access for File Uploads Steps | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -28,7 +29,7 @@ Direct API Submission requires the data provider to write an integration that wi
 #### Register:
 +	Follow the [Joining Instructions](JoiningInstructions.md), register to submit data to the Heritage Gateway, select the Direct API data submission method and enter the username and password you wish to use.  
 #### Obtain Access Credentials:
-+	Follow the procedure outlined the [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md) using your username and password to authenticate and obtain an access token required for the data submission.
++	Follow the procedure outlined in the [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md) using your username and password to authenticate and obtain an access token required for the data submission.
 #### Prepare Your Data:
 +	Organise your data into a submission batch according to the API documentation.
 +	Ensure your data structure aligns with the [schema](HeritageGatewayRecordSchemaDocumentation.md).
@@ -79,18 +80,17 @@ The third approach, FTP Server Access, offers a more traditional route, resembli
 ### 3. FTP Server Access for File Uploads Steps:
 
 #### Register
-+	Follow the [Joining Instructions](JoiningInstructions.md), register to submit data to the Heritage Gateway, select the FTP Server Access data submission method and enter the user name and password you wish to use.  
++	Follow the [Joining Instructions](JoiningInstructions.md), register to submit data to the Heritage Gateway, select the FTP Server Access data submission method and enter the username and password you wish to use.  
 
-#### Access the HE Heritage Gateway FTP Server:
-+	Detail TBC
+#### Connect to the HE Heritage Gateway FTP Server:
++ Download and install an FTP client, i.e. [FileZilla](https://filezilla-project.org), [WinSCP](https://winscp.net/eng/index.php) (Windows only), or any other that supports the SFTP (Secure File Transfer Protocol).  
++ Open your FTP client and enter the server details (host, username, password) to establish a connection.
 
 #### Prepare Your Data Files:
-+	Organise your data (detail TBC)
 +	Ensure your data structure aligns with the [schema](HeritageGatewayRecordSchemaDocumentation.md).
 
 #### Upload Your Data:
-+	Open your FTP client and enter the server details (host, username, password) to establish a connection.
-+	Navigate to the designated folder or directory and upload your prepared data files using the FTP client interface.
++	Follow the procedure outlined in the [FTP Server Submission Documentation](FTPServerSubmissionDocumentation.md) for creating a submission batch folder and uploading your prepared data files using the FTP client interface.
 
 #### Confirmation and Monitoring:
 +	Verify successful file uploads by checking the uploaded files' presence in the specified folder on the server.

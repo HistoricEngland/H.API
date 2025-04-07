@@ -11,6 +11,7 @@ The Heritage Gateway is managed by Historic England in partnership with ALGAO an
 - [Joining Instructions](JoiningInstructions.md): Step-by-step guide to join the Heritage Gateway.
 - [Data Submission Options](DataSubmissionOptions.md): Details the three available methods for submitting data to the Heritage Gateway.
 - [Direct API Submission Documentation](DirectAPISubmissionDocumentation.md): Instructions for submitting data via the RESTful API provided by Historic England.
+- [FTP Server Submission Documentation](FTPServerSubmissionDocumentation.md): Instructions for submitting data via the FTP Server provided by Historic England.
 
 ## Schema and Validation
 
