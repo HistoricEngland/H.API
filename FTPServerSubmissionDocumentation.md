@@ -5,6 +5,7 @@
 Version| Description | Author 
 --- | --- | --- 
 1.0  | Initial version of the instructions for the FTP Server submission of the Heritage Gateway Record | Jan Putzan (Ember Technology)
+1.1  | Added sFTP server url and port | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -14,6 +15,8 @@ This document outlines the steps required to submit Heritage Gateway Record (HGR
 
 ## Authentication
 
+- **Host**: sftp://he-sftp.embertech.link
+- **Port**: 2022
 - **Credentials**: Use the username and password created during your HE portal registration.
 - **Protocol**: Connect via **SFTP/FTPS** for encrypted file transfer.
 - **No token required**: Unlike the API method, authentication is handled directly through your FTP credentials.
