@@ -13,6 +13,7 @@ Version| Description | Author
 1.6  | Corrected CORE/OPTIONAL status for attributes in `record.monumentSources` object | Jan Putzan (Ember Technology)
 1.7  | Addition of `record.publishedRecordUrl` attribute to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
 1.8  | Removal of multiple scheme concept validation for `materials.*` attribute values | Jan Putzan (Ember Technology)
+1.9  | Addition of `publishedRecordUrl` to the Gateway Record Schema sample | Jan Putzan (Ember Technology)
 
 ## Overview
 
@@ -47,6 +48,7 @@ The minimum attributes comprising the CORE HGR are defined along with additional
 		"protectedStatuses": [ ... ],
 		"otherStatuses": [ ... ],
 		"lastUpdated": "string",
+		"publishedRecordUrl": "string",
 		"delete": boolean
 	}
 }
