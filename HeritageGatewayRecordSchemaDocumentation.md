@@ -14,6 +14,8 @@ Version| Description | Author
 1.7  | Addition of `record.publishedRecordUrl` attribute to the Heritage Gateway Record Schema | Jan Putzan (Ember Technology)
 1.8  | Removal of multiple scheme concept validation for `materials.*` attribute values | Jan Putzan (Ember Technology)
 1.9  | Changed Acceptable Values for `record.objectFinds.*.materials.*` | Jan Putzan (Ember Technology)
+1.10  | Removal of `DateInPast` validation rule for `endDate` attribute values | Jan Putzan (Ember Technology)
+
 
 ## Overview
 
@@ -177,7 +179,7 @@ For records where the data provider does not hold a specific name for the asset,
 **Mandatory in HGR**: Y (if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. (MIDAS)\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats), [DateInPast](DataValidationRulesDescriptions.md#dateinpast)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -525,7 +527,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Mandatory in HGR**: Y (if `record.objectFinds` attribute is present AND if attribute period is not provided, omitted if period = UNCERTAIN)\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of manufacture, deposition or death (for biological materials). (MIDAS)\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats), [DateInPast](DataValidationRulesDescriptions.md#dateinpast)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -634,7 +636,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats), [DateInPast](DataValidationRulesDescriptions.md#dateinpast)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
@@ -743,7 +745,7 @@ If record.pointGeometry.referenceSystem =  EPSG 27700  must be NORTHING co-ordin
 **Mandatory in HGR**: N\
 **Data Type**: String\
 **Description**: The latest year of a date range. Associated with a Start Date entry. Used together, they provide a range of dates within which something has taken place (where this is not precisely known) or to indicate the span of dates over which a longer event has taken place. Most significantly the dates of construction, loss or recovery.\
-**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats), [DateInPast](DataValidationRulesDescriptions.md#dateinpast)\
+**Validation Rules**: [DateFormats:YYYY-MM-DD, YYYY-MM, YYYY, -YYYY](DataValidationRulesDescriptions.md#dateformats)\
 **Acceptable Values**: BCE dates are represented using a negative year format.
 
 ---
